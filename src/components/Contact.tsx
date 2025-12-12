@@ -21,7 +21,7 @@ export function Contact() {
     { 
       icon: Linkedin, 
       label: 'LinkedIn', 
-      href: '#',
+      href: 'https://www.linkedin.com/in/diana-vanessa/',
       color: 'hover:text-[#0077B5]',
       bg: 'hover:bg-[#0077B5]/10'
     },
@@ -32,20 +32,7 @@ export function Contact() {
       color: 'hover:text-[#E4405F]',
       bg: 'hover:bg-[#E4405F]/10'
     },
-    { 
-      icon: Twitter, 
-      label: 'Twitter', 
-      href: '#',
-      color: 'hover:text-[#1DA1F2]',
-      bg: 'hover:bg-[#1DA1F2]/10'
-    },
-    { 
-      icon: Mail, 
-      label: 'Email', 
-      href: 'mailto:tu@email.com',
-      color: 'hover:text-primary',
-      bg: 'hover:bg-primary/10'
-    },
+    
   ];
 
   return (
@@ -153,8 +140,8 @@ export function Contact() {
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3 text-foreground">
                   <Mail className="w-5 h-5 text-primary" />
-                  <a href="mailto:tu@email.com" className="hover:text-primary transition-colors">
-                    tu@email.com
+                  <a href="mailto:dinessa.tech@gmail.com" className="hover:text-primary transition-colors">
+                    dinessa.tech@gmail.com
                   </a>
                 </div>
               </div>
@@ -189,10 +176,9 @@ export function Contact() {
               <h4 className="mb-4">¿Por qué trabajar conmigo?</h4>
               <ul className="space-y-3">
                 {[
-                  'Enfoque estratégico y creativo',
-                  'Resultados medibles y tangibles',
+                  'Enfoque estratégico y creativo con resultados medibles',
                   'Comunicación clara y constante',
-                  'Entrega puntual garantizada',
+                  
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="text-accent mt-1">✓</span>

@@ -26,7 +26,6 @@ export function Skills() {
         'Estrategia de marca',
         'Posicionamiento',
         'Brand voice',
-        'Naming',
       ],
     },
     {
@@ -35,7 +34,6 @@ export function Skills() {
       color: 'from-secondary to-accent',
       skills: [
         'Identidad visual',
-        'Diseño de logo',
         'Tipografía',
         'Sistemas de color',
       ],
@@ -47,7 +45,6 @@ export function Skills() {
       skills: [
         'Social media',
         'Content strategy',
-        'SEO/SEM',
         'Email marketing',
       ],
     },
@@ -56,18 +53,16 @@ export function Skills() {
       icon: Laptop,
       color: 'from-primary to-accent',
       skills: [
-        'Adobe Creative Suite',
         'Figma',
-        'Sketch',
-        'After Effects',
+        'Canva',
+        'Inkscape',
       ],
     },
   ];
 
   const additionalSkills = [
-    { icon: Package, label: 'Packaging Design' },
-    { icon: Camera, label: 'Dirección de Arte' },
-    { icon: PenTool, label: 'Ilustración' },
+ 
+    { icon: PenTool, label: 'UX Writing' },
     { icon: MessageSquare, label: 'Copywriting' },
   ];
 
@@ -79,15 +74,15 @@ export function Skills() {
       certificateUrl: 'https://www.credential.net/900b0164-545d-48d4-84d8-77c7e5bbcbfa#acc.Brp9O6qJ'
     },
     { 
-      title: 'Digital Marketing Expert', 
-      org: 'Google', 
-      year: '2022',
-      certificateUrl: 'https://www.example.com/certificate2.pdf'
+      title: 'Análisis Profesional en Power BI: Técnicas avanzadas de modelado y DAX', 
+      org: 'ConQuito', 
+      year: '2024',
+      certificateUrl: 'https://drive.google.com/file/d/1OTfTkemsHimM_i4xO31VzHlXzCHml8CJ/view?usp=sharing'
     },
     { 
-      title: 'Advanced UX Design', 
-      org: 'Nielsen Norman Group', 
-      year: '2021',
+      title: 'UX Writing: diseño de contenido y experiencia de usuario', 
+      org: 'Udemy', 
+      year: '2024',
       certificateUrl: 'https://www.udemy.com/certificate/UC-6fa3c903-dccf-40e6-947d-6211abeaec8b/'
     },
   ];

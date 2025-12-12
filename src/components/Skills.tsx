@@ -11,7 +11,7 @@ import {
   PenTool,
   Award
 } from 'lucide-react';
-import { CertificateModal } from './CertificateModal';
+// import { CertificateModal } from './CertificateModal';
 
 export function Skills() {
   const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
@@ -73,25 +73,22 @@ export function Skills() {
 
   const certifications = [
     { 
-      title: 'Brand Strategy Professional', 
-      org: 'AIGA', 
-      year: '2023',
-      imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800',
-      certificateUrl: 'https://www.example.com/certificate1.pdf'
+      title: 'Tecnología Superior en Negociación y Ventas', 
+      org: 'Universidad Católica de Cuenca', 
+      year: '2025',
+      certificateUrl: 'https://www.credential.net/900b0164-545d-48d4-84d8-77c7e5bbcbfa#acc.Brp9O6qJ'
     },
     { 
       title: 'Digital Marketing Expert', 
       org: 'Google', 
       year: '2022',
-      imageUrl: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800',
       certificateUrl: 'https://www.example.com/certificate2.pdf'
     },
     { 
       title: 'Advanced UX Design', 
       org: 'Nielsen Norman Group', 
       year: '2021',
-      imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800',
-      certificateUrl: 'https://www.example.com/certificate3.pdf'
+      certificateUrl: 'https://www.udemy.com/certificate/UC-6fa3c903-dccf-40e6-947d-6211abeaec8b/'
     },
   ];
 
@@ -203,7 +200,7 @@ export function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                onClick={() => openCertificate(cert)}
+                onClick={() => window.open(cert.certificateUrl, '_blank')}
                 className="bg-card p-6 rounded-2xl shadow-md hover:shadow-xl transition-all border border-border hover:border-primary group cursor-pointer"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform">
@@ -220,12 +217,13 @@ export function Skills() {
         </motion.div>
       </div>
 
-      {/* Certificate Modal */}
+      {/* Certificate Modal 
       <CertificateModal
         certificate={selectedCertificate}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
+      */}
     </section>
   );
 }

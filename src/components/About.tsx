@@ -11,7 +11,7 @@ export function About() {
     {
       icon: Target,
       title: 'Estrategia primero',
-      description: 'El diseño hermoso debe cumplir objetivos de negocio',
+      description: 'El diseño debe cumplir objetivos de negocio',
     },
     {
       icon: Lightbulb,

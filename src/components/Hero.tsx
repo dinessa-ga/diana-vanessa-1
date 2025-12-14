@@ -69,7 +69,7 @@ export function Hero() {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto">
-            Estratega de marca y diseñador creativo
+            Hola, soy Diana... Estratega de marca, diseñadora y redactora creativa
           </p>
           
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">

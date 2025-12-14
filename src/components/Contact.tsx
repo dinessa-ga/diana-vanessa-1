@@ -198,7 +198,7 @@ export function Contact() {
           viewport={{ once: true }}
           className="mt-20 pt-8 border-t border-border text-center text-muted-foreground"
         >
-          <p>© 2024 • Diseñado y desarrollado con 💖 y mucho ☕</p>
+          <p>© 2025 • Diseñado y desarrollado por Diana Guaiña</p>
         </motion.div>
       </div>
     </section>

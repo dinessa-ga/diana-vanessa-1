@@ -20,14 +20,14 @@ export function BrandCard({ project }: BrandCardProps) {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1.0 }}
           className="relative group"
         >
           <div className="relative overflow-hidden rounded-3xl shadow-2xl">
             <ImageWithFallback
               src={project.image}
               alt={project.brandName}
-              className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-[400px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
             
@@ -57,7 +57,7 @@ export function BrandCard({ project }: BrandCardProps) {
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-6"
+         className="space-y-6"  //  Aún no sé si cambiar aquí
         >
           <div>
             <p className="text-lg text-foreground leading-relaxed">

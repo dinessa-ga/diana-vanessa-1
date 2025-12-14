@@ -57,7 +57,7 @@ export function BrandingShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-4"
         >
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full mb-4">
             Proyectos destacados

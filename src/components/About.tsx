@@ -11,7 +11,7 @@ export function About() {
     {
       icon: Target,
       title: 'Estrategia primero',
-      description: 'El diseño hermoso debe cumplir objetivos de negocio',
+      description: 'El diseño debe cumplir objetivos de negocio',
     },
     {
       icon: Lightbulb,
@@ -44,13 +44,12 @@ export function About() {
             </h2>
             <div className="space-y-4 text-lg text-muted-foreground">
               <p>
-                Soy un apasionado del branding y el diseño estratégico. Mi misión es ayudar a las marcas
-                a encontrar su voz única y comunicarla de manera efectiva al mundo.
+                He sido parte de equipos para la creación y ejecución de estrategias de contenido y 
+                comunicación digital, fortaleciendo la identidad y visibilidad de marcas y comunidades.
               </p>
               <p>
-                Con más de 5 años de experiencia en marketing y diseño, he trabajado con startups,
-                empresas consolidadas y emprendedores para crear identidades de marca memorables
-                que generan resultados tangibles.
+                Actualmente, lidero una comunidad tecnológica en Latinoamérica, donde diseño y gestiono 
+                iniciativas que fomentan la innovación, la colaboración y la formación continua en tech.
               </p>
               <p>
                 Creo firmemente que el diseño es una herramienta poderosa de negocios. No se trata
@@ -65,9 +64,6 @@ export function About() {
               </span>
               <span className="px-4 py-2 bg-card shadow-md rounded-full text-foreground border border-border">
                 Visual Identity
-              </span>
-              <span className="px-4 py-2 bg-card shadow-md rounded-full text-foreground border border-border">
-                Creative Direction
               </span>
               <span className="px-4 py-2 bg-card shadow-md rounded-full text-foreground border border-border">
                 Marketing Digital

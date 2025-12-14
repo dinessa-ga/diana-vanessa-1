@@ -57,7 +57,7 @@ export function BrandingShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-4"
         >
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full mb-4">
             Proyectos destacados
@@ -127,40 +127,35 @@ export function BrandingShowcase() {
                   setDirection(index > currentIndex ? 1 : -1);
                   setCurrentIndex(index);
                 }}
-                className={`h-2 rounded-full transition-all ${
-                  index === currentIndex
+                className={`h-2 rounded-full transition-all ${index === currentIndex
                     ? 'w-8 bg-primary'
                     : 'w-2 bg-muted hover:bg-muted-foreground'
-                }`}
+                  }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
         </div>
 
-        {/* Stats Section */}
+        {/* Stats Section - editing */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-center"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 text-center justify-items-center"
         >
           <div>
-            <div className="text-4xl mb-2 text-primary">50+</div>
-            <div className="text-muted-foreground">Proyectos completados</div>
+            <div className="text-4xl mb-2 text-primary">3+</div>
+            <div className="text-muted-foreground">Años en organizaciones sociales </div>
           </div>
           <div>
-            <div className="text-4xl mb-2 text-secondary">35+</div>
-            <div className="text-muted-foreground">Clientes satisfechos</div>
-          </div>
-          <div>
-            <div className="text-4xl mb-2 text-accent">5+</div>
+            <div className="text-4xl mb-2 text-accent">4+</div>
             <div className="text-muted-foreground">Años de experiencia</div>
           </div>
           <div>
-            <div className="text-4xl mb-2 text-primary">15+</div>
-            <div className="text-muted-foreground">Premios ganados</div>
+            <div className="text-4xl mb-2 text-primary">2+</div>
+            <div className="text-muted-foreground">Años en marketing digital y contenido</div>
           </div>
         </motion.div>
       </div>

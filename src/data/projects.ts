@@ -215,19 +215,5 @@ export const brandProjects: BrandProject[] = [
       label2: 'Tasa de satisfacción'
     }
   },
-  {
-    id: 5,
-    brandName: 'Gourmet Box',
-    category: 'Alimentos & Delivery',
-    description: 'Diseño de packaging y marca para servicio de cajas gourmet. Sistema visual colorido y apetitoso.',
-    image: 'https://images.unsplash.com/photo-1744911491113-dd50a819472a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMGJyYW5kJTIwcGFja2FnaW5nfGVufDF8fHx8MTc2NTUwMTI4NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    colors: ['#591fff', '#9908cd', '#ff65a1', '#e0cedd'],
-    services: ['Packaging design', 'Branding', 'Marketing digital'],
-    results: {
-      metric1: '120%',
-      label1: 'Crecimiento mensual',
-      metric2: '92%',
-      label2: 'Tasa de recompra'
-    }
-  },
+ 
 ];

@@ -54,7 +54,7 @@ export function BrandCard({ project }: BrandCardProps) {
 
         {/* Content Section */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: 10}}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
          className="space-y-6"  //  Aún no sé si cambiar aquí

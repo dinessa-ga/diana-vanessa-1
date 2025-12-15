@@ -64,7 +64,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
             <span className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm text-primary rounded-full mb-4 border border-primary/30">
               {project.category}
             </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl mb-4 text-foreground">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 text-foreground">
               {project.brandName}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl">
@@ -320,7 +320,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
             <h2 className="text-3xl md:text-4xl mb-8 text-center text-foreground">
               Piezas <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Gráficas</span>
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-6"> {/* mostrar 3 columnas en desktop */}
               {caseStudy.visualExamples.map((imgUrl, index) => (
                 <motion.div
                   key={index}

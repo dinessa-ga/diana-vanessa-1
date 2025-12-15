@@ -215,5 +215,101 @@ export const brandProjects: BrandProject[] = [
       label2: 'Tasa de satisfacción'
     }
   },
+
+  {
+    id: 5,
+    brandName: 'Diana Vanessa | Tech Content Strategist',
+    category: 'Estrategia de Contenido & UX Writing',
+    description: 'Consultoría estratégica que fusiona la ingeniería de sistemas con el marketing de contenidos. Especialista en traducir conceptos técnicos complejos en narrativas claras y diseño de microcopy.',
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwd29tYW4lMjB3cml0aW5nfGVufDF8fHx8MTc2NTQxMjg4N3ww&ixlib=rb-4.1.0&q=80&w=1080',
+    colors: ['#2563EB', '#0F172A', '#10B981'],
+    services: ['Estrategia de Contenidos Tech', 'UX Writing & Microcopy', 'Gestión de Comunidades', 'Redacción Técnica'],
+    results: {
+      metric1: 'Top Tier',
+      label1: 'Posicionamiento Tech',
+      metric2: 'Híbrido',
+      label2: 'Perfil Técnico + Creativo'
+    },
+    caseStudy: {
+      clientOverview: 'Ingeniera en Sistemas con formación en UX Writing y Marketing. Fundadora de "Somos Dev" y experta en liderar la comunicación de productos digitales.',
+      challenge: 'El sector tecnológico carece de comunicadores que entiendan el código. El reto es posicionar una marca que demuestre capacidad técnica (Python, Frontend) y sensibilidad creativa (Copywriting, UX).',
+      purpose: 'Humanizar la tecnología mediante palabras precisas y estrategias basadas en datos, ayudando a empresas a conectar auténticamente con sus usuarios.',
+      buyerPersona: {
+        name: 'David Product Manager',
+        age: '30-45 años',
+        occupation: 'Líder de Producto / CEO Tech',
+        interests: ['SaaS', 'Experiencia de Usuario (UX)', 'Growth Hacking', 'Inteligencia Artificial'],
+        painPoints: ['Tiene un producto técnico increíble pero difícil de explicar', 'Necesita mejorar la retención de usuarios', 'Busca perfiles que entiendan el backend y el frontend del negocio']
+      },
+      brandPersonality: {
+        tone: ['Analítico', 'Empático', 'Profesional', 'Innovador'],
+        voice: 'La "Traductora Tecnológica": Capaz de hablar de APIs con los devs y de beneficios con los usuarios. Clara, directa y orientada a soluciones.'
+      },
+      contentStrategy: {
+        objectives: [
+          'Demostrar autoridad técnica en desarrollo y herramientas IA',
+          'Evidenciar habilidades de liderazgo comunitario',
+          'Educar sobre la importancia del UX Writing en el software',
+          'Atraer proyectos que requieran visión técnica y ejecución creativa'
+        ],
+        pillars: [
+          'Tech & Code (Frontend, Python, IA)',
+          'UX Writing (La voz del producto)',
+          'Community Building (Somos Dev)',
+          'Productividad Ágil (Notion, Jira)'
+        ]
+      },
+      deliverables: [
+        {
+          category: 'Estrategia de Comunidad',
+          items: ['Planificación de contenidos Tech', 'Organización de webinars y talleres', 'Estrategia de crecimiento en LinkedIn', 'Gestión de alianzas estratégicas']
+        },
+        {
+          category: 'UX Writing & Producto',
+          items: ['Microcopy para interfaces', 'Diseño de flujos conversacionales (Chatbots)', 'Investigación de usuarios (Maze)', 'Documentación en Confluence']
+        },
+        {
+          category: 'Marketing de Contenidos',
+          items: ['Artículos técnicos traducidos a lenguaje comercial', 'Posts con storytelling de datos', 'Guiones corporativos', 'Uso de IA para generación de copy']
+        },
+        {
+          category: 'Desarrollo Frontend',
+          items: ['Estructura HTML/CSS/JS para landing pages', 'Prototipado en Figma', 'Implementación de lógica básica', 'Optimización SEO técnica']
+        }
+      ],
+      visualExamples: [
+        'https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=800',
+        'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800',
+        'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800',
+        'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800'
+      ],
+      copyExamples: [
+        {
+          type: 'Bio de LinkedIn',
+          text: '💻 Ingeniera en Sistemas & UX Writer. Ayudo a empresas a transformar código complejo en experiencias de usuario irresistibles. Founder de @SomosDev.'
+        },
+        {
+          type: 'Microcopy (Error App)',
+          text: 'Antes: "Error 404". \nPropuesta UX: "Parece que hubo un cruce en los cables. No pudimos cargar tu historial por el momento. ¿Intentamos de nuevo?"'
+        },
+        {
+          type: 'Post de Comunidad',
+          text: '🚀 No es solo código, es comunicación. En el último Hackathon vi grandes ideas fallar al explicarse. Como devs, a veces olvidamos que el usuario no ve el backend, ve el texto.'
+        }
+      ],
+      results: [
+        'Fundadora y líder de crecimiento de la comunidad Somos Dev',
+        'Desarrollo de MVPs premiados en Hackathons (Experian, Bluetab)',
+        'Estrategias de contenido exitosas en Akros y La Casita',
+        'Optimización de procesos mediante herramientas No-Code',
+        'Creación de asistentes virtuales IA para análisis de datos'
+      ],
+      testimonial: {
+        text: 'Su capacidad para entender la arquitectura técnica y traducirla en una estrategia de contenido coherente es única. No solo escribe, diseña soluciones que mejoran la experiencia del usuario.',
+        author: 'CTO / Cliente Tech',
+        position: 'Líder de Desarrollo'
+      }
+    }
+  },
  
 ];

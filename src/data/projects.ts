@@ -96,7 +96,7 @@ export const brandProjects: BrandProject[] = [
       },
       deliverables: [
         {
-          category: 'Estrategia de Contenido',
+          category: 'Estrategia de contenido',
           items: ['Análisis de audiencia', 'Calendario editorial mensual', 'Estrategia multiplataforma', 'KPIs y métricas']
         },
         {
@@ -218,11 +218,11 @@ export const brandProjects: BrandProject[] = [
 
   {
     id: 5,
-    brandName: '[Tu Nombre] | Tech Content Strategist',
-    category: 'Estrategia de Contenido & UX Writing',
-    description: 'Consultoría estratégica que fusiona la ingeniería de sistemas con el marketing de contenidos. Especialista en traducir conceptos técnicos complejos en narrativas claras y diseño de microcopy.',
+    brandName: 'Diana Vanessa | Tech Content Strategist',
+    category: 'Estrategia de Contenido',
+    description: 'Consultoría estratégica que fusiona conocimientos en tecnología con el marketing de contenidos. Traduzco conceptos técnicos complejos en narrativas claras y diseño de microcopy.',
     image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwd29tYW4lMjB3cml0aW5nfGVufDF8fHx8MTc2NTQxMjg4N3ww&ixlib=rb-4.1.0&q=80&w=1080',
-    colors: ['#2563EB', '#0F172A', '#10B981'],
+    colors: ['#ff65a1', '#591fff', '#9908cd', '#fff3fe'],
     services: ['Estrategia de Contenidos Tech', 'UX Writing & Microcopy', 'Gestión de Comunidades', 'Redacción Técnica'],
     results: {
       metric1: 'Top Tier',
@@ -261,7 +261,7 @@ export const brandProjects: BrandProject[] = [
       },
       deliverables: [
         {
-          category: 'Estrategia de Comunidad',
+          category: 'Estrategia de comunidad',
           items: ['Planificación de contenidos Tech', 'Organización de webinars y talleres', 'Estrategia de crecimiento en LinkedIn', 'Gestión de alianzas estratégicas']
         },
         {
@@ -269,7 +269,7 @@ export const brandProjects: BrandProject[] = [
           items: ['Microcopy para interfaces', 'Diseño de flujos conversacionales (Chatbots)', 'Investigación de usuarios (Maze)', 'Documentación en Confluence']
         },
         {
-          category: 'Marketing de Contenidos',
+          category: 'Marketing de contenidos',
           items: ['Artículos técnicos traducidos a lenguaje comercial', 'Posts con storytelling de datos', 'Guiones corporativos', 'Uso de IA para generación de copy']
         },
         {

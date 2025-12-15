@@ -44,11 +44,11 @@ export function About() {
             </h2>
             <div className="space-y-4 text-lg text-muted-foreground">
               <p>
-                He sido parte de equipos para la creación y ejecución de estrategias de contenido y 
+                He sido parte de equipos para la creación y ejecución de estrategias de contenido y
                 comunicación digital, fortaleciendo la identidad y visibilidad de marcas y comunidades.
               </p>
               <p>
-                Actualmente, lidero una comunidad tecnológica en Latinoamérica, donde diseño y gestiono 
+                Actualmente, lidero una comunidad tecnológica en Latinoamérica, donde diseño y gestiono
                 iniciativas que fomentan la innovación, la colaboración y la formación continua en tech.
               </p>
               <p>
@@ -64,9 +64,6 @@ export function About() {
               </span>
               <span className="px-4 py-2 bg-card shadow-md rounded-full text-foreground border border-border">
                 Visual Identity
-              </span>
-              <span className="px-4 py-2 bg-card shadow-md rounded-full text-foreground border border-border">
-                Marketing Digital
               </span>
               <span className="px-4 py-2 bg-card shadow-md rounded-full text-foreground border border-border">
                 UX/UI Design

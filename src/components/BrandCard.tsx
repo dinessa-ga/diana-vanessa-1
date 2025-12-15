@@ -20,7 +20,7 @@ export function BrandCard({ project }: BrandCardProps) {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.0 }}
+          transition={{ duration: 3.0 }}
           className="relative group"
         >
           <div className="relative overflow-hidden rounded-3xl shadow-2xl">
@@ -54,7 +54,7 @@ export function BrandCard({ project }: BrandCardProps) {
 
         {/* Content Section */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: 10}}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
          className="space-y-6"  //  Aún no sé si cambiar aquí

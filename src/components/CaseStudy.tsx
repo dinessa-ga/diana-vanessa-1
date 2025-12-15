@@ -64,7 +64,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
             <span className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm text-primary rounded-full mb-4 border border-primary/30">
               {project.category}
             </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl mb-4 text-foreground">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 text-foreground">
               {project.brandName}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl">
@@ -89,7 +89,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
               <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
                 <Lightbulb className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-foreground">El Cliente</h3>
+              <h3 className="text-foreground">El cliente</h3>
             </div>
             <p className="text-muted-foreground leading-relaxed">{caseStudy.clientOverview}</p>
           </div>
@@ -99,7 +99,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
               <div className="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center">
                 <Target className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-foreground">El Desafío</h3>
+              <h3 className="text-foreground">El desafío</h3>
             </div>
             <p className="text-muted-foreground leading-relaxed">{caseStudy.challenge}</p>
           </div>
@@ -113,7 +113,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="bg-gradient-to-br from-primary/10 to-accent/10 p-10 rounded-3xl border border-primary/20"
           >
-            <h3 className="text-center mb-4 text-foreground">Propósito de la Marca</h3>
+            <h3 className="text-center mb-4 text-foreground">Propósito de la marca</h3>
             <p className="text-lg text-center text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               "{caseStudy.purpose}"
             </p>
@@ -128,7 +128,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h2 className="text-3xl md:text-4xl mb-8 text-center text-foreground">
-              Buyer <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Persona</span>
+              Buyer <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">persona</span>
             </h2>
             <div className="bg-card p-8 md:p-10 rounded-3xl shadow-lg border border-border">
               <div className="flex items-center gap-4 mb-6">
@@ -154,7 +154,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                   </ul>
                 </div>
                 <div>
-                  <h5 className="mb-3 text-accent">Pain Points</h5>
+                  <h5 className="mb-3 text-accent">Pain points</h5>
                   <ul className="space-y-2">
                     {caseStudy.buyerPersona.painPoints.map((pain, index) => (
                       <li key={index} className="flex items-center gap-2 text-muted-foreground">
@@ -177,14 +177,14 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <h2 className="text-3xl md:text-4xl mb-8 text-center text-foreground">
-              Personalidad de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Marca</span>
+              Personalidad de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">marca</span>
             </h2>
             <div className="bg-card p-8 md:p-10 rounded-3xl shadow-lg border border-border">
               <div className="space-y-6">
                 <div>
                   <h5 className="mb-4 text-primary flex items-center gap-2">
                     <MessageSquare className="w-5 h-5" />
-                    Tono de Voz
+                    Tono de voz
                   </h5>
                   <div className="flex flex-wrap gap-3">
                     {caseStudy.brandPersonality.tone.map((tone, index) => (
@@ -216,7 +216,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <h2 className="text-3xl md:text-4xl mb-8 text-center text-foreground">
-              Estrategia de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Contenido</span>
+              Estrategia de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">contenido</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-card p-8 rounded-3xl shadow-lg border border-border">
@@ -231,7 +231,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 </ul>
               </div>
               <div className="bg-card p-8 rounded-3xl shadow-lg border border-border">
-                <h5 className="mb-4 text-secondary">Pilares de Contenido</h5>
+                <h5 className="mb-4 text-secondary">Pilares de contenido</h5>
                 <ul className="space-y-3">
                   {caseStudy.contentStrategy.pillars.map((pillar, index) => (
                     <li key={index} className="flex items-start gap-3 text-muted-foreground">
@@ -252,7 +252,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <h2 className="text-3xl md:text-4xl mb-8 text-center text-foreground">
-            Entregables del <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Proyecto</span>
+            Entregables del <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">proyecto</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {caseStudy.deliverables.map((deliverable, index) => (
@@ -287,7 +287,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl mb-8 text-center text-foreground">
-              Ejemplos de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Copywriting</span>
+              Ejemplos de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">copywriting</span>
             </h2>
             <div className="space-y-6">
               {caseStudy.copyExamples.map((copy, index) => (
@@ -318,9 +318,9 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
             transition={{ duration: 0.6, delay: 0.7 }}
           >
             <h2 className="text-3xl md:text-4xl mb-8 text-center text-foreground">
-              Piezas <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Gráficas</span>
+              Piezas <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">gráficas</span>
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-6"> {/* mostrar 3 columnas en desktop */}
               {caseStudy.visualExamples.map((imgUrl, index) => (
                 <motion.div
                   key={index}
@@ -426,7 +426,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           className="text-center py-12"
         >
           <h3 className="text-2xl md:text-3xl mb-6 text-foreground">
-            ¿Listo para transformar tu marca?
+            ¿Empezamos a transformar tu marca?
           </h3>
           <button
             onClick={() => window.location.hash = '#contact'}

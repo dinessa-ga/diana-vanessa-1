@@ -73,7 +73,7 @@ export function Hero() {
           </p>
           
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
-            Transformo ideas en identidades visuales memorables que conectan con las personas y generan resultados
+            Transformo ideas en identidades memorables que conectan con las personas y generan resultados
           </p>
         </motion.div>
 

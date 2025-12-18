@@ -115,7 +115,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           >
             <h3 className="text-center mb-4 text-foreground">Propósito de la marca</h3>
             <p className="text-lg text-center text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              "{caseStudy.purpose}"
+              {caseStudy.purpose}
             </p>
           </motion.div>
         )}

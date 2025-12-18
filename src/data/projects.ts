@@ -222,18 +222,18 @@ export const brandProjects: BrandProject[] = [
     category: 'Estrategia de Contenido',
     description: 'Consultoría estratégica que fusiona conocimientos en tecnología con el marketing de contenidos. Traduzco conceptos técnicos complejos en narrativas claras y diseño de microcopy.',
     image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwd29tYW4lMjB3cml0aW5nfGVufDF8fHx8MTc2NTQxMjg4N3ww&ixlib=rb-4.1.0&q=80&w=1080',
-    colors: ['#ff65a1', '#591fff', '#9908cd', '#fff3fe'],
+    colors: ['#ff65a1', '#591fff', '#9908cd', '#fff3fe', '#0a0224'],
     services: ['Estrategia de Contenidos Tech', 'UX Writing & Microcopy', 'Gestión de Comunidades', 'Redacción Técnica'],
     results: {
       metric1: 'Top Tier',
       label1: 'Posicionamiento Tech',
       metric2: 'Híbrido',
-      label2: 'Perfil Técnico + Creativo'
+      label2: 'Perfil técnico + Creativo'
     },
     caseStudy: {
-      clientOverview: 'Ingeniera en Sistemas con formación en UX Writing y Marketing. Fundadora de "Somos Dev" y experta en liderar la comunicación de productos digitales.',
-      challenge: 'El sector tecnológico carece de comunicadores que entiendan el código. El reto es posicionar una marca que demuestre capacidad técnica (Python, Frontend) y sensibilidad creativa (Copywriting, UX).',
-      purpose: 'Humanizar la tecnología mediante palabras precisas y estrategias basadas en datos, ayudando a empresas a conectar auténticamente con sus usuarios.',
+      clientOverview: 'Ingeniera en Sistemas con conocimientos en UX Writing y Marketing. Fundadora de Somos Dev, comunidad tech y experta en liderar la comunicación de productos digitales.',
+      challenge: 'El sector tecnológico carece de comunicadores que entiendan el código, herramientas digitales y procesos en tecnología. El reto es posicionar una marca que demuestre capacidad técnica y sensibilidad creativa desde las palabras y el diseño.',
+      purpose: 'Humanizar la tecnología mediante palabras precisas y estrategias basadas en datos, ayudando a empresas a conectar auténticamente con sus usuarios y potenciales clientes.',
       buyerPersona: {
         name: 'David Product Manager',
         age: '30-45 años',
@@ -278,11 +278,10 @@ export const brandProjects: BrandProject[] = [
         }
       ],
       visualExamples: [
-        'https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=800',
-        'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800',
-        'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800',
-        'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800'
-      ],
+        'https://media.licdn.com/dms/image/v2/D4E22AQH56T5Wuf7EMw/feedshare-shrink_2048_1536/B4EZP0Bl.3HEAo-/0/1734965878979?e=1767830400&v=beta&t=iHBYyD6SRmDDhaDtuGTyyvvEC0Ag0_S937zwX6ksDNo',
+        'https://media.licdn.com/dms/image/v2/D4E22AQEQYhLudkV4Tg/feedshare-shrink_800/feedshare-shrink_800/0/1712860141168?e=1767830400&v=beta&t=1S9wYrEh9MlIkdSZnbjwsgyT4G2JBCY9Gz9237YjHO4',
+        'https://media.licdn.com/dms/image/v2/D4E22AQGczFGjDvi1Pg/feedshare-shrink_1280/feedshare-shrink_1280/0/1715987581536?e=1767830400&v=beta&t=rVIsEpyjarowNxxEGOCGg18eMePNlcqoA3n1Zg8kGvg',
+],
       copyExamples: [
         {
           type: 'Bio de LinkedIn',
@@ -311,5 +310,5 @@ export const brandProjects: BrandProject[] = [
       }
     }
   },
- 
+
 ];

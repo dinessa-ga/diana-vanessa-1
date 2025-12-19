@@ -1,10 +1,10 @@
 import { motion } from 'motion/react';
 import { useState } from 'react';
-import { 
-  Sparkles, 
-  Paintbrush, 
-  BarChart3, 
-  MessageSquare, 
+import {
+  Sparkles,
+  Paintbrush,
+  BarChart3,
+  MessageSquare,
   Laptop,
   Package,
   Camera,
@@ -61,29 +61,41 @@ export function Skills() {
   ];
 
   const additionalSkills = [
- 
+
     { icon: PenTool, label: 'UX Writing' },
     { icon: MessageSquare, label: 'Copywriting' },
   ];
 
   const certifications = [
-    { 
-      title: 'Tecnología Superior en Negociación y Ventas', 
-      org: 'Universidad Católica de Cuenca', 
+    {
+      title: 'Tecnología Superior en Negociación y Ventas',
+      org: 'Universidad Católica de Cuenca',
       year: '2025',
       certificateUrl: 'https://www.credential.net/900b0164-545d-48d4-84d8-77c7e5bbcbfa#acc.Brp9O6qJ'
     },
-    { 
-      title: 'Análisis Profesional en Power BI: Técnicas avanzadas de modelado y DAX', 
-      org: 'ConQuito', 
+    {
+      title: 'Análisis Profesional en Power BI: Técnicas avanzadas de modelado y DAX',
+      org: 'ConQuito',
       year: '2024',
       certificateUrl: 'https://drive.google.com/file/d/1OTfTkemsHimM_i4xO31VzHlXzCHml8CJ/view?usp=sharing'
     },
-    { 
-      title: 'UX Writing: diseño de contenido y experiencia de usuario', 
-      org: 'Udemy', 
+    {
+      title: 'UX Writing: diseño de contenido y experiencia de usuario',
+      org: 'Udemy',
       year: '2024',
       certificateUrl: 'https://www.udemy.com/certificate/UC-6fa3c903-dccf-40e6-947d-6211abeaec8b/'
+    },
+    {
+      title: 'Inbound Marketing',
+      org: 'Hubspot Academy',
+      year: '2025',
+      certificateUrl: 'https://app.hubspot.com/academy/achievements/s09d523t/es/1/diana-guaina/inbound-nuevo'
+    },
+    {
+      title: 'Curso de Growth Marketing con Inteligencia Artificial',
+      org: 'Platzi',
+      year: '2025',
+      certificateUrl: 'https://platzi.com/p/diana.vannesa/curso/12370-growth-ia/diploma/detalle/'
     },
   ];
 
@@ -135,7 +147,7 @@ export function Skills() {
 
                 <ul className="space-y-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <li 
+                    <li
                       key={skillIndex}
                       className="text-sm text-muted-foreground flex items-center gap-2"
                     >

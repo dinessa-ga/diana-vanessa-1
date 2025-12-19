@@ -156,10 +156,10 @@ export const brandProjects: BrandProject[] = [
     colors: ['#aa1a85', '#eef0ff', '#eb2766', '#001865', '#ffbc00'],
     services: ['Rebranding', 'Diseño web', 'Estrategia de marca'],
     results: {
-      metric1: '200%',
-      label1: 'Aumento en conversiones',
-      metric2: '$2M',
-      label2: 'Ronda de inversión'
+      metric1: '20%',
+      label1: 'Reconocimiento de marca',
+      metric2: '30%',
+      label2: 'Asistencia a eventos'
     },
     caseStudy: {
       clientOverview: 'Akros domina el entorno digital con soluciones integradas, personalizadas y escalables. Acompaña la evolución tecnológica con visión, control y propósito.',
@@ -173,23 +173,14 @@ export const brandProjects: BrandProject[] = [
           category: 'Contenido y diseño',
           items: ['Estrategia de contenido B2B', 'Carruseles(15)', 'Infografías (5)', 'Blog Linkedin(6)']
         },
-
       ],
-      results: [
-        'Aumento del 200% en conversiones del sitio web',
-        'Cierre de ronda de inversión de $2M',
-        'Reducción del 40% en ciclo de ventas',
-        'Aumento del 150% en leads calificados'
-      ],
-
       visualExamples: [
-         'src/assets/akros/case-study-2-art1.png',
+        'src/assets/akros/case-study-2-art1.png',
         'src/assets/akros/case-study-2-art2.png',
         'src/assets/akros/case-study-2-art3.png',
         'src/assets/akros/case-study-2-art4.png',
         'src/assets/akros/case-study-2-art5.png',
         'src/assets/akros/case-study-2-art6.png',
-       
       ],
 
       copyExamples: [
@@ -197,8 +188,8 @@ export const brandProjects: BrandProject[] = [
           type: 'Caption de carrusel de LinkedIn',
           text: '¿Qué tienen en común un banco, un gobierno y una tienda online? Cada sector enfrenta amenazas distintas, pero todos necesitan lo mismo: contexto, visibilidad y acción para anticiparse. En Akros, activamos soluciones de ciberseguridad que combinan inteligencia, tecnología y visión de negocio. Descubre cómo podemos ayudarte a anticipar lo que otros aún no ven. 🔍 Contáctanos: '
         },
-       
       ],
+      results: []
     }
   },
 

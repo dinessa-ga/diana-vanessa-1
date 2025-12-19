@@ -28,7 +28,7 @@ export function Contact() {
     { 
       icon: Instagram, 
       label: 'Instagram', 
-      href: '#',
+      href: 'https://www.instagram.com/dinessag/',
       color: 'hover:text-[#E4405F]',
       bg: 'hover:bg-[#E4405F]/10'
     },

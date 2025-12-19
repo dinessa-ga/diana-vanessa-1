@@ -351,7 +351,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="bg-card p-8 rounded-3xl shadow-lg border border-border"
         >
-          <h3 className="text-center mb-6 text-foreground">Paleta de Colores</h3>
+          <h3 className="text-center mb-6 text-foreground">Paleta de colores</h3>
           <div className="flex justify-center gap-4 flex-wrap">
             {project.colors.map((color, index) => (
               <div key={index} className="text-center">
@@ -372,7 +372,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           transition={{ duration: 0.6, delay: 0.9 }}
         >
           <h2 className="text-3xl md:text-4xl mb-8 text-center text-foreground">
-            Resultados e <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Impacto</span>
+            Resultados e <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">impacto</span>
           </h2>
           <div className="bg-gradient-to-br from-primary to-secondary p-10 rounded-3xl text-white shadow-2xl">
             <div className="grid md:grid-cols-2 gap-8 mb-8">

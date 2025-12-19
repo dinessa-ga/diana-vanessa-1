@@ -51,7 +51,7 @@ export interface BrandProject {
 }
 
 export const brandProjects: BrandProject[] = [
-    
+
   {
     id: 1,
     brandName: 'Diana Vanessa | Tech Content Strategist',
@@ -117,7 +117,7 @@ export const brandProjects: BrandProject[] = [
         'https://media.licdn.com/dms/image/v2/D4E22AQH56T5Wuf7EMw/feedshare-shrink_2048_1536/B4EZP0Bl.3HEAo-/0/1734965878979?e=1767830400&v=beta&t=iHBYyD6SRmDDhaDtuGTyyvvEC0Ag0_S937zwX6ksDNo',
         'https://media.licdn.com/dms/image/v2/D4E22AQEQYhLudkV4Tg/feedshare-shrink_800/feedshare-shrink_800/0/1712860141168?e=1767830400&v=beta&t=1S9wYrEh9MlIkdSZnbjwsgyT4G2JBCY9Gz9237YjHO4',
         'https://media.licdn.com/dms/image/v2/D4E22AQGczFGjDvi1Pg/feedshare-shrink_1280/feedshare-shrink_1280/0/1715987581536?e=1767830400&v=beta&t=rVIsEpyjarowNxxEGOCGg18eMePNlcqoA3n1Zg8kGvg',
-],
+      ],
       copyExamples: [
         {
           type: 'Bio de LinkedIn',
@@ -153,7 +153,7 @@ export const brandProjects: BrandProject[] = [
     category: 'Content Creation & Branding',
     description: 'Línea gráfica gestionada con el equipo de marketing, para el contenido de valor para empresa tecnológica. Desarrollo de piezas gráficas moderna y minimalista que refleja innovación y cercanía.',
     image: 'src/assets/case-study-2.png',
-    colors: ['#11aed1','#aa1a85', '#eef0ff', '#eb2766', '#001865'],
+    colors: ['#11aed1', '#aa1a85', '#eef0ff', '#eb2766', '#001865'],
     services: ['Rebranding', 'Diseño web', 'Estrategia de marca'],
     results: {
       metric1: '200%',
@@ -162,8 +162,8 @@ export const brandProjects: BrandProject[] = [
       label2: 'Ronda de inversión'
     },
     caseStudy: {
-      clientOverview: 'Tech Innovate es una startup de SaaS B2B que ofrece soluciones de automatización empresarial. Necesitaban reposicionarse como líderes de la industria.',
-      challenge: 'Su identidad anterior era genérica y no reflejaba su nivel de innovación tecnológica. Tenían baja confianza de inversores y dificultades para destacar entre competidores.',
+      clientOverview: 'Akros domina el entorno digital con soluciones integradas, personalizadas y escalables. Acompaña la evolución tecnológica con visión, control y propósito.',
+      challenge: 'Generar contenido de valor manteniendo criterio técnico y emocional, a través de generar estructuras y mejora de procesos de contenido',
       deliverables: [
         {
           category: 'Estrategia de contenido',
@@ -173,14 +173,31 @@ export const brandProjects: BrandProject[] = [
           category: 'Contenido y diseño',
           items: ['Estrategia de contenido B2B', 'Carruseles(15)', 'Infografías (5)', 'Blog Linkedin(6)']
         },
-        
+
       ],
       results: [
         'Aumento del 200% en conversiones del sitio web',
         'Cierre de ronda de inversión de $2M',
         'Reducción del 40% en ciclo de ventas',
         'Aumento del 150% en leads calificados'
-      ]
+      ],
+
+      visualExamples: [
+         'src/assets/akros/case-study-2-art1.png',
+        'src/assets/akros/case-study-2-art3.png',
+       
+      ],
+
+      copyExamples: [
+        {
+          type: 'Caption de post único de LinkedIn',
+          text: '💻 Ingeniera en Sistemas & UX Writer. Ayudo a empresas a transformar código complejo en experiencias de usuario irresistibles. Founder de @SomosDev.'
+        },
+       {
+          type: 'Caption de carrusel de LinkedIn',
+          text: '🚀 No es solo código, es comunicación. En el último Hackathon vi grandes ideas fallar al explicarse. Como devs, a veces olvidamos que el usuario no ve el backend, ve el texto.'
+        }
+      ],
     }
   },
 

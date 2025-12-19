@@ -133,27 +133,27 @@ export const brandProjects: BrandProject[] = [
         }
       ],
       results: [
-        'Fundadora y líder de crecimiento de la comunidad Somos Dev',
-        'Desarrollo de MVPs premiados en Hackathons (Experian, Bluetab)',
+        'Fundadora y líder de contenido de la comunidad Somos Dev',
+        'Desarrollo de MVPs  en Hackathons (Experian, Bluetab)',
         'Estrategias de contenido exitosas en Akros y La Casita',
         'Optimización de procesos mediante herramientas No-Code',
-        'Creación de asistentes virtuales IA para análisis de datos'
+        'Creación de agentes de IA para generación de contenido'
       ],
       testimonial: {
-        text: 'Su capacidad para entender la arquitectura técnica y traducirla en una estrategia de contenido coherente es única. No solo escribe, diseña soluciones que mejoran la experiencia del usuario.',
-        author: 'CTO / Cliente Tech',
-        position: 'Líder de Desarrollo'
+        text: 'Diana, es una profesional apasionada por el desarrollo web, está en constante actualización tecnológica y desafiando retos en el ámbito web. ¡Si ustedes necesitan a alguien con determinación, pasión, no duden en contratar a Diana, estoy segura de que será fundamental en su equipo!',
+        author: 'Mayra Ceballos / Laboratoria',
+        position: 'Senior Recruiter IT'
       }
     }
   },
 
   {
     id: 2,
-    brandName: 'Akros, Decisiones para el futuro',
+    brandName: 'Akros',
     category: 'Content Creation & Branding',
     description: 'Línea gráfica gestionada con el equipo de marketing, para el contenido de valor para empresa tecnológica. Desarrollo de piezas gráficas moderna y minimalista que refleja innovación y cercanía.',
     image: 'src/assets/case-study-2.png',
-    colors: ['#11aed1', '#aa1a85', '#eef0ff', '#eb2766', '#001865'],
+    colors: ['#aa1a85', '#eef0ff', '#eb2766', '#001865', '#ffbc00'],
     services: ['Rebranding', 'Diseño web', 'Estrategia de marca'],
     results: {
       metric1: '200%',
@@ -184,19 +184,20 @@ export const brandProjects: BrandProject[] = [
 
       visualExamples: [
          'src/assets/akros/case-study-2-art1.png',
+        'src/assets/akros/case-study-2-art2.png',
         'src/assets/akros/case-study-2-art3.png',
+        'src/assets/akros/case-study-2-art4.png',
+        'src/assets/akros/case-study-2-art5.png',
+        'src/assets/akros/case-study-2-art6.png',
        
       ],
 
       copyExamples: [
         {
-          type: 'Caption de post único de LinkedIn',
-          text: '💻 Ingeniera en Sistemas & UX Writer. Ayudo a empresas a transformar código complejo en experiencias de usuario irresistibles. Founder de @SomosDev.'
-        },
-       {
           type: 'Caption de carrusel de LinkedIn',
-          text: '🚀 No es solo código, es comunicación. En el último Hackathon vi grandes ideas fallar al explicarse. Como devs, a veces olvidamos que el usuario no ve el backend, ve el texto.'
-        }
+          text: '¿Qué tienen en común un banco, un gobierno y una tienda online? Cada sector enfrenta amenazas distintas, pero todos necesitan lo mismo: contexto, visibilidad y acción para anticiparse. En Akros, activamos soluciones de ciberseguridad que combinan inteligencia, tecnología y visión de negocio. Descubre cómo podemos ayudarte a anticipar lo que otros aún no ven. 🔍 Contáctanos: '
+        },
+       
       ],
     }
   },

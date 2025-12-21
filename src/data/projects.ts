@@ -152,7 +152,7 @@ export const brandProjects: BrandProject[] = [
     brandName: 'Akros',
     category: 'Content Creation & Branding',
     description: 'Línea gráfica gestionada con el equipo de marketing, para el contenido de valor para empresa tecnológica. Desarrollo de piezas gráficas moderna y minimalista que refleja innovación y cercanía.',
-    image: 'public/case-study-2.png',
+    image: 'case-study-2.png',
     colors: ['#aa1a85', '#eef0ff', '#eb2766', '#001865', '#ffbc00'],
     services: ['Rebranding', 'Diseño web', 'Estrategia de marca'],
     results: {

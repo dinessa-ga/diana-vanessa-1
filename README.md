@@ -3,7 +3,7 @@
 
 A modern, interactive portfolio website showcasing my work as a Tech Content Strategist. This project highlights branding projects, case studies, skills, and services, built with a focus on clean design and user experience.
 
-This is a code bundle for Portfolio-2. The original project is available at [https://www.figma.com/design/F7XOjajL2NeakHaRuHylMw/Portfolio-2](https://www.figma.com/design/F7XOjajL2NeakHaRuHylMw/Portfolio-2).
+This is a code bundle for Portfolio-2. The base project is available at [https://www.figma.com/design/F7XOjajL2NeakHaRuHylMw/Portfolio-2](https://www.figma.com/design/F7XOjajL2NeakHaRuHylMw/Portfolio-2).
 
 ## Features
 

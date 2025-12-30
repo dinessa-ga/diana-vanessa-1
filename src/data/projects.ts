@@ -54,9 +54,9 @@ export const brandProjects: BrandProject[] = [
 
   {
     id: 1,
-    brandName: 'Diana Vanessa | Tech Content Strategist',
+    brandName: 'Diana Vanessa | Estratega de Contenido Tech',
     category: 'Estrategia de Contenido',
-    description: 'Consultoría estratégica que fusiona conocimientos en tecnología con el marketing de contenidos. Traduzco conceptos técnicos complejos en narrativas claras y diseño de microcopy.',
+    description: 'Fusiono conocimientos en tecnología con el marketing de contenidos. Traduzco conceptos técnicos complejos en narrativas claras y diseño de microcopy.',
     image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwd29tYW4lMjB3cml0aW5nfGVufDF8fHx8MTc2NTQxMjg4N3ww&ixlib=rb-4.1.0&q=80&w=1080',
     colors: ['#ff65a1', '#591fff', '#9908cd', '#fff3fe', '#0a0224'],
     services: ['Estrategia de Contenidos Tech', 'UX Writing & Microcopy', 'Gestión de Comunidades', 'Redacción Técnica'],
@@ -67,7 +67,7 @@ export const brandProjects: BrandProject[] = [
       label2: 'Perfil técnico + Creativo'
     },
     caseStudy: {
-      clientOverview: 'Ingeniera en Sistemas con conocimientos en UX Writing y Marketing. Fundadora de Somos Dev, comunidad tech y experta en liderar la comunicación de productos digitales.',
+      clientOverview: 'Ingeniera en Sistemas con conocimientos en UX Writing y Marketing digital. Fundadora de Somos Dev una comunidad tech',
       challenge: 'El sector tecnológico carece de comunicadores que entiendan el código, herramientas digitales y procesos en tecnología. El reto es posicionar una marca que demuestre capacidad técnica y sensibilidad creativa desde las palabras y el diseño.',
       purpose: 'Humanizar la tecnología mediante palabras precisas y estrategias basadas en datos, ayudando a empresas a conectar auténticamente con sus usuarios y potenciales clientes.',
       buyerPersona: {
@@ -79,10 +79,10 @@ export const brandProjects: BrandProject[] = [
       },
       brandPersonality: {
         tone: ['Analítico', 'Empático', 'Profesional', 'Innovador'],
-        voice: 'La "Traductora Tecnológica": Capaz de hablar de APIs con los devs y de beneficios con los usuarios. Clara, directa y orientada a soluciones.'
+        voice: '"Traductora Tecnológica": Capaz de hablar de APIs con los devs y de beneficios con los usuarios. Clara, directa y orientada a soluciones.'
       },
       contentStrategy: {
-        objectives: [
+        objectives: [ 
           'Demostrar autoridad técnica en desarrollo y herramientas IA',
           'Evidenciar habilidades de liderazgo comunitario',
           'Educar sobre la importancia del UX Writing en el software',
@@ -121,28 +121,25 @@ export const brandProjects: BrandProject[] = [
       copyExamples: [
         {
           type: 'Bio de LinkedIn',
-          text: '💻 Ingeniera en Sistemas & UX Writer. Ayudo a empresas a transformar código complejo en experiencias de usuario irresistibles. Founder de @SomosDev.'
+          text: 'He formado parte de equipos dedicados a la creación y ejecución de estrategias de contenido y comunicación digital, fortaleciendo la identidad y visibilidad de marcas y comunidades. Actualmente lidero Somos Dev, una comunidad tecnológica en Latinoamérica, donde diseño y gestiono iniciativas que promueven la innovación, la colaboración y la formación continua en tech.'
         },
-        {
-          type: 'Microcopy (Error App)',
-          text: 'Antes: "Error 404". \nPropuesta UX: "Parece que hubo un cruce en los cables. No pudimos cargar tu historial por el momento. ¿Intentamos de nuevo?"'
-        },
+      
         {
           type: 'Post de Comunidad',
-          text: '🚀 No es solo código, es comunicación. En el último Hackathon vi grandes ideas fallar al explicarse. Como devs, a veces olvidamos que el usuario no ve el backend, ve el texto.'
+          text: 'Este 2025 construiremos una comunidad tech fortalecida con tus conocimientos y de lo mucho que puedes aprender.👩🏽‍💻 \n👉 ¡Únete! ¡Déjanos un comentario o escríbenos directamente! 🚀✨\nSi ya tomaste la decisión de unirte, puedes llenar el siguiente formulario y luego escríbenos directamente.😊'
         }
       ],
       results: [
         'Fundadora y líder de contenido de la comunidad Somos Dev',
         'Desarrollo de MVPs  en Hackathons (Experian, Bluetab)',
-        'Estrategias de contenido exitosas en Akros y La Casita',
+        'Estrategias de contenido en organizaciones sociales y de tecnología',
         'Optimización de procesos mediante herramientas No-Code',
         'Creación de agentes de IA para generación de contenido'
       ],
       testimonial: {
         text: 'Diana, es una profesional apasionada por el desarrollo web, está en constante actualización tecnológica y desafiando retos en el ámbito web. ¡Si ustedes necesitan a alguien con determinación, pasión, no duden en contratar a Diana, estoy segura de que será fundamental en su equipo!',
         author: 'Mayra Ceballos / Laboratoria',
-        position: 'Senior Recruiter IT'
+        position: 'Coordinadora de Employability & Placement'
       }
     }
   },
@@ -151,7 +148,7 @@ export const brandProjects: BrandProject[] = [
     id: 2,
     brandName: 'Akros',
     category: 'Content Creation & Branding',
-    description: 'Línea gráfica gestionada con el equipo de marketing, para el contenido de valor para empresa tecnológica. Desarrollo de piezas gráficas moderna y minimalista que refleja innovación y cercanía.',
+    description: 'Desarrollo en equipo de piezas gráficas moderna y minimalista que refleja innovación y cercanía.',
     image: 'case-study-2.png',
     colors: ['#aa1a85', '#eef0ff', '#eb2766', '#001865', '#ffbc00'],
     services: ['Rebranding', 'Diseño web', 'Estrategia de marca'],
@@ -163,11 +160,11 @@ export const brandProjects: BrandProject[] = [
     },
     caseStudy: {
       clientOverview: 'Akros domina el entorno digital con soluciones integradas, personalizadas y escalables. Acompaña la evolución tecnológica con visión, control y propósito.',
-      challenge: 'Generar contenido de valor manteniendo criterio técnico y emocional, a través de generar estructuras y mejora de procesos de contenido',
+      challenge: 'Generar contenido de valor manteniendo criterio técnico y emocional, a través de generar estructuras y mejora de procesos de contenido.',
       deliverables: [
         {
           category: 'Estrategia de contenido',
-          items: ['Auditoría de marca', 'Reposicionamiento estratégico', 'Arquitectura de marca', 'Messaging framework']
+          items: ['Auditoría de marca', 'Reposicionamiento estratégico', 'Análisis del proceso de contenido y branding', 'Creación de agentes de IA']
         },
         {
           category: 'Contenido y diseño',
@@ -186,7 +183,7 @@ export const brandProjects: BrandProject[] = [
       copyExamples: [
         {
           type: 'Caption de carrusel de LinkedIn',
-          text: '¿Qué tienen en común un banco, un gobierno y una tienda online? Cada sector enfrenta amenazas distintas, pero todos necesitan lo mismo: contexto, visibilidad y acción para anticiparse. En Akros, activamos soluciones de ciberseguridad que combinan inteligencia, tecnología y visión de negocio. Descubre cómo podemos ayudarte a anticipar lo que otros aún no ven. 🔍 Contáctanos: '
+          text: '¿Qué tienen en común un banco, un gobierno y una tienda online? \nCada sector enfrenta amenazas distintas, pero todos necesitan lo mismo: contexto, visibilidad y acción para anticiparse. \nEn Akros, activamos soluciones de ciberseguridad que combinan inteligencia, tecnología y visión de negocio. \nDescubre cómo podemos ayudarte a anticipar lo que otros aún no ven. 🔍 Contáctanos: '
         },
       ],
       results: []

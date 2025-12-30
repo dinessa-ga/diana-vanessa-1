@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Sparkles, ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -60,18 +60,17 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm text-foreground">Marketing • Branding • Diseño</span>
           </motion.div>
 
           <h1 className="mb-6 text-5xl md:text-6xl lg:text-7xl text-foreground">
             Doy <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">vida</span> a las marcas
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto">
             Hola, soy Diana... Estratega de marca, diseñadora y redactora creativa
           </p>
-          
+
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
             Transformo ideas en identidades memorables que conectan con las personas y generan resultados
           </p>

@@ -49,10 +49,10 @@ export function Contact() {
             Contacto
           </span>
           <h2 className="mb-6 text-4xl md:text-5xl text-foreground">
-            ¿Listo para <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">crear</span> algo increíble?
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Transforma </span> tu proyecto en acción
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Estoy siempre abierto a nuevos proyectos y colaboraciones. Hablemos sobre tu marca.
+            Escríbeme para nuevos proyectos, colaboraciones o para ser parte de tu empresa. Hablemos sobre tu marca.
           </p>
         </motion.div>
 

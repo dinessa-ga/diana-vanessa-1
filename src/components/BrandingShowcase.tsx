@@ -40,14 +40,13 @@ export function BrandingShowcase() {
     });
   };
 
-  // Auto-play functionality
-  useEffect(() => {
-    const timer = setInterval(() => {
-      paginate(1);
-    }, 6000);
-
-    return () => clearInterval(timer);
-  }, [currentIndex]);
+  // Auto-play functionality removed for better UX
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     paginate(1);
+  //   }, 6000);
+  //   return () => clearInterval(timer);
+  // }, [currentIndex]);
 
   return (
     <section id="branding" className="py-20 px-4 bg-card overflow-hidden">
@@ -81,8 +80,7 @@ export function BrandingShowcase() {
               animate="center"
               exit="exit"
               transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
+                duration: 0
               }}
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
@@ -105,14 +103,14 @@ export function BrandingShowcase() {
           {/* Navigation Arrows */}
           <button
             onClick={() => paginate(-1)}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-card shadow-lg rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110 border-2 border-border"
+            className="absolute left-4 top-4 md:top-1/2 -translate-y-0 md:-translate-y-1/2 z-10 w-12 h-12 bg-card shadow-lg rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110 border-2 border-border"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={() => paginate(1)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-card shadow-lg rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110 border-2 border-border"
+            className="absolute right-4 top-4 md:top-1/2 -translate-y-0 md:-translate-y-1/2 z-10 w-12 h-12 bg-card shadow-lg rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110 border-2 border-border"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6" />

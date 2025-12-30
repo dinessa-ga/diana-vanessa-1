@@ -200,7 +200,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 <div>
                   <h5 className="mb-3 text-secondary">Voice Description</h5>
                   <p className="text-muted-foreground leading-relaxed italic">
-                    "{caseStudy.brandPersonality.voice}"
+                    {caseStudy.brandPersonality.voice}
                   </p>
                 </div>
               </div>

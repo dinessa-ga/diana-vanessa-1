@@ -148,10 +148,10 @@ export const brandProjects: BrandProject[] = [
     id: 2,
     brandName: 'Akros',
     category: 'Content Creation & Branding',
-    description: 'Desarrollo en equipo de piezas gráficas moderna y minimalista que refleja innovación y cercanía.',
+    description: 'Proyecto colaborativo para el desarrollo de piezas gráficas moderna y minimalista que refleja innovación y cercanía.',
     image: 'case-study-2.png',
     colors: ['#aa1a85', '#eef0ff', '#eb2766', '#001865', '#ffbc00'],
-    services: ['Rebranding', 'Diseño web', 'Estrategia de marca'],
+    services: ['Estrategia de contenido', 'Contenido y diseño de piezas gráficas'],
     results: {
       metric1: '20%',
       label1: 'Reconocimiento de marca',

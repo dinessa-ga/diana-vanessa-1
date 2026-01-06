@@ -133,7 +133,7 @@ export function Contact() {
               <h3 className="mb-6 text-foreground">Conectemos</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 Ya sea que tengas un proyecto en mente, necesites ayuda con tu estrategia de marca,
-                o simplemente quieras charlar sobre diseño, me encantaría escucharte.
+                o simplemente quieras charlar sobre marketing, diseño y tecnología, me encantaría escucharte.
               </p>
 
               {/* Direct Contact */}

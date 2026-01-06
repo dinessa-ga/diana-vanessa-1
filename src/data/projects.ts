@@ -54,10 +54,10 @@ export const brandProjects: BrandProject[] = [
 
   {
     id: 1,
-    brandName: 'Diana Vanessa | Estratega de Contenido Tech',
+    brandName: 'Diana Vanessa',
     category: 'Estrategia de Contenido',
     description: 'Fusiono conocimientos en tecnología con el marketing de contenidos. Traduzco conceptos técnicos complejos en narrativas claras y diseño de microcopy.',
-    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwd29tYW4lMjB3cml0aW5nfGVufDF8fHx8MTc2NTQxMjg4N3ww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'case-study-1.png',
     colors: ['#ff65a1', '#591fff', '#9908cd', '#fff3fe', '#0a0224'],
     services: ['Estrategia de Contenidos Tech', 'UX Writing & Microcopy', 'Gestión de Comunidades', 'Redacción Técnica'],
     results: {

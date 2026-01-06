@@ -60,7 +60,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="text-sm text-foreground">Marketing • Branding • Diseño</span>
+            <span className="text-sm text-foreground">Perfil creativo en tech</span>
           </motion.div>
 
           <h1 className="mb-6 text-5xl md:text-6xl lg:text-7xl text-foreground">
@@ -68,7 +68,8 @@ export function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto">
-            Hola, soy Diana... Estratega de marca, diseñadora y redactora creativa
+            Hola, soy <b>Diana</b>
+            <br /> Estratega de marca, diseñadora y redactora creativa
           </p>
 
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">

@@ -148,8 +148,8 @@ export function BrandingShowcase() {
             <div className="text-muted-foreground">Años en organizaciones sociales </div>
           </div>
           <div>
-            <div className="text-4xl mb-2 text-accent">4+</div>
-            <div className="text-muted-foreground">Años de experiencia</div>
+            <div className="text-4xl mb-2 text-accent">3+</div>
+            <div className="text-muted-foreground">Años de experiencia en redacción</div>
           </div>
           <div>
             <div className="text-4xl mb-2 text-primary">2+</div>

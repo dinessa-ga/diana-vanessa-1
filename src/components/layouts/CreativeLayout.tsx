@@ -7,7 +7,7 @@ interface CreativeLayoutProps {
 
 export function CreativeLayout({ children }: CreativeLayoutProps) {
   const menuItems = [
-    { label: 'Inicio', href: '/' },
+    { label: 'Inicio', href: '#hero' },
     { label: 'Sobre mí', href: '#about' },
     { label: 'Proyectos', href: '#projects' },
     { label: 'Contacto', href: '#contact' },

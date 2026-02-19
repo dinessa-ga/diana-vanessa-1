@@ -7,9 +7,9 @@ interface DevLayoutProps {
 
 export function DevLayout({ children }: DevLayoutProps) {
   const menuItems = [
-    { label: 'Inicio Dev', href: '/Dev' },
-    { label: 'Stack', href: '#stack' },
-    { label: 'Proyectos Dev', href: '#projects' },
+    { label: 'Inicio', href: '/Dev' },
+    { label: 'Sobre mí', href: '#about' },
+    { label: 'Proyectos', href: '#projects' },
     { label: 'Experiencia', href: '#experience' },
     { label: '← Perfil Creativo', href: '/' },
   ];

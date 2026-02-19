@@ -1,7 +1,10 @@
 import { motion } from 'motion/react';
 import { ArrowDown } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export function Hero() {
+  const navigate = useNavigate();
+
   const scrollToProjects = () => {
     document.getElementById('branding')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -88,6 +91,12 @@ export function Hero() {
             className="px-8 py-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           >
             Ver mi trabajo
+          </button>
+          <button
+            onClick={() => navigate('/Dev')}
+            className="px-8 py-4 bg-card text-foreground rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all border-2 border-border hover:border-primary"
+          >
+            Perfil Dev →
           </button>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}

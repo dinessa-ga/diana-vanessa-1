@@ -9,7 +9,7 @@ export function DevLayout({ children }: DevLayoutProps) {
   const menuItems = [
     { label: 'Inicio', href: '/Dev' },
     { label: 'Sobre mí', href: '#about' },
-    { label: 'Proyectos', href: '#projects' },
+    { label: 'Proyectos ', href: '#projects' },
     { label: 'Experiencia', href: '#experience' },
     { label: '← Perfil Creativo', href: '/' },
   ];

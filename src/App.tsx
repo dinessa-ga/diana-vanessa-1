@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { BrandingShowcase } from './components/BrandingShowcase';
-import { Skills } from './components/Skills';
-import { Contact } from './components/Contact';
+import { Hero } from './components/sections/creative/Hero';
+import { About } from './components/sections/creative/About';
+import { BrandingShowcase } from './components/sections/creative/BrandingShowcase';
+import { Skills } from './components/sections/creative/Skills';
+import { Contact } from './components/sections/creative/Contact';
 import { ThemeToggle } from './components/ThemeToggle';
-import { CaseStudy } from './components/CaseStudy';
+import { CaseStudy } from './components/sections/creative/CaseStudy';
 import { brandProjects } from './data/projects';
 
 export default function App() {

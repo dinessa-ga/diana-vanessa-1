@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { BrandCard } from './BrandCard';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { brandProjects } from '../data/projects';
+import { brandProjects } from '../../../data/projects';
 
 export function BrandingShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);

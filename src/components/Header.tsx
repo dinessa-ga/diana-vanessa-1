@@ -43,7 +43,7 @@ export function Header({ menuItems }: HeaderProps) {
   const linkHover =
     'hover:bg-accent hover:text-accent-foreground rounded-xl';
   const linkActive =
-    'bg-accent text-accent-foreground rounded-xl';
+    'bg-accent/20 text-accent-foreground rounded-xl';
 
   return (
     <header
@@ -51,60 +51,56 @@ export function Header({ menuItems }: HeaderProps) {
       className="bg-background border-b border-border"
     >
       <nav className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-center items-center h-16">
+        {/* Nav Desktop — visible solo cuando NO es móvil */}
+        {!isMobile && (
+          <div className="flex-1 flex justify-center items-center h-16 w-full" style={{ gap: '4px' }}>
+            {menuItems.map((item) => {
+              const active = item.label !== 'Inicio' && isActive(item.href);
+              const cls = `${linkBase} ${linkHover} ${active ? linkActive : ''}`;
+              return item.href.startsWith('#') ? (
+                <a key={item.label} href={item.href} className={cls} style={{ fontWeight: 600 }}>
+                  {item.label}
+                </a>
+              ) : (
+                <Link key={item.label} to={item.href} className={cls} style={{ fontWeight: 600 }}>
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
+        )}
 
-         
+        {/* Botón hamburguesa — visible solo en móvil */}
+        {isMobile && (
+          <button
+            type="button"
+            aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen(prev => !prev)}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '8px',
+              borderRadius: '12px',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              marginLeft: 'auto',
+            }}
+            className="text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-200"
+          >
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+              />
+            </svg>
+          </button>
+        )}
 
-          {/* Nav Desktop — visible solo cuando NO es móvil */}
-          {!isMobile && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-              {menuItems.map((item) => {
-                const active = isActive(item.href);
-                const cls = item.label === 'Inicio' ? `${linkBase} ${linkHover}` : `${linkBase} ${linkHover} ${active ? linkActive : ''}`;
-                return item.href.startsWith('#') ? (
-                  <a key={item.label} href={item.href} className={cls} style={{ fontWeight: 600 }}>
-                    {item.label}
-                  </a>
-                ) : (
-                  <Link key={item.label} to={item.href} className={cls} style={{ fontWeight: 600 }}>
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </div>
-          )}
-
-          {/* Botón hamburguesa — visible solo en móvil */}
-          {isMobile && (
-            <button
-              type="button"
-              aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
-              aria-expanded={isOpen}
-              onClick={() => setIsOpen(prev => !prev)}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '8px',
-                borderRadius: '12px',
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-              className="text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-200"
-            >
-              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
-                />
-              </svg>
-            </button>
-          )}
-
-        </div>
       </nav>
 
       {/* MobileMenu solo se monta cuando es móvil */}

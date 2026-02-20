@@ -31,9 +31,11 @@ export function MobileMenu({ menuItems, isOpen, onClose }: MobileMenuProps) {
     !href.startsWith('#') && location.pathname === href;
 
   const linkBase =
-    'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 px-4 py-3 rounded-xl transition-all duration-200 text-base font-medium';
+    'text-foreground px-4 py-3 rounded-xl transition-all duration-200 text-base font-medium';
+  const linkHover =
+    'hover:bg-accent hover:text-accent-foreground';
   const linkActive =
-    'bg-gray-100 text-gray-900 font-semibold';
+    'bg-accent text-accent-foreground font-semibold';
 
   return (
     <>
@@ -45,7 +47,7 @@ export function MobileMenu({ menuItems, isOpen, onClose }: MobileMenuProps) {
           position: 'fixed',
           inset: 0,
           zIndex: 40,
-          backgroundColor: 'rgba(0,0,0,0.5)',
+          backgroundColor: 'rgba(0,0,0,0.7)',
           opacity: isOpen ? 1 : 0,
           pointerEvents: isOpen ? 'auto' : 'none',
           transition: 'opacity 0.3s ease',
@@ -56,6 +58,7 @@ export function MobileMenu({ menuItems, isOpen, onClose }: MobileMenuProps) {
       <div
         role="dialog"
         aria-modal="true"
+        className="bg-background"
         style={{
           position: 'fixed',
           top: '68px',
@@ -63,9 +66,8 @@ export function MobileMenu({ menuItems, isOpen, onClose }: MobileMenuProps) {
           right: '16px',
           zIndex: 50,
           borderRadius: '16px',
-          backgroundColor: 'white',
-          border: '1px solid #e5e7eb',
-          boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)',
+          border: '1px solid hsl(var(--border))',
+          boxShadow: '0 20px 25px -5px rgba(0,0,0,0.15)',
           opacity: isOpen ? 1 : 0,
           transform: isOpen ? 'scaleY(1) translateY(0)' : 'scaleY(0.95) translateY(-8px)',
           transformOrigin: 'top',
@@ -76,7 +78,7 @@ export function MobileMenu({ menuItems, isOpen, onClose }: MobileMenuProps) {
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px' }}>
           {menuItems.map((item) => {
             const active = isActive(item.href);
-            const cls = `${linkBase} ${active ? linkActive : ''}`;
+            const cls = `${linkBase} ${linkHover} ${active ? linkActive : ''}`;
             return item.href.startsWith('#') ? (
               <a
                 key={item.label}

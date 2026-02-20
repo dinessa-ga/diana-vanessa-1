@@ -2,8 +2,9 @@ import { motion, AnimatePresence } from 'motion/react';
 import { BrandCard } from './BrandCard';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { brandProjects } from '../data/projects';
+import { brandProjects } from '../../../data/projects';
 
+// Componente de Proyectos
 export function BrandingShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -49,7 +50,7 @@ export function BrandingShowcase() {
   // }, [currentIndex]);
 
   return (
-    <section id="branding" className="py-20 px-4 bg-card overflow-hidden">
+    <section id="projects" className="py-20 px-4 bg-card overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

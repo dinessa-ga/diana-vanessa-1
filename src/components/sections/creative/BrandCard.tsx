@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { TrendingUp, Award } from 'lucide-react';
-import { BrandProject } from '../data/projects';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { BrandProject } from '../../../data/projects';
+import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface BrandCardProps {
   project: BrandProject;

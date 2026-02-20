@@ -2,11 +2,37 @@ import { motion } from 'motion/react';
 import { ArrowDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-export function Hero() {
+interface HeroConfig {
+  label: string;
+  title: React.ReactNode;
+  name: string;
+  role: string;
+  description: string;
+  primaryButtonText: string;
+  secondaryButtonText: string;
+  scrollToId: string;
+}
+
+interface HeroProps {
+  config?: HeroConfig;
+}
+
+const defaultConfig: HeroConfig = {
+  label: 'Perfil creativo en tech',
+  title: 'Doy vida a las marcas',
+  name: 'Diana',
+  role: 'Estratega de marca, diseñadora y redactora creativa',
+  description: 'Transformo ideas en identidades memorables que conectan con las personas y generan resultados',
+  primaryButtonText: 'Ver mi trabajo',
+  secondaryButtonText: 'Hablemos',
+  scrollToId: 'branding',
+};
+
+export function Hero({ config = defaultConfig }: HeroProps) {
   const navigate = useNavigate();
 
   const scrollToProjects = () => {
-    document.getElementById('branding')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(config.scrollToId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -63,20 +89,20 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="text-sm text-foreground">Perfil creativo en tech</span>
+            <span className="text-sm text-foreground">{config.label}</span>
           </motion.div>
 
           <h1 className="mb-6 text-5xl md:text-6xl lg:text-7xl text-foreground">
-            Doy <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">vida</span> a las marcas
+            {config.title}
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto">
-            Hola, soy <b>Diana</b>
-            <br /> Estratega de marca, diseñadora y redactora creativa
+            Hola, soy <b>{config.name}</b>
+            <br /> {config.role}
           </p>
 
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
-            Transformo ideas en identidades memorables que conectan con las personas y generan resultados
+            {config.description}
           </p>
         </motion.div>
 
@@ -90,19 +116,14 @@ export function Hero() {
             onClick={scrollToProjects}
             className="px-8 py-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           >
-            Ver mi trabajo
+            {config.primaryButtonText}
           </button>
-          <button
-            onClick={() => navigate('/Dev')}
-            className="px-8 py-4 bg-card text-foreground rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all border-2 border-border hover:border-primary"
-          >
-            Perfil Dev →
-          </button>
+         
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="px-8 py-4 bg-card text-foreground rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all border-2 border-border hover:border-primary"
           >
-            Hablemos
+            {config.secondaryButtonText}
           </button>
         </motion.div>
 

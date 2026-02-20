@@ -18,11 +18,11 @@ const projects: Project[] = [
     image: "/dev/eduruta-web.png",
     stack: ["React", "Tailwind CSS", "Supabase", "Google Auth"],
     projectUrl: "https://eduruta.lovable.app/",
-    
+
   },
   {
     id: "2",
-    name: "Beat - Social Network for Music Lovers",
+    name: "Beat - Social Network ",
     description: "Beat, primer proyecto aplicando UX design, reviews de música.",
     image: "dev/beat-app.png",
     stack: ["React", "TypeScript", "PostgreSQL", "Prisma"],
@@ -44,7 +44,7 @@ export default function ProjectsDev() {
   return (
     <section id="projects" className="py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Título */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -79,16 +79,19 @@ export default function ProjectsDev() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 * index }}
               whileHover={{ scale: 1.02 }}
-              className="bg-card rounded-2xl shadow-lg border border-border overflow-hidden relative group"
+              className="bg-card rounded-2xl shadow-lg border border-border overflow-hidden "
             >
               {/* Imagen */}
-              <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                <img 
-                  src={project.image} 
-                  alt={project.name} 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <img
+                src={project.image}
+                alt={project.name}
+                style={{
+                  width: '100%',
+                  height: '200px',
+                  objectFit: 'cover',
+                  display: 'block',
+                }}
+              />
 
               {/* Contenido */}
               <div className="p-6 relative z-10">

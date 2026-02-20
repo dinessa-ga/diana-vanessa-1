@@ -13,55 +13,44 @@ interface Project {
 const projects: Project[] = [
   {
     id: "1",
-    name: "E-commerce Platform",
-    description: "Plataforma de comercio electrónico full-stack con React, Node.js y MongoDB.",
-    image: "/placeholder-project.jpg",
-    stack: ["React", "Node.js", "MongoDB", "Express"],
-    projectUrl: "#",
-    codeUrl: "#",
+    name: "EduRuta Web",
+    description: "Sitio web informativo para la plataforma de educación en línea EduRuta.",
+    image: "/dev/eduruta-web.png",
+    stack: ["React", "Tailwind CSS", "Supabase", "Google Auth"],
+    projectUrl: "https://eduruta.lovable.app/",
+    
   },
   {
     id: "2",
-    name: "Task Management App",
-    description: "Aplicación de gestión de tareas con autenticación y base de datos SQL.",
-    image: "/placeholder-project.jpg",
+    name: "Beat - Social Network for Music Lovers",
+    description: "Beat, primer proyecto aplicando UX design, reviews de música.",
+    image: "dev/beat-app.png",
     stack: ["React", "TypeScript", "PostgreSQL", "Prisma"],
     projectUrl: "#",
     codeUrl: "#",
   },
   {
     id: "3",
-    name: "API RESTful",
-    description: "API RESTful para servicios backend con documentación Swagger.",
-    image: "/placeholder-project.jpg",
-    stack: ["Node.js", "Express", "JWT", "Swagger"],
-    projectUrl: "#",
-    codeUrl: "#",
+    name: "Bluetab - Human Resources",
+    description: "Formulario y Chatbot para la búsqueda y formación de equipos de trabajo.",
+    image: "dev/bluetab.png",
+    stack: ["Vite.js", "Flowise AI", "API Open AI", "Airtable"],
+    projectUrl: "https://bluetab-test.vercel.app/",
+    codeUrl: "https://github.com/dinessa-ga/Bluetab_desarrollo",
   },
 ];
 
 export default function ProjectsDev() {
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-16">
+    <section id="projects" className="py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-block mb-4"
-        >
-          <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-            Proyectos
-          </span>
-        </motion.div>
-
+        
         {/* Título */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent"
+          className="text-center text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text"
         >
           Soluciones que he construido
         </motion.h2>
@@ -71,9 +60,9 @@ export default function ProjectsDev() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-muted-foreground mb-12 max-w-2xl"
+          className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto text-center"
         >
-          Explora mis proyectos técnicos y soluciones innovadoras que demuestran mi experiencia en desarrollo full-stack.
+          Explora mis proyectos técnicos y soluciones que demuestran mis habilidades en desarrollo web.
         </motion.p>
 
         {/* Grid de proyectos */}
@@ -81,9 +70,9 @@ export default function ProjectsDev() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {projects.map((project, index) => (
+          {projects.slice(0, 3).map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -93,12 +82,16 @@ export default function ProjectsDev() {
               className="bg-card rounded-2xl shadow-lg border border-border overflow-hidden relative group"
             >
               {/* Imagen */}
-              <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                <span className="text-muted-foreground">Imagen del proyecto</span>
+              <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                <img 
+                  src={project.image} 
+                  alt={project.name} 
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Contenido */}
-              <div className="p-6">
+              <div className="p-6 relative z-10">
                 <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
                 <p className="text-muted-foreground mb-4">{project.description}</p>
 
@@ -107,7 +100,7 @@ export default function ProjectsDev() {
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
+                      className="bg-accent text-secondary-foreground px-4 py-2 rounded-full text-sm"
                     >
                       {tech}
                     </span>
@@ -118,14 +111,18 @@ export default function ProjectsDev() {
                 <div className="flex gap-3">
                   <a
                     href={project.projectUrl}
-                    className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg text-center font-medium hover:shadow-lg transition-shadow"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 px-4 py-2 border border-border rounded-lg hover:border-primary text-center font-medium transition-colors"
                   >
                     Ver proyecto
                   </a>
                   {project.codeUrl && (
                     <a
                       href={project.codeUrl}
-                      className="px-4 py-2 border border-border rounded-lg text-center font-medium hover:bg-gray-50 transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 border border-border rounded-lg hover:border-primary text-center font-medium  transition-colors"
                     >
                       Ver código
                     </a>
@@ -137,6 +134,18 @@ export default function ProjectsDev() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Botón Ver más proyectos */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-8"
+        >
+          <button className="px-8 py-4 bg-card text-foreground rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all border-2 border-border hover:border-primary">
+            Ver más proyectos
+          </button>
         </motion.div>
       </div>
     </section>

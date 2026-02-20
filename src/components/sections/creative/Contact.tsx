@@ -1,8 +1,28 @@
 import { motion } from 'motion/react';
-import { Mail, Linkedin, Instagram, Twitter, Send } from 'lucide-react';
+import { Mail, Linkedin, Instagram, Twitter, Send, LucideIcon } from 'lucide-react';
 import { useState } from 'react';
 
-export function Contact() {
+interface ContactConfig {
+  label: string;
+  title: React.ReactNode;
+  description: string;
+  email: string;
+  connectText: string;
+  socialLinks: Array<{
+    icon: LucideIcon;
+    label: string;
+    href: string;
+    color: string;
+    bg: string;
+  }>;
+  whyWorkWithMe: string[];
+}
+
+interface ContactProps {
+  config?: ContactConfig;
+}
+
+export function Contact({ config }: ContactProps = {}) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,23 +37,39 @@ export function Contact() {
     setFormData({ name: '', email: '', message: '' });
   };
 
-  const socialLinks = [
-    { 
-      icon: Linkedin, 
-      label: 'LinkedIn', 
-      href: 'https://www.linkedin.com/in/diana-vanessa/',
-      color: 'hover:text-[#0077B5]',
-      bg: 'hover:bg-[#0077B5]/10'
-    },
-    { 
-      icon: Instagram, 
-      label: 'Instagram', 
-      href: 'https://www.instagram.com/dinessag/',
-      color: 'hover:text-[#E4405F]',
-      bg: 'hover:bg-[#E4405F]/10'
-    },
-    
-  ];
+  const defaultConfig: ContactConfig = {
+    label: 'Contacto',
+    title: (
+      <>
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Transforma </span> tu proyecto en acción
+      </>
+    ),
+    description: 'Escríbeme para nuevos proyectos, colaboraciones o para ser parte de tu empresa. Hablemos sobre tu marca.',
+    email: 'dinessa.tech@gmail.com',
+    connectText: 'Ya sea que tengas un proyecto en mente, necesites ayuda con tu estrategia de marca, o simplemente quieras charlar sobre marketing, diseño y tecnología, me encantaría escucharte.',
+    socialLinks: [
+      { 
+        icon: Linkedin, 
+        label: 'LinkedIn', 
+        href: 'https://www.linkedin.com/in/diana-vanessa/',
+        color: 'hover:text-[#0077B5]',
+        bg: 'hover:bg-[#0077B5]/10'
+      },
+      { 
+        icon: Instagram, 
+        label: 'Instagram', 
+        href: 'https://www.instagram.com/dinessag/',
+        color: 'hover:text-[#E4405F]',
+        bg: 'hover:bg-[#E4405F]/10'
+      },
+    ],
+    whyWorkWithMe: [
+      'Enfoque estratégico y creativo con resultados medibles',
+      'Comunicación clara y constante',
+    ]
+  };
+
+  const finalConfig = config || defaultConfig;
 
   return (
     <section id="contact" className="py-20 px-4 bg-gradient-to-br from-background via-muted/20 to-primary/5">
@@ -46,13 +82,13 @@ export function Contact() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full mb-4">
-            Contacto
+            {finalConfig.label}
           </span>
           <h2 className="mb-6 text-4xl md:text-5xl text-foreground">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Transforma </span> tu proyecto en acción
+            {finalConfig.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Escríbeme para nuevos proyectos, colaboraciones o para ser parte de tu empresa. Hablemos sobre tu marca.
+            {finalConfig.description}
           </p>
         </motion.div>
 
@@ -132,16 +168,15 @@ export function Contact() {
             <div className="bg-card p-8 rounded-3xl shadow-lg border border-border">
               <h3 className="mb-6 text-foreground">Conectemos</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Ya sea que tengas un proyecto en mente, necesites ayuda con tu estrategia de marca,
-                o simplemente quieras charlar sobre marketing, diseño y tecnología, me encantaría escucharte.
+                {finalConfig.connectText}
               </p>
 
               {/* Direct Contact */}
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3 text-foreground">
                   <Mail className="w-5 h-5 text-primary" />
-                  <a href="mailto:dinessa.tech@gmail.com" className="hover:text-primary transition-colors">
-                    dinessa.tech@gmail.com
+                  <a href={`mailto:${finalConfig.email}`} className="hover:text-primary transition-colors">
+                    {finalConfig.email}
                   </a>
                 </div>
               </div>
@@ -152,7 +187,7 @@ export function Contact() {
                   Sígueme en redes
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
-                  {socialLinks.map((social) => {
+                  {finalConfig.socialLinks.map((social) => {
                     const Icon = social.icon;
                     return (
                       <a
@@ -175,11 +210,7 @@ export function Contact() {
             <div className="bg-gradient-to-br from-primary to-secondary p-8 rounded-3xl text-white">
               <h4 className="mb-4">¿Por qué trabajar conmigo?</h4>
               <ul className="space-y-3">
-                {[
-                  'Enfoque estratégico y creativo con resultados medibles',
-                  'Comunicación clara y constante',
-                  
-                ].map((item, index) => (
+                {finalConfig.whyWorkWithMe.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="text-accent mt-1">✓</span>
                     <span>{item}</span>

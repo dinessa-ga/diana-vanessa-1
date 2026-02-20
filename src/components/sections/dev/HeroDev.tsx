@@ -9,8 +9,8 @@ export function HeroDev() {
       </>
     ),
     name: 'Diana',
-    role: 'Desarrolladora Frontend, especialista en React y experiencia del usuario',
-    description: 'Combino código limpio, diseño intuitivo y creatividad para construir aplicaciones web que funcionan perfectamente y se ven increíbles',
+    role: 'Desarrolladora Frontend, experiencia en React y UX/UI',
+    description: 'Combino código, diseño intuitivo y creatividad para construir aplicaciones web que funcionan y se ven increíbles',
     primaryButtonText: 'Ver proyectos',
     secondaryButtonText: 'Contáctame',
     scrollToId: 'projects-dev',

@@ -16,7 +16,7 @@ export function CreativeLayout({ children }: CreativeLayoutProps) {
 
   return (
     <div className="min-h-screen">
-      
+      <ThemeToggle />
       <Header menuItems={menuItems} />
       <div className="pt-16">
         {children}

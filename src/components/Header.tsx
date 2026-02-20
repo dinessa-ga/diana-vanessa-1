@@ -39,41 +39,34 @@ export function Header({ menuItems }: HeaderProps) {
     !href.startsWith('#') && location.pathname === href;
 
   const linkBase =
-    'text-gray-700 dark:text-gray-300 px-4 py-2 rounded-xl transition-all duration-200 text-sm font-medium';
+    'text-foreground px-4 py-2 transition-all duration-200 text-sm font-bold';
   const linkHover =
-    'hover:bg-gray-100 hover:text-gray-900';
+    'hover:bg-accent hover:text-accent-foreground rounded-xl';
   const linkActive =
-    'bg-gray-100 text-gray-900 font-semibold';
+    'bg-accent text-accent-foreground rounded-xl';
 
   return (
     <header
       style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }}
-      className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700"
+      className="bg-background border-b border-border"
     >
       <nav className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-center items-center h-16">
 
-          {/* Brand */}
-          <Link
-            to="/"
-            className="text-xl font-bold text-gray-900 dark:text-white"
-            style={{ textDecoration: 'none' }}
-          >
-            Diana Vanessa
-          </Link>
+         
 
           {/* Nav Desktop — visible solo cuando NO es móvil */}
           {!isMobile && (
             <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
               {menuItems.map((item) => {
                 const active = isActive(item.href);
-                const cls = `${linkBase} ${linkHover} ${active ? linkActive : ''}`;
+                const cls = item.label === 'Inicio' ? `${linkBase} ${linkHover}` : `${linkBase} ${linkHover} ${active ? linkActive : ''}`;
                 return item.href.startsWith('#') ? (
-                  <a key={item.label} href={item.href} className={cls}>
+                  <a key={item.label} href={item.href} className={cls} style={{ fontWeight: 600 }}>
                     {item.label}
                   </a>
                 ) : (
-                  <Link key={item.label} to={item.href} className={cls}>
+                  <Link key={item.label} to={item.href} className={cls} style={{ fontWeight: 600 }}>
                     {item.label}
                   </Link>
                 );
@@ -98,7 +91,7 @@ export function Header({ menuItems }: HeaderProps) {
                 border: 'none',
                 cursor: 'pointer',
               }}
-              className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-200"
+              className="text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-200"
             >
               <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path

@@ -10,7 +10,7 @@ export function DevLayout({ children }: DevLayoutProps) {
     { label: 'Inicio', href: '/Dev' },
     { label: 'Sobre mí', href: '#about' },
     { label: 'Proyectos ', href: '#projects' },
-    { label: 'Experiencia', href: '#experience' },
+    { label: 'Servicios', href: '#services' },
     { label: '← Perfil Creativo', href: '/' },
   ];
 

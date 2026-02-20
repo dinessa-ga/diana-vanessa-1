@@ -1,5 +1,5 @@
 import { Header } from '../Header';
-import { ThemeToggle } from '../ThemeToggle';
+
 
 interface DevLayoutProps {
   children: React.ReactNode;
@@ -7,7 +7,7 @@ interface DevLayoutProps {
 
 export function DevLayout({ children }: DevLayoutProps) {
   const menuItems = [
-    
+
     { label: 'Sobre mí', href: '#about' },
     { label: 'Proyectos ', href: '#projects-dev' },
     { label: 'Servicios', href: '#services' },
@@ -17,7 +17,6 @@ export function DevLayout({ children }: DevLayoutProps) {
 
   return (
     <div className="min-h-screen">
-      <ThemeToggle />
       <Header menuItems={menuItems} />
       <div className="pt-16">
         {children}

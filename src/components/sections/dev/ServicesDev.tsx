@@ -47,7 +47,7 @@ export function ServicesDev() {
   };
 
   return (
-    <section id="services" className="py-20 px-4 bg-background">
+    <section id="services" className="py-12 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ export function ServicesDev() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 mb-16 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 mb-8 w-full">
           {services.map((service, serviceIndex) => {
             const Icon = service.icon;
             return (

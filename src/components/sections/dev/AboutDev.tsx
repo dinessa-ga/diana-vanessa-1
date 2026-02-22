@@ -61,7 +61,7 @@ export default function AboutDev() {
     return (
         <section
             id="about"
-            className="py-20 px-4 bg-gradient-to-br from-background to-muted/30"
+            className="py-12 px-4 bg-gradient-to-br from-background to-muted/30"
         >
             <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-12 items-center">

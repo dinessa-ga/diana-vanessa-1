@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 
 interface Project {
@@ -18,6 +19,7 @@ const projects: Project[] = [
     image: "/dev/eduruta-web.png",
     stack: ["React", "Tailwind CSS", "Supabase", "Google Auth"],
     projectUrl: "https://eduruta.lovable.app/",
+    codeUrl: "https://github.com/dinessa-ga/eduruta-web-n8n"
 
   },
   {
@@ -25,9 +27,9 @@ const projects: Project[] = [
     name: "Beat - Social Network ",
     description: "Beat, primer proyecto aplicando UX design, reviews de música.",
     image: "dev/beat-app.png",
-    stack: ["React", "TypeScript", "PostgreSQL", "Prisma"],
-    projectUrl: "#",
-    codeUrl: "#",
+    stack: ["Javascript", "Firebase", "Figma", "HTML", "CSS"],
+    projectUrl: "https://beat-1-29ed1.web.app/",
+    codeUrl: "https://github.com/dinessa-ga/DEV003-social-network",
   },
   {
     id: "3",
@@ -38,19 +40,46 @@ const projects: Project[] = [
     projectUrl: "https://bluetab-test.vercel.app/",
     codeUrl: "https://github.com/dinessa-ga/Bluetab_desarrollo",
   },
+  {
+    id: "4",
+    name: "Bluetab - Human Resources",
+    description: "Formulario y Chatbot para la búsqueda y formación de equipos de trabajo.",
+    image: "dev/bluetab.png",
+    stack: ["Vite.js", "Flowise AI", "API Open AI", "Airtable"],
+    projectUrl: "https://bluetab-test.vercel.app/",
+    codeUrl: "https://github.com/dinessa-ga/Bluetab_desarrollo",
+  },
+  {
+    id: "5",
+    name: "Sitio web HerUX",
+    description: "Formulario y Chatbot para la búsqueda y formación de equipos de trabajo.",
+    image: "dev/bluetab.png",
+    stack: ["Vite.js", "Flowise AI", "API Open AI", "Airtable"],
+    projectUrl: "https://bluetab-test.vercel.app/",
+    codeUrl: "https://github.com/dinessa-ga/Bluetab_desarrollo",
+  },
+  {
+    id: "6",
+    name: "Bluetab - Human Resources",
+    description: "Formulario y Chatbot para la búsqueda y formación de equipos de trabajo.",
+    image: "dev/bluetab.png",
+    stack: ["Vite.js", "Flowise AI", "API Open AI", "Airtable"],
+    projectUrl: "https://bluetab-test.vercel.app/",
+    codeUrl: "https://github.com/dinessa-ga/Bluetab_desarrollo",
+  },
 ];
 
 export default function ProjectsDev() {
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <section id="projects-dev" className="py-12 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-
         {/* Título */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-center text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text"
+          className="text-center text-4xl md:text-5xl font-bold mt-8 mb-4 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text"
         >
           Soluciones que he construido
         </motion.h2>
@@ -67,12 +96,13 @@ export default function ProjectsDev() {
 
         {/* Grid de proyectos */}
         <motion.div
+          layout
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {projects.slice(0, 3).map((project, index) => (
+          {projects.slice(0, isExpanded ? projects.length : 3).map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -146,8 +176,8 @@ export default function ProjectsDev() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-8"
         >
-          <button className="px-8 py-4 bg-card text-foreground rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all border-2 border-border hover:border-primary">
-            Ver más proyectos
+          <button onClick={() => setIsExpanded(!isExpanded)} className="px-8 py-4 bg-card text-foreground rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all border-2 border-border hover:border-primary">
+            {isExpanded ? "Ver menos proyectos" : "Ver más proyectos"}
           </button>
         </motion.div>
       </div>

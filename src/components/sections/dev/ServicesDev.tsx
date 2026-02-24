@@ -34,13 +34,13 @@ export function ServicesDev() {
       skills: [
         'Chatbots personalizados',
         'Flujos automatizados',
-        'Arquitectura offline‑first',
+        'Análisis de procesos y optimización de tareas',
       ],
     },
   ];
 
   const openWhatsApp = (serviceTitle: string) => {
-    const phoneNumber = '1234567890'; // Reemplazar con el número real
+    const phoneNumber = '593967008345'; // Reemplazar con el número real
     const message = `Hola, me gustaría solicitar el servicio de ${serviceTitle}`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');

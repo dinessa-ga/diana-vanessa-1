@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 
 interface Project {
   id: string;
@@ -42,30 +42,30 @@ const projects: Project[] = [
   },
   {
     id: "4",
-    name: "Bluetab - Human Resources",
-    description: "Formulario y Chatbot para la búsqueda y formación de equipos de trabajo.",
-    image: "dev/bluetab.png",
-    stack: ["Vite.js", "Flowise AI", "API Open AI", "Airtable"],
-    projectUrl: "https://bluetab-test.vercel.app/",
-    codeUrl: "https://github.com/dinessa-ga/Bluetab_desarrollo",
+    name: "Her UX - Comunidad de UX",
+    description: "Sitio web de la comunidad HerUX",
+    image: "dev/her-ux.png",
+    stack: ["Vite.js", "TypeScript", "Tailwind CSS", "Daisy UI"],
+    projectUrl: "https://website-her-ux.vercel.app/",
+    codeUrl: "https://github.com/dinessa-ga/website-herUX",
   },
   {
     id: "5",
-    name: "Sitio web HerUX",
-    description: "Formulario y Chatbot para la búsqueda y formación de equipos de trabajo.",
-    image: "dev/bluetab.png",
-    stack: ["Vite.js", "Flowise AI", "API Open AI", "Airtable"],
-    projectUrl: "https://bluetab-test.vercel.app/",
-    codeUrl: "https://github.com/dinessa-ga/Bluetab_desarrollo",
+    name: "Landing Catademy",
+    description: "Landing page para la plataforma de educación en línea Catademy.",
+    image: "dev/landing-catademy.png",
+    stack: ["Javascript", "Arquitectura BEM", "HTML", "CSS"],
+    projectUrl: "https://landing-dv-v1.vercel.app/",
+    codeUrl: "https://bitbucket.org/diana-ga/html-css/src/main/",
   },
   {
     id: "6",
-    name: "Bluetab - Human Resources",
-    description: "Formulario y Chatbot para la búsqueda y formación de equipos de trabajo.",
-    image: "dev/bluetab.png",
-    stack: ["Vite.js", "Flowise AI", "API Open AI", "Airtable"],
-    projectUrl: "https://bluetab-test.vercel.app/",
-    codeUrl: "https://github.com/dinessa-ga/Bluetab_desarrollo",
+    name: "Street Fighter - Juego de Peleas",
+    description: "Juego de peleas inspirado en el clásico Street Fighter.",
+    image: "dev/game.png",
+    stack: ["Vite.js", "TypeScript"],
+    projectUrl: "https://project-js2-sf.vercel.app/",
+    codeUrl: "https://bitbucket.org/diana-ga/project-js2-sf/src/main/",
   },
 ];
 
@@ -96,20 +96,21 @@ export default function ProjectsDev() {
 
         {/* Grid de proyectos */}
         <motion.div
-          layout
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {projects.slice(0, isExpanded ? projects.length : 3).map((project, index) => (
+          <AnimatePresence>
+            {projects.slice(0, isExpanded ? projects.length : 3).map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.6, delay: 0.1 * index }}
               whileHover={{ scale: 1.02 }}
-              className="bg-card rounded-2xl shadow-lg border border-border overflow-hidden "
+              className="bg-card rounded-2xl shadow-lg border border-border overflow-hidden group"
             >
               {/* Imagen */}
               <img
@@ -166,7 +167,8 @@ export default function ProjectsDev() {
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </motion.div>
-          ))}
+            ))}
+          </AnimatePresence>
         </motion.div>
 
         {/* Botón Ver más proyectos */}

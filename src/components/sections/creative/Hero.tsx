@@ -25,7 +25,7 @@ const defaultConfig: HeroConfig = {
   description: 'Transformo ideas en identidades memorables que conectan con las personas y generan resultados',
   primaryButtonText: 'Ver mi trabajo',
   secondaryButtonText: 'Hablemos',
-  scrollToId: 'branding',
+  scrollToId: 'projects-creative',
 };
 
 export function Hero({ config = defaultConfig }: HeroProps) {

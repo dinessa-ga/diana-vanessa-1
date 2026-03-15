@@ -78,9 +78,9 @@ export default function AboutDev() {
                             Sobre mí
                         </h2>
                         <p>
-                            Creo experiencias digitales accesibles y centradas en las personas. 
-                            Creo soluciones que no solo se ven bien, 
-                            sino que también cumplan objetivos claros y generen impacto real.
+                            Creo experiencias digitales accesibles y centradas en las personas: 
+                            Soluciones que no solo se ven bien, 
+                            sino que también cumplen objetivos claros y generan impacto real.
                             
                         </p>
                         <p>

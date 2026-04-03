@@ -60,12 +60,12 @@ const projects: Project[] = [
   },
   {
     id: "6",
-    name: "Street Fighter - Juego de Peleas",
-    description: "Juego de peleas inspirado en el clásico Street Fighter.",
-    image: "dev/game.png",
-    stack: ["Vite.js", "TypeScript"],
-    projectUrl: "https://project-js2-sf.vercel.app/",
-    codeUrl: "https://bitbucket.org/diana-ga/project-js2-sf/src/main/",
+    name: "Math App - Operaciones con decimales",
+    description: "Aplicación para practicar operaciones matemáticas con decimales.",
+    image: "dev/game1.png",
+    stack: ["Vite.js", "TypeScript", "Tailwind CSS"],
+    projectUrl: "https://math-1-three.vercel.app//",
+    codeUrl: "https://github.com/dinessa-ga/math-1",
   },
 ];
 

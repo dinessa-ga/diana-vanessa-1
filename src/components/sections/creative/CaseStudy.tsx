@@ -33,6 +33,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
   const [orientation, setOrientation] = useState<'portrait' | 'landscape'>('portrait');
   const [isDraggingEnabled, setIsDraggingEnabled] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
+  const [deletedElements, setDeletedElements] = useState<Set<string>>(new Set());
 
   // Detectar parámetro ?edit=true en la URL o dentro del hash
   useEffect(() => {
@@ -70,12 +71,51 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           text-shadow: none !important;
         }
         
+        /* Proteger la paleta de colores */
+        .preserve-colors,
+        .preserve-colors * {
+          color: inherit !important;
+          background: inherit !important;
+        }
+        
         .is-editing #pdf-content {
           background: white;
           border: 2px solid #d1d5db;
           margin: 50px auto;
           overflow: visible;
           box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+          position: relative;
+        }
+        
+        /* Líneas de separación de páginas */
+        .is-editing #pdf-content::before {
+          content: '';
+          position: absolute;
+          top: 297mm;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: repeating-linear-gradient(
+            90deg,
+            #ef4444,
+            #ef4444 10px,
+            transparent 10px,
+            transparent 20px
+          );
+          z-index: 10;
+          pointer-events: none;
+        }
+        
+        .is-editing #pdf-content::after {
+          content: 'Página 1 | Página 2 →';
+          position: absolute;
+          top: 296mm;
+          right: 10px;
+          font-size: 12px;
+          color: #ef4444;
+          background: white;
+          padding: 2px 8px;
+          z-index: 10;
         }
         
         .is-editing body {
@@ -418,38 +458,46 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-20">
           
           {/* Overview & Challenge */}
-          <EditableBlock isDraggingEnabled={isDraggingEnabled}>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="grid md:grid-cols-2 gap-8"
+          {!deletedElements.has('overview-challenge') && (
+            <EditableBlock 
+              isDraggingEnabled={isDraggingEnabled}
+              onDelete={() => setDeletedElements(new Set([...deletedElements, 'overview-challenge']))}
             >
-              <div className="bg-card p-8 rounded-3xl shadow-lg border border-border">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
-                    <Lightbulb className="w-6 h-6 text-white" />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="grid md:grid-cols-2 gap-8"
+              >
+                <div className="bg-card p-8 rounded-3xl shadow-lg border border-border">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+                      <Lightbulb className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-foreground">El cliente</h3>
                   </div>
-                  <h3 className="text-foreground">El cliente</h3>
+                  <p className="text-muted-foreground leading-relaxed">{caseStudy.clientOverview}</p>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">{caseStudy.clientOverview}</p>
-              </div>
 
-              <div className="bg-card p-8 rounded-3xl shadow-lg border border-border">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center">
-                    <Target className="w-6 h-6 text-white" />
+                <div className="bg-card p-8 rounded-3xl shadow-lg border border-border">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center">
+                      <Target className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-foreground">El desafío</h3>
                   </div>
-                  <h3 className="text-foreground">El desafío</h3>
+                  <p className="text-muted-foreground leading-relaxed">{caseStudy.challenge}</p>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">{caseStudy.challenge}</p>
-              </div>
-            </motion.div>
-          </EditableBlock>
+              </motion.div>
+            </EditableBlock>
+          )}
 
           {/* Propósito (si existe) */}
-          {caseStudy.purpose && (
-            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
+          {caseStudy.purpose && !deletedElements.has('purpose') && (
+            <EditableBlock 
+              isDraggingEnabled={isDraggingEnabled}
+              onDelete={() => setDeletedElements(new Set([...deletedElements, 'purpose']))}
+            >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -465,8 +513,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           )}
 
           {/* Buyer Persona */}
-          {caseStudy.buyerPersona && (
-            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
+          {caseStudy.buyerPersona && !deletedElements.has('buyer-persona') && (
+            <EditableBlock 
+              isDraggingEnabled={isDraggingEnabled}
+              onDelete={() => setDeletedElements(new Set([...deletedElements, 'buyer-persona']))}
+            >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -516,8 +567,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           )}
 
           {/* Personalidad de Marca */}
-          {caseStudy.brandPersonality && (
-            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
+          {caseStudy.brandPersonality && !deletedElements.has('brand-personality') && (
+            <EditableBlock 
+              isDraggingEnabled={isDraggingEnabled}
+              onDelete={() => setDeletedElements(new Set([...deletedElements, 'brand-personality']))}
+            >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -557,8 +611,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           )}
 
           {/* Estrategia de Contenido */}
-          {caseStudy.contentStrategy && (
-            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
+          {caseStudy.contentStrategy && !deletedElements.has('content-strategy') && (
+            <EditableBlock 
+              isDraggingEnabled={isDraggingEnabled}
+              onDelete={() => setDeletedElements(new Set([...deletedElements, 'content-strategy']))}
+            >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -596,7 +653,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           )}
 
           {/* Deliverables */}
-          <EditableBlock isDraggingEnabled={isDraggingEnabled}>
+          {!deletedElements.has('deliverables') && (
+            <EditableBlock 
+              isDraggingEnabled={isDraggingEnabled}
+              onDelete={() => setDeletedElements(new Set([...deletedElements, 'deliverables']))}
+            >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -629,11 +690,15 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 ))}
               </div>
             </motion.div>
-          </EditableBlock>
+            </EditableBlock>
+          )}
 
           {/* Ejemplos de Copy */}
-          {caseStudy.copyExamples && caseStudy.copyExamples.length > 0 && (
-            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
+          {caseStudy.copyExamples && caseStudy.copyExamples.length > 0 && !deletedElements.has('copy-examples') && (
+            <EditableBlock 
+              isDraggingEnabled={isDraggingEnabled}
+              onDelete={() => setDeletedElements(new Set([...deletedElements, 'copy-examples']))}
+            >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -665,8 +730,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           )}
 
           {/* Ejemplos Visuales */}
-          {caseStudy.visualExamples && caseStudy.visualExamples.length > 0 && (
-            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
+          {caseStudy.visualExamples && caseStudy.visualExamples.length > 0 && !deletedElements.has('visual-examples') && (
+            <EditableBlock 
+              isDraggingEnabled={isDraggingEnabled}
+              onDelete={() => setDeletedElements(new Set([...deletedElements, 'visual-examples']))}
+            >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -675,7 +743,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 <h2 className="text-3xl md:text-4xl mb-8 text-center text-foreground">
                   Piezas <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">gráficas</span>
                 </h2>
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                   {caseStudy.visualExamples.map((imgUrl, index) => (
                     <motion.div
                       key={index}
@@ -701,12 +769,16 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           )}
 
           {/* Paleta de colores */}
-          <EditableBlock isDraggingEnabled={isDraggingEnabled}>
+          {!deletedElements.has('color-palette') && (
+            <EditableBlock 
+              isDraggingEnabled={isDraggingEnabled}
+              onDelete={() => setDeletedElements(new Set([...deletedElements, 'color-palette']))}
+            >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="bg-card p-8 rounded-3xl shadow-lg border border-border"
+              className="bg-card p-8 rounded-3xl shadow-lg border border-border preserve-colors"
             >
               <h3 className="text-center mb-6 text-foreground">Paleta de colores</h3>
               <div className="flex justify-center gap-4 flex-wrap">
@@ -721,10 +793,15 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 ))}
               </div>
             </motion.div>
-          </EditableBlock>
+            </EditableBlock>
+          )}
 
           {/* Resultados */}
-          <EditableBlock isDraggingEnabled={isDraggingEnabled}>
+          {!deletedElements.has('results') && (
+            <EditableBlock 
+              isDraggingEnabled={isDraggingEnabled}
+              onDelete={() => setDeletedElements(new Set([...deletedElements, 'results']))}
+            >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -755,11 +832,15 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 </ul>
               </div>
             </motion.div>
-          </EditableBlock>
+            </EditableBlock>
+          )}
 
           {/* Testimonial */}
-          {caseStudy.testimonial && (
-            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
+          {caseStudy.testimonial && !deletedElements.has('testimonial') && (
+            <EditableBlock 
+              isDraggingEnabled={isDraggingEnabled}
+              onDelete={() => setDeletedElements(new Set([...deletedElements, 'testimonial']))}
+            >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -781,7 +862,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           )}
 
           {/* CTA Final */}
-          <EditableBlock isDraggingEnabled={isDraggingEnabled}>
+          {!deletedElements.has('cta-final') && (
+            <EditableBlock 
+              isDraggingEnabled={isDraggingEnabled}
+              onDelete={() => setDeletedElements(new Set([...deletedElements, 'cta-final']))}
+            >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -798,7 +883,8 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 Hablemos de tu proyecto
               </button>
             </motion.div>
-          </EditableBlock>
+            </EditableBlock>
+          )}
         </div>
       </div>
     </div>

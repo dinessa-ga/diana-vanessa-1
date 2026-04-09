@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import Draggable from 'react-draggable';
+import { Trash2 } from 'lucide-react';
 
 interface EditableBlockProps {
   children: React.ReactNode;
   isDraggingEnabled: boolean;
   className?: string;
+  onDelete?: () => void;
 }
 
 export function EditableBlock({
   children,
   isDraggingEnabled,
   className = '',
+  onDelete,
 }: EditableBlockProps) {
   const [zIndex, setZIndex] = useState(1);
   const [isDragging, setIsDragging] = useState(false);
@@ -63,6 +66,17 @@ export function EditableBlock({
               pointerEvents: 'none',
             }}
           />
+        )}
+
+        {/* Botón eliminar (esquina superior derecha) */}
+        {isDraggingEnabled && onDelete && (
+          <button
+            onClick={onDelete}
+            className="absolute top-2 right-2 p-1.5 bg-red-500/80 hover:bg-red-600 text-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity shadow-lg z-50"
+            title="Eliminar elemento"
+          >
+            <Trash2 className="w-4 h-4" />
+          </button>
         )}
       </div>
     </Draggable>

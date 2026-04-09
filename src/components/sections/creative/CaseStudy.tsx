@@ -29,11 +29,15 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
   const caseStudy = project.caseStudy;
   const pdfContentRef = useRef<HTMLDivElement>(null);
   
+  const A4_HEIGHT_PX = 1122;
+  const MAX_PAGE_GUIDES = 10;
+
   // Estados para la funcionalidad de edición y PDF
   const [orientation, setOrientation] = useState<'portrait' | 'landscape'>('portrait');
   const [isDraggingEnabled, setIsDraggingEnabled] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
   const [deletedElements, setDeletedElements] = useState<Set<string>>(new Set());
+  const [contentHeight, setContentHeight] = useState(0);
 
   // Detectar parámetro ?edit=true en la URL o dentro del hash
   useEffect(() => {
@@ -55,30 +59,31 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
       const styleTag = document.createElement('style');
       styleTag.id = 'edit-mode-styles';
       styleTag.textContent = `
-        .is-editing h1,
-        .is-editing h2,
-        .is-editing h3,
-        .is-editing h4,
-        .is-editing h5,
-        .is-editing h6,
-        .is-editing p,
-        /* Forzar texto negro en modo edición, pero excluir paleta de colores */
-        .is-editing span:not(.preserve-colors):not(.preserve-colors *),
-        .is-editing a:not(.preserve-colors):not(.preserve-colors *),
-        .is-editing div:not(.preserve-colors):not(.preserve-colors *),
-        .is-editing li:not(.preserve-colors):not(.preserve-colors *),
-        .is-editing p:not(.preserve-colors):not(.preserve-colors *),
-        .is-editing h1:not(.preserve-colors):not(.preserve-colors *),
-        .is-editing h2:not(.preserve-colors):not(.preserve-colors *),
-        .is-editing h3:not(.preserve-colors):not(.preserve-colors *),
-        .is-editing h4:not(.preserve-colors):not(.preserve-colors *) {
+        /* Forzar texto negro en modo edición, pero excluir la paleta y controles de página */
+        .is-editing *:not(.preserve-colors):not(.preserve-colors *):not(.color-swatch):not(.color-swatch *):not(.palette-container):not(.palette-container *):not(.page-label):not(.page-label *):not(.page-guideline):not(.page-guideline *) {
           color: #000000 !important;
           background: transparent !important;
+          background-color: transparent !important;
           text-shadow: none !important;
         }
-        
 
-        
+        .is-editing .preserve-colors,
+        .is-editing .preserve-colors *,
+        .is-editing .color-swatch,
+        .is-editing .color-swatch *,
+        .is-editing .palette-container,
+        .is-editing .palette-container *,
+        .is-editing .page-label,
+        .is-editing .page-label *,
+        .is-editing .page-guideline,
+        .is-editing .page-guideline * {
+          color: unset !important;
+          background: unset !important;
+          background-color: unset !important;
+          background-image: unset !important;
+          text-shadow: unset !important;
+        }
+
         .is-editing #pdf-content {
           background: white;
           border: 2px solid #d1d5db;
@@ -87,37 +92,63 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
           position: relative;
         }
-        
-        /* Líneas de separación de páginas */
-        [data-page-break] {
+
+        .is-editing .preserve-colors,
+        .is-editing .preserve-colors *,
+        .is-editing .color-swatch,
+        .is-editing .color-swatch * {
+          color: unset !important;
+          background: unset !important;
+          background-color: unset !important;
+          background-image: unset !important;
+          border-color: unset !important;
+          box-shadow: unset !important;
+          text-shadow: unset !important;
+        }
+
+        .is-editing .page-guideline,
+        .is-editing .page-label {
+          pointer-events: none;
+          z-index: 0;
+        }
+
+        .is-editing .page-guideline {
           position: absolute;
-          top: 297mm;
           left: 0;
           right: 0;
-          height: 2px;
-          background: repeating-linear-gradient(
-            90deg,
-            #ef4444,
-            #ef4444 10px,
-            transparent 10px,
-            transparent 20px
-          );
-          z-index: 10;
-          pointer-events: none;
+          height: 1px;
+          border-top: 1px dashed rgba(0, 0, 0, 0.2);
+          background: rgba(0, 0, 0, 0.04);
+          z-index: 0;
         }
-        
-        [data-page-break]::after {
-          content: 'Página 1 | Página 2 →';
+
+        .is-editing .page-guideline::before {
+          content: attr(data-label);
           position: absolute;
-          top: -12px;
-          right: 10px;
+          top: -20px;
+          right: 12px;
           font-size: 12px;
-          color: #ef4444;
-          background: white;
+          color: #111111;
+          background: rgba(255, 255, 255, 0.92);
           padding: 2px 8px;
-          z-index: 11;
+          border-radius: 999px;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+          z-index: 1;
         }
-        
+
+        .is-editing .page-label {
+          position: absolute;
+          right: 16px;
+          width: max-content;
+          padding: 4px 10px;
+          color: #000000;
+          background: rgba(255, 255, 255, 0.95);
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          border-radius: 999px;
+          font-size: 12px;
+          z-index: 0;
+        }
+
         .is-editing body {
           background-color: #f3f4f6;
         }
@@ -158,6 +189,20 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (!pdfContentRef.current) return;
+
+    const updateContentHeight = () => {
+      setContentHeight(pdfContentRef.current?.offsetHeight || 0);
+    };
+
+    updateContentHeight();
+    const observer = new ResizeObserver(updateContentHeight);
+    observer.observe(pdfContentRef.current);
+
+    return () => observer.disconnect();
+  }, [isDraggingEnabled, project]);
 
   const copyComputedStyles = (source: HTMLElement, target: HTMLElement) => {
     const computed = window.getComputedStyle(source);
@@ -405,8 +450,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
       const canvas = await html2canvas(clonedNode, {
         scale: 2,
         useCORS: true,
+        allowTaint: true,
         logging: false,
-        backgroundColor: '#FFFFFF',
+        backgroundColor: null,
+        removeContainer: false,
+        foreignObjectRendering: false,
       });
 
       document.body.removeChild(wrapper);
@@ -442,6 +490,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
       if (imageHeightMm <= pdfHeightMm) {
         pdf.addImage(imgData, 'PNG', 0, 0, pdfWidthMm, imageHeightMm);
         // Agregar indicador de página para documento de una página
+        pdf.setFont('helvetica');
         pdf.setFontSize(10);
         pdf.setTextColor(100, 100, 100); // Gris
         pdf.text('Página 1', pdfWidthMm - 20, pdfHeightMm - 10);
@@ -485,12 +534,12 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           pdf.addImage(pageData, 'PNG', 0, 0, pdfWidthMm, pageImageHeightMm);
 
           // Agregar indicador de página
+          pdf.setFont('helvetica');
           pdf.setFontSize(10);
           pdf.setTextColor(100, 100, 100); // Gris
           const currentPage = pageIndex + 1;
-          const nextPage = currentPage + 1;
-          const pageText = pageTopPx + currentPageHeightPx < canvas.height ? `Página ${currentPage} → Página ${nextPage}` : `Página ${currentPage}`;
-          pdf.text(pageText, pdfWidthMm - 40, pdfHeightMm - 10);
+          const pageText = `Página ${currentPage}`;
+          pdf.text(pageText, pdfWidthMm - 20, pdfHeightMm - 10);
 
           pageTopPx += currentPageHeightPx;
           pageIndex += 1;
@@ -920,15 +969,22 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="bg-card p-8 rounded-3xl shadow-lg border border-border preserve-colors"
+              className="bg-card p-8 rounded-3xl shadow-lg border border-border preserve-colors palette-container relative z-10"
             >
               <h3 className="text-center mb-6 text-foreground">Paleta de colores</h3>
               <div className="flex justify-center gap-4 flex-wrap">
                 {project.colors.map((color, index) => (
                   <div key={index} className="text-center">
                     <div
-                      className="w-20 h-20 rounded-2xl shadow-lg mb-2 border-2 border-border"
-                      style={{ backgroundColor: color }}
+                      className="rounded-2xl shadow-lg mb-2 border-2 border-border preserve-colors color-swatch"
+                      style={{
+                        backgroundColor: color,
+                        width: '80px',
+                        height: '80px',
+                        minWidth: '80px',
+                        minHeight: '80px',
+                        zIndex: 2,
+                      }}
                     />
                     <span className="text-sm text-muted-foreground">{color}</span>
                   </div>
@@ -1029,9 +1085,29 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           )}
         </div>
 
-        {/* Elemento visual para separación de página */}
-        {isDraggingEnabled && (
-          <div data-page-break="" />
+        {/* Guías de salto de página en modo edición */}
+        {isDraggingEnabled && contentHeight > 0 && (
+          <>
+            {Array.from({ length: Math.max(Math.ceil(contentHeight / A4_HEIGHT_PX) - 1, 0) }, (_, index) => index + 1).map((pageIndex) => (
+              <div
+                key={`page-break-${pageIndex}`}
+                className="page-guideline"
+                data-label={`Final de Página ${pageIndex} / Inicio de Página ${pageIndex + 1}`}
+                style={{ top: pageIndex * A4_HEIGHT_PX }}
+              />
+            ))}
+            {Array.from({ length: Math.min(Math.max(Math.ceil(contentHeight / A4_HEIGHT_PX), 1), MAX_PAGE_GUIDES) }, (_, index) => index + 1).map((pageIndex) => (
+              <div
+                key={`page-label-${pageIndex}`}
+                className="page-label"
+                style={{
+                  top: Math.min(pageIndex * A4_HEIGHT_PX - 42, contentHeight - 42),
+                }}
+              >
+                Página {pageIndex}
+              </div>
+            ))}
+          </>
         )}
       </div>
     </div>

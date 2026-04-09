@@ -62,21 +62,22 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
         .is-editing h5,
         .is-editing h6,
         .is-editing p,
-        .is-editing span,
-        .is-editing a,
-        .is-editing div,
-        .is-editing li {
+        /* Forzar texto negro en modo edición, pero excluir paleta de colores */
+        .is-editing span:not(.preserve-colors):not(.preserve-colors *),
+        .is-editing a:not(.preserve-colors):not(.preserve-colors *),
+        .is-editing div:not(.preserve-colors):not(.preserve-colors *),
+        .is-editing li:not(.preserve-colors):not(.preserve-colors *),
+        .is-editing p:not(.preserve-colors):not(.preserve-colors *),
+        .is-editing h1:not(.preserve-colors):not(.preserve-colors *),
+        .is-editing h2:not(.preserve-colors):not(.preserve-colors *),
+        .is-editing h3:not(.preserve-colors):not(.preserve-colors *),
+        .is-editing h4:not(.preserve-colors):not(.preserve-colors *) {
           color: #000000 !important;
           background: transparent !important;
           text-shadow: none !important;
         }
         
-        /* Proteger la paleta de colores */
-        .preserve-colors,
-        .preserve-colors * {
-          color: inherit !important;
-          background: inherit !important;
-        }
+
         
         .is-editing #pdf-content {
           background: white;
@@ -88,8 +89,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
         }
         
         /* Líneas de separación de páginas */
-        .is-editing #pdf-content::before {
-          content: '';
+        [data-page-break] {
           position: absolute;
           top: 297mm;
           left: 0;
@@ -106,16 +106,16 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           pointer-events: none;
         }
         
-        .is-editing #pdf-content::after {
+        [data-page-break]::after {
           content: 'Página 1 | Página 2 →';
           position: absolute;
-          top: 296mm;
+          top: -12px;
           right: 10px;
           font-size: 12px;
           color: #ef4444;
           background: white;
           padding: 2px 8px;
-          z-index: 10;
+          z-index: 11;
         }
         
         .is-editing body {
@@ -161,6 +161,98 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
 
   const copyComputedStyles = (source: HTMLElement, target: HTMLElement) => {
     const computed = window.getComputedStyle(source);
+    
+    // Para elementos con preserve-colors, copiar TODOS los estilos sin modificaciones
+    if (source.className.includes('preserve-colors') || source.closest('.preserve-colors')) {
+      const allProperties = [
+        'background',
+        'backgroundColor',
+        'backgroundImage',
+        'backgroundPosition',
+        'backgroundSize',
+        'backgroundRepeat',
+        'backgroundAttachment',
+        'border',
+        'borderColor',
+        'borderStyle',
+        'borderWidth',
+        'borderRadius',
+        'boxShadow',
+        'color',
+        'fill',
+        'stroke',
+        'font',
+        'fontFamily',
+        'fontSize',
+        'fontWeight',
+        'fontStyle',
+        'lineHeight',
+        'letterSpacing',
+        'textAlign',
+        'textDecoration',
+        'textTransform',
+        'whiteSpace',
+        'wordSpacing',
+        'padding',
+        'margin',
+        'display',
+        'flexDirection',
+        'justifyContent',
+        'alignItems',
+        'gap',
+        'width',
+        'height',
+        'minWidth',
+        'minHeight',
+        'maxWidth',
+        'maxHeight',
+        'position',
+        'top',
+        'left',
+        'right',
+        'bottom',
+        'overflow',
+        'opacity',
+        'visibility',
+        'transform',
+        'filter',
+        'outlineColor',
+        'outlineStyle',
+        'outlineWidth',
+        'boxSizing',
+        'gridTemplateColumns',
+        'gridTemplateRows',
+        'gridColumn',
+        'gridRow',
+        'gridAutoRows',
+        'flex',
+        'flexBasis',
+        'flexGrow',
+        'flexShrink',
+        'resize'
+      ];
+
+      allProperties.forEach((property) => {
+        let value = computed.getPropertyValue(property);
+        if (!value) return;
+
+        const hasUnsupportedColor = value.includes('oklab') || value.includes('color-mix(');
+        if (hasUnsupportedColor) {
+          if (property === 'backgroundImage' || property === 'boxShadow' || property === 'filter') {
+            value = 'none';
+          } else if (property.includes('color') || property === 'border' || property === 'outlineColor') {
+            value = 'transparent';
+          } else {
+            return;
+          }
+        }
+
+        (target.style as any)[property] = value;
+      });
+      return;
+    }
+    
+    // Para elementos normales, aplicar la lógica de forzar texto negro
     const properties = [
       'background',
       'backgroundColor',
@@ -217,6 +309,16 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
       'outlineStyle',
       'outlineWidth',
       'boxSizing',
+      'gridTemplateColumns',
+      'gridTemplateRows',
+      'gridColumn',
+      'gridRow',
+      'gridAutoRows',
+      'flex',
+      'flexBasis',
+      'flexGrow',
+      'flexShrink',
+      'resize'
     ];
 
     properties.forEach((property) => {
@@ -234,6 +336,14 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
         }
       }
 
+      // Para elementos normales, forzar texto negro y fondo transparente
+      if (property === 'color') {
+        value = '#000000';
+      }
+      if (property === 'background' || property === 'backgroundColor') {
+        value = 'transparent';
+      }
+
       (target.style as any)[property] = value;
     });
   };
@@ -247,6 +357,26 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
       const cloneNode = cloneNodes[index];
       if (cloneNode instanceof HTMLElement) {
         copyComputedStyles(sourceNode, cloneNode);
+        
+        // Mantener estilos de grid en inline para que se capturen en PDF
+        if (sourceNode.className.includes('grid')) {
+          const computed = window.getComputedStyle(sourceNode);
+          const gridTemplateColumns = computed.gridTemplateColumns;
+          const gridAutoRows = computed.gridAutoRows;
+          const gridGap = computed.gap;
+          
+          cloneNode.style.display = 'grid';
+          if (gridTemplateColumns && gridTemplateColumns !== 'none') {
+            cloneNode.style.gridTemplateColumns = gridTemplateColumns;
+          }
+          if (gridAutoRows && gridAutoRows !== 'auto') {
+            cloneNode.style.gridAutoRows = gridAutoRows;
+          }
+          if (gridGap) {
+            cloneNode.style.gap = gridGap;
+          }
+        }
+        
         cloneNode.className = '';
       }
     });
@@ -311,6 +441,10 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
 
       if (imageHeightMm <= pdfHeightMm) {
         pdf.addImage(imgData, 'PNG', 0, 0, pdfWidthMm, imageHeightMm);
+        // Agregar indicador de página para documento de una página
+        pdf.setFontSize(10);
+        pdf.setTextColor(100, 100, 100); // Gris
+        pdf.text('Página 1', pdfWidthMm - 20, pdfHeightMm - 10);
       } else {
         let pageTopPx = 0;
         let pageIndex = 0;
@@ -349,6 +483,14 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           }
 
           pdf.addImage(pageData, 'PNG', 0, 0, pdfWidthMm, pageImageHeightMm);
+
+          // Agregar indicador de página
+          pdf.setFontSize(10);
+          pdf.setTextColor(100, 100, 100); // Gris
+          const currentPage = pageIndex + 1;
+          const nextPage = currentPage + 1;
+          const pageText = pageTopPx + currentPageHeightPx < canvas.height ? `Página ${currentPage} → Página ${nextPage}` : `Página ${currentPage}`;
+          pdf.text(pageText, pdfWidthMm - 40, pdfHeightMm - 10);
 
           pageTopPx += currentPageHeightPx;
           pageIndex += 1;
@@ -886,6 +1028,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
             </EditableBlock>
           )}
         </div>
+
+        {/* Elemento visual para separación de página */}
+        {isDraggingEnabled && (
+          <div data-page-break="" />
+        )}
       </div>
     </div>
   );

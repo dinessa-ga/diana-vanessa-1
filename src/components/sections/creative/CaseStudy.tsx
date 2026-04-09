@@ -18,25 +18,11 @@ import {
 import { BrandProject } from '../../../data/projects';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Toolbar } from './Toolbar';
+import { EditableBlock } from './EditableBlock';
 
 interface CaseStudyProps {
   project: BrandProject;
   onBack: () => void;
-}
-
-// Componente wrapper para secciones draggable
-function DraggableSection({
-  children,
-  isDraggingEnabled,
-}: {
-  children: React.ReactNode;
-  isDraggingEnabled: boolean;
-}) {
-  return (
-    <Draggable disabled={!isDraggingEnabled}>
-      <div className={`${isDraggingEnabled ? 'cursor-move' : ''}`}>{children}</div>
-    </Draggable>
-  );
 }
 
 export function CaseStudy({ project, onBack }: CaseStudyProps) {
@@ -59,14 +45,78 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
       return hashParams.get('edit') === 'true';
     };
 
-    setIsDraggingEnabled(getEditMode());
+    const isEditMode = getEditMode();
+    setIsDraggingEnabled(isEditMode);
+
+    // Inyectar estilos dinámicos en modo edición
+    if (isEditMode) {
+      document.body.classList.add('is-editing');
+      const styleTag = document.createElement('style');
+      styleTag.id = 'edit-mode-styles';
+      styleTag.textContent = `
+        .is-editing h1,
+        .is-editing h2,
+        .is-editing h3,
+        .is-editing h4,
+        .is-editing h5,
+        .is-editing h6,
+        .is-editing p,
+        .is-editing span,
+        .is-editing a,
+        .is-editing div,
+        .is-editing li {
+          color: #000000 !important;
+          background: transparent !important;
+          text-shadow: none !important;
+        }
+        
+        .is-editing #pdf-content {
+          background: white;
+          border: 2px solid #d1d5db;
+          margin: 50px auto;
+          overflow: visible;
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .is-editing body {
+          background-color: #f3f4f6;
+        }
+      `;
+      document.head.appendChild(styleTag);
+    } else {
+      document.body.classList.remove('is-editing');
+      const styleTag = document.getElementById('edit-mode-styles');
+      if (styleTag) {
+        styleTag.remove();
+      }
+    }
 
     const handleHashChange = () => {
-      setIsDraggingEnabled(getEditMode());
+      const newEditMode = getEditMode();
+      setIsDraggingEnabled(newEditMode);
+      
+      if (newEditMode) {
+        document.body.classList.add('is-editing');
+      } else {
+        document.body.classList.remove('is-editing');
+        const styleTag = document.getElementById('edit-mode-styles');
+        if (styleTag) {
+          styleTag.remove();
+        }
+      }
     };
 
     window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      if (isEditMode) {
+        document.body.classList.remove('is-editing');
+        const styleTag = document.getElementById('edit-mode-styles');
+        if (styleTag) {
+          styleTag.remove();
+        }
+      }
+    };
   }, []);
 
   const copyComputedStyles = (source: HTMLElement, target: HTMLElement) => {
@@ -368,7 +418,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-20">
           
           {/* Overview & Challenge */}
-          <DraggableSection isDraggingEnabled={isDraggingEnabled}>
+          <EditableBlock isDraggingEnabled={isDraggingEnabled}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -395,11 +445,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 <p className="text-muted-foreground leading-relaxed">{caseStudy.challenge}</p>
               </div>
             </motion.div>
-          </DraggableSection>
+          </EditableBlock>
 
           {/* Propósito (si existe) */}
           {caseStudy.purpose && (
-            <DraggableSection isDraggingEnabled={isDraggingEnabled}>
+            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -411,12 +461,12 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                   {caseStudy.purpose}
                 </p>
               </motion.div>
-            </DraggableSection>
+            </EditableBlock>
           )}
 
           {/* Buyer Persona */}
           {caseStudy.buyerPersona && (
-            <DraggableSection isDraggingEnabled={isDraggingEnabled}>
+            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -462,12 +512,12 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                   </div>
                 </div>
               </motion.div>
-            </DraggableSection>
+            </EditableBlock>
           )}
 
           {/* Personalidad de Marca */}
           {caseStudy.brandPersonality && (
-            <DraggableSection isDraggingEnabled={isDraggingEnabled}>
+            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -503,12 +553,12 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                   </div>
                 </div>
               </motion.div>
-            </DraggableSection>
+            </EditableBlock>
           )}
 
           {/* Estrategia de Contenido */}
           {caseStudy.contentStrategy && (
-            <DraggableSection isDraggingEnabled={isDraggingEnabled}>
+            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -542,11 +592,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                   </div>
                 </div>
               </motion.div>
-            </DraggableSection>
+            </EditableBlock>
           )}
 
           {/* Deliverables */}
-          <DraggableSection isDraggingEnabled={isDraggingEnabled}>
+          <EditableBlock isDraggingEnabled={isDraggingEnabled}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -579,11 +629,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 ))}
               </div>
             </motion.div>
-          </DraggableSection>
+          </EditableBlock>
 
           {/* Ejemplos de Copy */}
           {caseStudy.copyExamples && caseStudy.copyExamples.length > 0 && (
-            <DraggableSection isDraggingEnabled={isDraggingEnabled}>
+            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -611,12 +661,12 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                   ))}
                 </div>
               </motion.div>
-            </DraggableSection>
+            </EditableBlock>
           )}
 
           {/* Ejemplos Visuales */}
           {caseStudy.visualExamples && caseStudy.visualExamples.length > 0 && (
-            <DraggableSection isDraggingEnabled={isDraggingEnabled}>
+            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -647,11 +697,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                   ))}
                 </div>
               </motion.div>
-            </DraggableSection>
+            </EditableBlock>
           )}
 
           {/* Paleta de colores */}
-          <DraggableSection isDraggingEnabled={isDraggingEnabled}>
+          <EditableBlock isDraggingEnabled={isDraggingEnabled}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -671,10 +721,10 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 ))}
               </div>
             </motion.div>
-          </DraggableSection>
+          </EditableBlock>
 
           {/* Resultados */}
-          <DraggableSection isDraggingEnabled={isDraggingEnabled}>
+          <EditableBlock isDraggingEnabled={isDraggingEnabled}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -705,11 +755,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 </ul>
               </div>
             </motion.div>
-          </DraggableSection>
+          </EditableBlock>
 
           {/* Testimonial */}
           {caseStudy.testimonial && (
-            <DraggableSection isDraggingEnabled={isDraggingEnabled}>
+            <EditableBlock isDraggingEnabled={isDraggingEnabled}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -727,11 +777,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                   </div>
                 </div>
               </motion.div>
-            </DraggableSection>
+            </EditableBlock>
           )}
 
           {/* CTA Final */}
-          <DraggableSection isDraggingEnabled={isDraggingEnabled}>
+          <EditableBlock isDraggingEnabled={isDraggingEnabled}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -748,7 +798,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 Hablemos de tu proyecto
               </button>
             </motion.div>
-          </DraggableSection>
+          </EditableBlock>
         </div>
       </div>
     </div>

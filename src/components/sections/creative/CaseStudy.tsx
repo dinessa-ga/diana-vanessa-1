@@ -974,11 +974,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
+              className="mt-16 mb-16 p-8"
             >
               <h2 className="text-3xl md:text-4xl mb-8 text-center text-foreground">
                 Resultados e <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">impacto</span>
               </h2>
-              <div className="bg-gradient-to-br from-primary to-secondary p-10 rounded-3xl text-white shadow-2xl">
                 <div className="grid md:grid-cols-2 gap-8 mb-8">
                   <div className="text-center">
                     <div className="text-5xl mb-2">{project.results.metric1}</div>
@@ -998,7 +998,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              
             </motion.div>
             </EditableBlock>
           )}

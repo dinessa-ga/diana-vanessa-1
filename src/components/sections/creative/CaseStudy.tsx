@@ -60,28 +60,11 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
       styleTag.id = 'edit-mode-styles';
       styleTag.textContent = `
         /* Forzar texto negro en modo edición, pero excluir la paleta y controles de página */
-        .is-editing *:not(.preserve-colors):not(.preserve-colors *):not(.color-swatch):not(.color-swatch *):not(.palette-container):not(.palette-container *):not(.page-label):not(.page-label *):not(.page-guideline):not(.page-guideline *) {
+        .is-editing *:not(.preserve-colors):not(.preserve-colors *):not(.color-swatch):not(.color-swatch *):not(.palette-color-block):not(.palette-color-block *):not(.palette-container):not(.palette-container *):not(.page-label):not(.page-label *):not(.page-guideline):not(.page-guideline *) {
           color: #000000 !important;
           background: transparent !important;
           background-color: transparent !important;
           text-shadow: none !important;
-        }
-
-        .is-editing .preserve-colors,
-        .is-editing .preserve-colors *,
-        .is-editing .color-swatch,
-        .is-editing .color-swatch *,
-        .is-editing .palette-container,
-        .is-editing .palette-container *,
-        .is-editing .page-label,
-        .is-editing .page-label *,
-        .is-editing .page-guideline,
-        .is-editing .page-guideline * {
-          color: unset !important;
-          background: unset !important;
-          background-color: unset !important;
-          background-image: unset !important;
-          text-shadow: unset !important;
         }
 
         .is-editing #pdf-content {
@@ -91,19 +74,6 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           overflow: visible;
           box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
           position: relative;
-        }
-
-        .is-editing .preserve-colors,
-        .is-editing .preserve-colors *,
-        .is-editing .color-swatch,
-        .is-editing .color-swatch * {
-          color: unset !important;
-          background: unset !important;
-          background-color: unset !important;
-          background-image: unset !important;
-          border-color: unset !important;
-          box-shadow: unset !important;
-          text-shadow: unset !important;
         }
 
         .is-editing .page-guideline,
@@ -974,9 +944,9 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
               <h3 className="text-center mb-6 text-foreground">Paleta de colores</h3>
               <div className="flex justify-center gap-4 flex-wrap">
                 {project.colors.map((color, index) => (
-                  <div key={index} className="text-center">
+                  <div key={index} className="text-center palette-color-block">
                     <div
-                      className="rounded-2xl shadow-lg mb-2 border-2 border-border preserve-colors color-swatch"
+                      className="rounded-2xl shadow-lg mb-2 border-2 border-border preserve-colors color-swatch palette-color-block"
                       style={{
                         backgroundColor: color,
                         width: '80px',

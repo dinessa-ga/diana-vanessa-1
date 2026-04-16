@@ -42,11 +42,11 @@ export interface BrandProject {
       text: string;
     }[];
     results: string[];
-    testimonial?: {
+    testimonials: Array<{
       text: string;
       author: string;
       position: string;
-    };
+    }>;
   };
 }
 
@@ -136,14 +136,26 @@ export const brandProjects: BrandProject[] = [
         'Optimización de procesos mediante herramientas No-Code',
         'Creación de agentes de IA para generación de contenido'
       ],
-      testimonial: {
-        text: 'Diana, es una profesional apasionada por el desarrollo web, está en constante actualización tecnológica y desafiando retos en el ámbito web. ¡Si ustedes necesitan a alguien con determinación, pasión, no duden en contratar a Diana, estoy segura de que será fundamental en su equipo!',
-        author: 'Mayra Ceballos / Laboratoria',
-        position: 'Coordinadora de Employability & Placement'
-      }
+      testimonials: [
+        {
+          text: 'Diana, es una profesional apasionada por el desarrollo web, está en constante actualización tecnológica y desafiando retos en el ámbito web. ¡Si ustedes necesitan a alguien con determinación, pasión, no duden en contratar a Diana, estoy segura de que será fundamental en su equipo!',
+          author: 'Mayra Ceballos / Laboratoria',
+          position: 'Coordinadora de Employability & Placement'
+        },
+        {
+          text: 'He tenido la oportunidad de coincidir profesionalmente con Diana y puedo destacar su amplio conocimiento en diversas áreas, lo que le permite aportar valor de manera integral en los equipos en los que participa. Se caracteriza por ser una persona gentil, colaborativa y con una energía muy positiva, lo que contribuye a generar un ambiente de trabajo ameno y motivador. Su disposicion para apoyar y su actitud proactiva hacen que sea un gran soporte dentro de cualquier equipo. Sin duda, Diana es una profesional que suma tanto por sus habilidades como por su calidad humana.',
+          author: 'Ana García',
+          position: 'Desarrolladora Senior'
+        },
+        {
+          text: 'Diana es una desarrolladora excepcional con una habilidad única para combinar creatividad y técnica. Su capacidad para resolver problemas complejos y su dedicación al aprendizaje continuo la hacen invaluable en cualquier proyecto.',
+          author: 'Carlos Rodríguez',
+          position: 'Product Manager'
+        },
+      ]
+  
     }
   },
-
   {
     id: 2,
     brandName: 'Akros',

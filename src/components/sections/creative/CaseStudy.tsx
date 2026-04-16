@@ -397,25 +397,30 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           </div>
         </motion.div>
 
-        {/* Testimonial */}
-        {caseStudy.testimonial && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="bg-card p-10 md:p-12 rounded-3xl shadow-lg border border-border relative"
-          >
-            <Quote className="absolute top-8 left-8 w-12 h-12 text-primary/20" />
-            <div className="relative z-10 max-w-3xl mx-auto text-center">
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 italic leading-relaxed">
-                "{caseStudy.testimonial.text}"
-              </p>
-              <div>
-                <div className="text-foreground">{caseStudy.testimonial.author}</div>
-                <div className="text-sm text-muted-foreground">{caseStudy.testimonial.position}</div>
-              </div>
-            </div>
-          </motion.div>
+        {/* Testimonios */}
+        {caseStudy.testimonials && caseStudy.testimonials.length > 0 && (
+          <div className="space-y-8">
+            {caseStudy.testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1 + index * 0.2 }}
+                className="bg-card p-10 md:p-12 rounded-3xl shadow-lg border border-border relative"
+              >
+                <Quote className="absolute top-8 left-8 w-12 h-12 text-primary/20" />
+                <div className="relative z-10 max-w-3xl mx-auto text-center">
+                  <p className="text-xl md:text-2xl text-muted-foreground mb-8 italic leading-relaxed">
+                    "{testimonial.text}"
+                  </p>
+                  <div>
+                    <div className="text-foreground">{testimonial.author}</div>
+                    <div className="text-sm text-muted-foreground">{testimonial.position}</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         )}
 
         {/* CTA Final */}

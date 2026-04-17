@@ -9,7 +9,8 @@ import {
   CheckCircle2,
   Palette,
   MessageSquare,
-  Package
+  Package,
+  Instagram
 } from 'lucide-react';
 import { BrandProject } from '../../../data/projects';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
@@ -321,25 +322,89 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
               Piezas <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">gráficas</span>
             </h2>
             <div className="grid md:grid-cols-3 gap-6"> {/* mostrar 3 columnas en desktop */}
-              {caseStudy.visualExamples.map((imgUrl, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="relative group overflow-hidden rounded-2xl shadow-lg aspect-square"
-                >
-                  <ImageWithFallback
-                    src={imgUrl}
-                    alt={`Pieza gráfica ${index + 1} - ${project.brandName}`}
-                    className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                    <Palette className="w-6 h-6 text-white" />
-                  </div>
-                </motion.div>
-              ))}
+              {caseStudy.visualExamples.map((example, index) => {
+                const visual = typeof example === 'string'
+                  ? { src: example, embedCode: undefined, isVideo: false, platform: 'instagram' }
+                  : example;
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="relative group overflow-hidden rounded-2xl shadow-lg aspect-square"
+                  >
+                    <ImageWithFallback
+                      src={visual.src}
+                      alt={`Pieza gráfica ${index + 1} - ${project.brandName}`}
+                      className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <Palette className="w-6 h-6 text-white" />
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+
+        {/* Publicaciones de Instagram (1080x1350, 4:5) */}
+        {caseStudy.instagramPosts && caseStudy.instagramPosts.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            <div className="mb-8 text-center">
+              <h2 className="text-3xl md:text-4xl text-foreground">
+                Publicaciones en <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Instagram</span>
+              </h2>
+              <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+                 Haz clic para ver la publicación.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {caseStudy.instagramPosts.map((post, index) => {
+
+                return (
+                  <motion.a
+                    key={index}
+                    href={post.embedCode ?? '#'}
+                    target={post.embedCode ? '_blank' : undefined}
+                    rel={post.embedCode ? 'noreferrer' : undefined}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="relative group overflow-hidden rounded-2xl shadow-lg aspect-[4/5] block"
+                  >
+                    <ImageWithFallback
+                      src={post.src}
+                      alt={`Publicación de Instagram ${index + 1} - ${project.brandName}`}
+                      className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-4">
+                      <div className="flex items-center gap-2 text-white">
+                        <Instagram className="w-5 h-5" />
+                        <span className="text-sm">Instagram</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        {post.isVideo && (
+                          <span className="px-3 py-1 bg-black/70 rounded-full text-xs uppercase tracking-[0.18em]">
+                            Video
+                          </span>
+                        )}
+                        <span className="text-sm text-white/90 underline">
+                          {post.embedCode ? 'Ver publicación' : 'Sin enlace definido'}
+                        </span>
+                      </div>
+                    </div>
+                  </motion.a>
+                );
+              })}
             </div>
           </motion.div>
         )}
@@ -408,9 +473,9 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 transition={{ duration: 0.6, delay: 1 + index * 0.2 }}
                 className="bg-card p-10 md:p-12 rounded-3xl shadow-lg border border-border relative"
               >
-                <Quote className="absolute top-8 left-8 w-12 h-12 text-primary/20" />
+                <Quote className="absolute top-4 left-8 w-12 h-12 text-primary/20" />
                 <div className="relative z-10 max-w-3xl mx-auto text-center">
-                  <p className="text-xl md:text-2xl text-muted-foreground mb-8 italic leading-relaxed">
+                  <p className="text-l text-muted-foreground mb-2 italic leading-relaxed">
                     "{testimonial.text}"
                   </p>
                   <div>

@@ -36,7 +36,17 @@ export interface BrandProject {
       category: string;
       items: string[];
     }[];
-    visualExamples?: string[]; // URLs de imágenes de piezas creadas
+    visualExamples?: Array<{
+      src: string;
+      embedCode?: string;
+      isVideo?: boolean;
+      platform?: 'instagram' | string;
+    }>; // URLs o datos de publicaciones de Instagram en formato 1080x1350
+    instagramPosts?: Array<{
+      src: string;
+      embedCode: string;
+      isVideo?: boolean;
+    }>; // Enlaces directos o códigos de inserción de publicaciones de Instagram
     copyExamples?: {
       type: string; // 'caption', 'copy', 'slogan', etc.
       text: string;
@@ -71,8 +81,8 @@ export const brandProjects: BrandProject[] = [
       challenge: 'El sector tecnológico carece de comunicadores que entiendan el código, herramientas digitales y procesos en tecnología. El reto es posicionar una marca que demuestre capacidad técnica y sensibilidad creativa desde las palabras y el diseño.',
       purpose: 'Humanizar la tecnología mediante palabras precisas y estrategias basadas en datos, ayudando a empresas a conectar auténticamente con sus usuarios y potenciales clientes.',
       buyerPersona: {
-        name: 'David Product Manager',
-        age: '30-45 años',
+        name: 'Product Manager',
+        age: '25-45 años',
         occupation: 'Líder de Producto / CEO Tech',
         interests: ['Plataformas de E-commerce/Landing pages', 'Experiencia de Usuario (UX)', 'Growth Marketing', 'Inteligencia Artificial'],
         painPoints: ['Tiene un producto técnico increíble pero difícil de explicar', 'Necesita mejorar la retención de usuarios', 'Busca perfiles que entiendan el backend y el frontend del negocio']
@@ -114,9 +124,14 @@ export const brandProjects: BrandProject[] = [
         }
       ],
       visualExamples: [
-        'me/case-study-1-art1.png',
-        'me/case-study-1-art2.png',
-        'me/case-study-1-art3.png',
+        { src: 'me/case-study-1-art1.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: 'me/case-study-1-art2.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: 'me/case-study-1-art3.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+      ],
+      instagramPosts: [
+        { src: 'me/instagram-post-1.png', embedCode: 'https://www.instagram.com/p/DOY_OhdALKX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', isVideo: false },
+        { src: 'me/instagram-post-2.png', embedCode: 'https://www.instagram.com/p/EJEMPLO2/', isVideo: false },
+        { src: 'me/instagram-post-3.png', embedCode: 'https://www.instagram.com/p/EJEMPLO3/', isVideo: false },
       ],
       copyExamples: [
         {
@@ -144,13 +159,13 @@ export const brandProjects: BrandProject[] = [
         },
         {
           text: 'He tenido la oportunidad de coincidir profesionalmente con Diana y puedo destacar su amplio conocimiento en diversas áreas, lo que le permite aportar valor de manera integral en los equipos en los que participa. Se caracteriza por ser una persona gentil, colaborativa y con una energía muy positiva, lo que contribuye a generar un ambiente de trabajo ameno y motivador. Su disposicion para apoyar y su actitud proactiva hacen que sea un gran soporte dentro de cualquier equipo. Sin duda, Diana es una profesional que suma tanto por sus habilidades como por su calidad humana.',
-          author: 'Ana García',
-          position: 'Desarrolladora Senior'
+          author: 'Ivanna Maridueña / Akros',
+          position: 'Analista de Talento Humano'
         },
         {
-          text: 'Diana es una desarrolladora excepcional con una habilidad única para combinar creatividad y técnica. Su capacidad para resolver problemas complejos y su dedicación al aprendizaje continuo la hacen invaluable en cualquier proyecto.',
-          author: 'Carlos Rodríguez',
-          position: 'Product Manager'
+          text: 'Diana fue una de nuestras estudiantes del programa dual de Negociación y Ventas de servicios digitales de la Universidad Católica de Cuenca. Ahí demostró madurez, compromiso y responsabilidad, cumpliendo con todo lo necesario en la fase académica y empresarial. Además, demostró rápidas habilidades de adaptacion y planteo propuestas pertinentes para la empresa.',
+          author: 'Andre Vallejo / Universidad Católica de Cuenca',
+          position: 'Coordinadora Campus Quito'
         },
       ]
   
@@ -184,12 +199,17 @@ export const brandProjects: BrandProject[] = [
         },
       ],
       visualExamples: [
-        'akros/case-study-2-art1.png',
-        'akros/case-study-2-art2.png',
-        'akros/case-study-2-art3.png',
-        'akros/case-study-2-art4.png',
-        'akros/case-study-2-art5.png',
-        'akros/case-study-2-art6.png',
+        { src: 'akros/case-study-2-art1.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: 'akros/case-study-2-art2.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: 'akros/case-study-2-art3.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: 'akros/case-study-2-art4.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: 'akros/case-study-2-art5.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: 'akros/case-study-2-art6.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+      ],
+      instagramPosts: [
+        { src: 'akros/case-study-2-art1.png', embedCode: 'https://www.instagram.com/p/EJEMPLO4/', isVideo: false },
+        { src: 'akros/case-study-2-art2.png', embedCode: 'https://www.instagram.com/p/EJEMPLO5/', isVideo: false },
+        { src: 'akros/case-study-2-art3.png', embedCode: 'https://www.instagram.com/p/EJEMPLO6/', isVideo: false },
       ],
 
       copyExamples: [
@@ -198,7 +218,8 @@ export const brandProjects: BrandProject[] = [
           text: '¿Qué tienen en común un banco, un gobierno y una tienda online? \nCada sector enfrenta amenazas distintas, pero todos necesitan lo mismo: contexto, visibilidad y acción para anticiparse. \nEn Akros, activamos soluciones de ciberseguridad que combinan inteligencia, tecnología y visión de negocio. \nDescubre cómo podemos ayudarte a anticipar lo que otros aún no ven. 🔍 Contáctanos: '
         },
       ],
-      results: []
+      results: [],
+      testimonials: []
     }
   },
 

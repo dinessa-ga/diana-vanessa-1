@@ -206,11 +206,7 @@ export const brandProjects: BrandProject[] = [
         { src: 'akros/case-study-2-art5.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
         { src: 'akros/case-study-2-art6.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
       ],
-      instagramPosts: [
-        { src: 'akros/case-study-2-art1.png', embedCode: 'https://www.instagram.com/p/EJEMPLO4/', isVideo: false },
-        { src: 'akros/case-study-2-art2.png', embedCode: 'https://www.instagram.com/p/EJEMPLO5/', isVideo: false },
-        { src: 'akros/case-study-2-art3.png', embedCode: 'https://www.instagram.com/p/EJEMPLO6/', isVideo: false },
-      ],
+    
 
       copyExamples: [
         {

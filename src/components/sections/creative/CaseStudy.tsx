@@ -351,64 +351,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           </motion.div>
         )}
 
-        {/* Publicaciones de Instagram (1080x1350, 4:5) */}
-        {caseStudy.instagramPosts && caseStudy.instagramPosts.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-          >
-            <div className="mb-8 text-center">
-              <h2 className="text-3xl md:text-4xl text-foreground">
-                Publicaciones en <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Instagram</span>
-              </h2>
-              <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-                 Haz clic para ver la publicación.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {caseStudy.instagramPosts.map((post, index) => {
-
-                return (
-                  <motion.a
-                    key={index}
-                    href={post.embedCode ?? '#'}
-                    target={post.embedCode ? '_blank' : undefined}
-                    rel={post.embedCode ? 'noreferrer' : undefined}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="relative group overflow-hidden rounded-2xl shadow-lg aspect-[4/5] block"
-                  >
-                    <ImageWithFallback
-                      src={post.src}
-                      alt={`Publicación de Instagram ${index + 1} - ${project.brandName}`}
-                      className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-4">
-                      <div className="flex items-center gap-2 text-white">
-                        <Instagram className="w-5 h-5" />
-                        <span className="text-sm">Instagram</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        {post.isVideo && (
-                          <span className="px-3 py-1 bg-black/70 rounded-full text-xs uppercase tracking-[0.18em]">
-                            Video
-                          </span>
-                        )}
-                        <span className="text-sm text-white/90 underline">
-                          {post.embedCode ? 'Ver publicación' : 'Sin enlace definido'}
-                        </span>
-                      </div>
-                    </div>
-                  </motion.a>
-                );
-              })}
-            </div>
-          </motion.div>
-        )}
-
+       
         {/* Paleta de colores */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

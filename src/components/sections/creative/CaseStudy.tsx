@@ -9,7 +9,8 @@ import {
   CheckCircle2,
   Palette,
   MessageSquare,
-  Package
+  Package,
+  Instagram
 } from 'lucide-react';
 import { BrandProject } from '../../../data/projects';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
@@ -321,29 +322,36 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
               Piezas <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">gráficas</span>
             </h2>
             <div className="grid md:grid-cols-3 gap-6"> {/* mostrar 3 columnas en desktop */}
-              {caseStudy.visualExamples.map((imgUrl, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="relative group overflow-hidden rounded-2xl shadow-lg aspect-square"
-                >
-                  <ImageWithFallback
-                    src={imgUrl}
-                    alt={`Pieza gráfica ${index + 1} - ${project.brandName}`}
-                    className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                    <Palette className="w-6 h-6 text-white" />
-                  </div>
-                </motion.div>
-              ))}
+              {caseStudy.visualExamples.map((example, index) => {
+                const visual = typeof example === 'string'
+                  ? { src: example, embedCode: undefined, isVideo: false, platform: 'instagram' }
+                  : example;
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="relative group overflow-hidden rounded-2xl shadow-lg aspect-square"
+                  >
+                    <ImageWithFallback
+                      src={visual.src}
+                      alt={`Pieza gráfica ${index + 1} - ${project.brandName}`}
+                      className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <Palette className="w-6 h-6 text-white" />
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
         )}
 
+       
         {/* Paleta de colores */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -397,25 +405,30 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           </div>
         </motion.div>
 
-        {/* Testimonial */}
-        {caseStudy.testimonial && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="bg-card p-10 md:p-12 rounded-3xl shadow-lg border border-border relative"
-          >
-            <Quote className="absolute top-8 left-8 w-12 h-12 text-primary/20" />
-            <div className="relative z-10 max-w-3xl mx-auto text-center">
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 italic leading-relaxed">
-                "{caseStudy.testimonial.text}"
-              </p>
-              <div>
-                <div className="text-foreground">{caseStudy.testimonial.author}</div>
-                <div className="text-sm text-muted-foreground">{caseStudy.testimonial.position}</div>
-              </div>
-            </div>
-          </motion.div>
+        {/* Testimonios */}
+        {caseStudy.testimonials && caseStudy.testimonials.length > 0 && (
+          <div className="space-y-8">
+            {caseStudy.testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1 + index * 0.2 }}
+                className="bg-card p-10 md:p-12 rounded-3xl shadow-lg border border-border relative"
+              >
+                <Quote className="absolute top-4 left-8 w-12 h-12 text-primary/20" />
+                <div className="relative z-10 max-w-3xl mx-auto text-center">
+                  <p className="text-l text-muted-foreground mb-2 italic leading-relaxed">
+                    "{testimonial.text}"
+                  </p>
+                  <div>
+                    <div className="text-foreground">{testimonial.author}</div>
+                    <div className="text-sm text-muted-foreground">{testimonial.position}</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         )}
 
         {/* CTA Final */}

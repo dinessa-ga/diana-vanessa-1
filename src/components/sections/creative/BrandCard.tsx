@@ -20,14 +20,15 @@ export function BrandCard({ project }: BrandCardProps) {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          // transition={{ duration: 6.0 }} // Omitir duración de la transición
+          // transition={{ duration: 6.0 }} // Don't times transitions
           className="relative group"
         >
           <div className="relative overflow-hidden rounded-3xl shadow-2xl">
             <ImageWithFallback
               src={project.image}
               alt={project.brandName}
-              className="w-full h-[400px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110"
+              // Here  h-[100px] is for mobile and h-[400px] for desktop, you can adjust as needed
+              className="w-full h-[100px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
             

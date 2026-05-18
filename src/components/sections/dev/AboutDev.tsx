@@ -66,7 +66,7 @@ export default function AboutDev() {
             <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     {/* Columna izquierda - Párrafos */}
-                    
+
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -74,22 +74,22 @@ export default function AboutDev() {
                         transition={{ duration: 0.6 }}
                         className="space-y-4 text-lg text-muted-foreground"
                     >
-                         <h2 className="mb-6 text-4xl md:text-5xl text-foreground ext-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                        <h2 className="mb-6 text-4xl md:text-5xl text-foreground ext-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                             Sobre mí
                         </h2>
                         <p>
-                            Creo experiencias digitales accesibles y centradas en las personas: 
-                            Soluciones que no solo se ven bien, 
+                            Creo experiencias digitales accesibles y centradas en las personas:
+                            Soluciones que no solo se ven bien,
                             sino que también cumplen objetivos claros y generan impacto real.
-                            
+
                         </p>
                         <p>
-                            Actualmente, lidero una comunidad tecnológica en Latinoamérica, donde diseño y gestiono
-                            iniciativas que fomentan la innovación, la colaboración y la formación continua en tech.
+                            Actualmente, genero espacios de aprendizaje colaborativo y busco generar
+                            iniciativas que fomentan la innovación, la colaboración y la formación continua en tecnología.
                         </p>
                         <p>
                             Más que código: transformo ideas en soluciones útiles, escalables y sostenibles.
-                             Mi objetivo es aportar valor a través 
+                            Mi objetivo es aportar valor a través
                             de proyectos que integren diseño, accesibilidad y visión estratégica.
                         </p>
                     </motion.div>
@@ -102,7 +102,7 @@ export default function AboutDev() {
                         transition={{ duration: 0.6 }}
                         className="space-y-8"
                     >
-                       
+
                         <div className="space-y-6">
                             {benefits.map((benefit, index) => {
                                 const Icon = benefit.icon;

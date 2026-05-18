@@ -48,13 +48,13 @@ export function About() {
                 comunicación digital, fortaleciendo la identidad y visibilidad de marcas y comunidades.
               </p>
               <p>
-                Actualmente, lidero una comunidad tecnológica en Latinoamérica, donde diseño y gestiono
-                iniciativas que fomentan la innovación, la colaboración y la formación continua en tech.
+                Actualmente, transformo ideas o proyectos a soluciones digitales;
+                usando tecnología, marketing digital y creatividad para optimizar objetivos comerciales.
               </p>
               <p>
-                Creo firmemente que el diseño es una herramienta poderosa de negocios. No se trata
-                solo de hacer que las cosas se vean bien, sino de crear conexiones emocionales
-                que impulsen el crecimiento.
+                Impulso negocios y procesos creativos para optimizar su impacto y alcance, 
+                enfocándome en la estrategia de marca, la identidad visual y el diseño UX/UI. 
+                
               </p>
             </div>
 

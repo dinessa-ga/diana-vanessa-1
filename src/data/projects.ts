@@ -77,7 +77,7 @@ export const brandProjects: BrandProject[] = [
       label2: 'Perfil técnico + Creativo'
     },
     caseStudy: {
-      clientOverview: 'Ingeniera en Sistemas con conocimientos en UX Writing y Marketing digital. Fundadora de Somos Dev una comunidad tech',
+      clientOverview: 'Ingeniera en Sistemas con experiencia en marketing digital, conocimientos en UX Writing y creación de contenido.',
       challenge: 'El sector tecnológico carece de comunicadores que entiendan el código, herramientas digitales y procesos en tecnología. El reto es posicionar una marca que demuestre capacidad técnica y sensibilidad creativa desde las palabras y el diseño.',
       purpose: 'Humanizar la tecnología mediante palabras precisas y estrategias basadas en datos, ayudando a empresas a conectar auténticamente con sus usuarios y potenciales clientes.',
       buyerPersona: {
@@ -101,7 +101,7 @@ export const brandProjects: BrandProject[] = [
         pillars: [
           'Tech & Code (Frontend, Python, IA)',
           'UX Writing (La voz del producto)',
-          'Community Building (Somos Dev)',
+          'Community Building',
           'Productividad Ágil (Notion, Jira)'
         ]
       },
@@ -136,7 +136,7 @@ export const brandProjects: BrandProject[] = [
       copyExamples: [
         {
           type: 'Bio de LinkedIn',
-          text: 'He formado parte de equipos dedicados a la creación y ejecución de estrategias de contenido y comunicación digital, fortaleciendo la identidad y visibilidad de marcas y comunidades. Actualmente lidero Somos Dev, una comunidad tecnológica en Latinoamérica, donde diseño y gestiono iniciativas que promueven la innovación, la colaboración y la formación continua en tech.'
+          text: 'He formado parte de equipos dedicados a la creación y ejecución de estrategias de contenido y comunicación digital, fortaleciendo la identidad y visibilidad de marcas y comunidades.'
         },
       
         {
@@ -145,7 +145,6 @@ export const brandProjects: BrandProject[] = [
         }
       ],
       results: [
-        'Fundadora y líder de contenido de la comunidad Somos Dev',
         'Desarrollo de MVPs  en Hackathons (Experian, Bluetab)',
         'Estrategias de contenido en organizaciones sociales y de tecnología',
         'Optimización de procesos mediante herramientas No-Code',

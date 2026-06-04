@@ -66,9 +66,9 @@ export const brandProjects: BrandProject[] = [
     id: 1,
     brandName: 'Diana Vanessa',
     category: 'Estrategia de Contenido',
-    description: 'Fusiono conocimientos en tecnología con el marketing de contenidos. Traduzco conceptos técnicos complejos en narrativas claras y diseño de microcopy.',
+    description: 'Fusiono conocimientos en tecnología con el marketing de contenidos. Traduzco conceptos técnicos complejos en narrativas claras y cercanas.',
     image: 'case-study-1.png',
-    colors: ['#ff65a1', '#591fff', '#9908cd', '#fff3fe', '#0a0224'],
+    colors: ['#ff65a1', '#591fff', '#fff3fe', '#0a0224'],
     services: ['Estrategia de Contenidos Tech', 'UX Writing & Microcopy', 'Gestión de Comunidades', 'Redacción Técnica'],
     results: {
       metric1: 'Top Tier',
@@ -78,42 +78,34 @@ export const brandProjects: BrandProject[] = [
     },
     caseStudy: {
       clientOverview: 'Ingeniera en Sistemas con experiencia en marketing digital, conocimientos en UX Writing y creación de contenido.',
-      challenge: 'El sector tecnológico carece de comunicadores que entiendan el código, herramientas digitales y procesos en tecnología. El reto es posicionar una marca que demuestre capacidad técnica y sensibilidad creativa desde las palabras y el diseño.',
+      challenge: 'El sector tecnológico carece de comunicadores que entiendan de herramientas digitales, tecnología y procesos creativos. El reto es posicionar una marca que demuestre capacidad técnica y sensibilidad creativa desde las palabras y el diseño.',
       purpose: 'Humanizar la tecnología mediante palabras precisas y estrategias basadas en datos, ayudando a empresas a conectar auténticamente con sus usuarios y potenciales clientes.',
       buyerPersona: {
-        name: 'Product Manager',
+        name: 'Gerente',
         age: '25-45 años',
-        occupation: 'Líder de Producto / CEO Tech',
-        interests: ['Plataformas de E-commerce/Landing pages', 'Experiencia de Usuario (UX)', 'Growth Marketing', 'Inteligencia Artificial'],
-        painPoints: ['Tiene un producto técnico increíble pero difícil de explicar', 'Necesita mejorar la retención de usuarios', 'Busca perfiles que entiendan el backend y el frontend del negocio']
+        occupation: 'Líder de Producto / Experto legal y financiero',
+        interests: ['Plataformas de E-commerce/Landing pages', 'Incrementar ventas y mejorar contenido', 'Growth Marketing', 'Automatización de procesos creativos'],
+        painPoints: ['Tiene un producto/servicio difícil de explicar', 'Necesita mejorar la captación de clientes potenciales', 'Busca perfiles que entiendan la automización y procesos creativos.']
       },
       brandPersonality: {
-        tone: ['Analítico', 'Empático', 'Profesional', 'Innovador'],
-        voice: '"Traductora Tecnológica": Capaz de hablar de APIs con los devs y de beneficios con los usuarios. Clara, directa y orientada a soluciones.'
+        tone: ['Analítico', 'Empático', 'Profesional'],
+        voice: '"Traductora tecnológica": Capaz de hablar de APIs con los devs y de beneficios con los usuarios. Clara, directa y orientada a soluciones.'
       },
       contentStrategy: {
         objectives: [ 
           'Demostrar autoridad técnica en desarrollo y herramientas IA',
-          'Evidenciar habilidades de liderazgo comunitario',
+          'Evidenciar habilidades en marketing estratégico',
           'Educar sobre la importancia del UX Writing en el software',
           'Atraer proyectos que requieran visión técnica y ejecución creativa'
         ],
         pillars: [
-          'Tech & Code (Frontend, Python, IA)',
-          'UX Writing (La voz del producto)',
-          'Community Building',
-          'Productividad Ágil (Notion, Jira)'
-        ]
+          'Educar (Tech, Code & Branding)',
+          'Inspirar (Experiencias que conectan)',
+          'Conectar (Procesos creativos y humanos detrás de la tecnología)',
+          ]
       },
       deliverables: [
-        {
-          category: 'Estrategia de comunidad',
-          items: ['Planificación de contenidos Tech', 'Organización de webinars y talleres', 'Estrategia de crecimiento en LinkedIn', 'Gestión de alianzas estratégicas']
-        },
-        {
-          category: 'UX Writing & Producto',
-          items: ['Microcopy para interfaces', 'Diseño de flujos conversacionales (Chatbots)', 'Investigación de usuarios (Maze)', 'Documentación en Confluence']
-        },
+       
         {
           category: 'Marketing de contenidos',
           items: ['Artículos técnicos traducidos a lenguaje comercial', 'Posts con storytelling de datos', 'Guiones corporativos', 'Uso de IA para generación de copy']

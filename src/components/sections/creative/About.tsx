@@ -6,7 +6,7 @@ export function About() {
     {
       icon: Palette,
       title: 'Creatividad sin límites',
-      description: 'Cada proyecto es una oportunidad para innovar y romper moldes',
+      description: 'Cada proyecto es una oportunidad para innovar y mejorar procesos.',
     },
     {
       icon: Target,
@@ -52,7 +52,7 @@ export function About() {
                 usando tecnología, marketing digital y creatividad para optimizar objetivos comerciales.
               </p>
               <p>
-                Impulso negocios y procesos creativos para optimizar su impacto y alcance, 
+                Impulso negocios y procesos creativos, 
                 enfocándome en la estrategia de marca, la identidad visual y el diseño UX/UI. 
                 
               </p>

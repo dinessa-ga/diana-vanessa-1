@@ -85,11 +85,11 @@ export const brandProjects: BrandProject[] = [
         age: '25-45 años',
         occupation: 'Líder de Producto / Experto legal y financiero',
         interests: ['Plataformas de E-commerce/Landing pages', 'Incrementar ventas y mejorar contenido', 'Growth Marketing', 'Automatización de procesos creativos'],
-        painPoints: ['Tiene un producto/servicio difícil de explicar', 'Necesita mejorar la captación de clientes potenciales', 'Busca perfiles que entiendan la automización y procesos creativos.']
+        painPoints: ['Tiene un producto/servicio difícil de explicar', 'Necesita mejorar la captación de clientes potenciales', 'Busca perfiles que entiendan la automatización y procesos creativos.']
       },
       brandPersonality: {
         tone: ['Analítico', 'Empático', 'Profesional'],
-        voice: '"Traductora tecnológica": Capaz de hablar de APIs con los devs y de beneficios con los usuarios. Clara, directa y orientada a soluciones.'
+        voice: '"Traductora técnica": Capaz de hablar de tecnología con los devs, de beneficios con los usuarios y de comunicar temas complejos de forma cercana. Clara, directa y orientada a soluciones.'
       },
       contentStrategy: {
         objectives: [ 

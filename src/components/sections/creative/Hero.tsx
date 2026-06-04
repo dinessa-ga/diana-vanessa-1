@@ -21,7 +21,7 @@ const defaultConfig: HeroConfig = {
   label: 'Perfil creativo en tech',
   title: 'Doy vida a las marcas',
   name: 'Diana',
-  role: 'Estratega de marca, diseñadora y redactora creativa',
+  role: 'Estratega de marca y redactora creativa',
   description: 'Transformo ideas en identidades memorables que conectan con las personas y generan resultados',
   primaryButtonText: 'Ver mi trabajo',
   secondaryButtonText: 'Hablemos',

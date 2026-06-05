@@ -77,19 +77,19 @@ export const brandProjects: BrandProject[] = [
       label2: 'Perfil técnico + Creativo'
     },
     caseStudy: {
-      clientOverview: 'Ingeniera en Sistemas con experiencia en marketing digital, conocimientos en UX Writing y creación de contenido.',
-      challenge: 'El sector tecnológico carece de comunicadores que entiendan de herramientas digitales, tecnología y procesos creativos. El reto es posicionar una marca que demuestre capacidad técnica y sensibilidad creativa desde las palabras y el diseño.',
-      purpose: 'Humanizar la tecnología mediante palabras precisas y estrategias basadas en datos, ayudando a empresas a conectar auténticamente con sus usuarios y potenciales clientes.',
+      clientOverview: 'Como Ingeniera en Sistemas con experiencia en marketing digital y creación de contenido, me dedico a darle vida a las ideas para tu marca.',
+      challenge: 'Generar estrategias para tu marca para que comprendan tu producto o servicio. El reto es posicionar tu marca para que demuestre capacidad técnica, cercanía más allá de las palabras y el diseño.',
+      purpose: 'Humanizar tu servicio o producto mediante estrategias basadas en datos, ayudando a tu negocio a conectar auténticamente con tus usuarios y potenciales clientes.',
       buyerPersona: {
         name: 'Gerente',
         age: '25-45 años',
-        occupation: 'Líder de Producto / Experto legal y financiero',
-        interests: ['Plataformas de E-commerce/Landing pages', 'Incrementar ventas y mejorar contenido', 'Growth Marketing', 'Automatización de procesos creativos'],
+        occupation: 'Líder de Producto / Emprendedor experto',
+        interests: ['Plataformas de E-commerce/Landing pages', 'Incrementar ventas e implementación de estrategias', 'Growth Marketing', 'Automatización de procesos creativos'],
         painPoints: ['Tiene un producto/servicio difícil de explicar', 'Necesita mejorar la captación de clientes potenciales', 'Busca perfiles que entiendan la automatización y procesos creativos.']
       },
       brandPersonality: {
         tone: ['Analítico', 'Empático', 'Profesional'],
-        voice: '"Traductora técnica": Capaz de hablar de tecnología con los devs, de beneficios con los usuarios y de comunicar temas complejos de forma cercana. Clara, directa y orientada a soluciones.'
+        voice: 'Traductora técnica: Capaz de hablar de tecnología con los devs, de beneficios con los usuarios y de comunicar temas complejos de forma cercana. Clara, directa y orientada a soluciones.'
       },
       contentStrategy: {
         objectives: [ 
@@ -108,11 +108,11 @@ export const brandProjects: BrandProject[] = [
        
         {
           category: 'Marketing de contenidos',
-          items: ['Artículos técnicos traducidos a lenguaje comercial', 'Posts con storytelling de datos', 'Guiones corporativos', 'Uso de IA para generación de copy']
+          items: ['Artículos técnicos traducidos a lenguaje comercial', 'Posts con storytelling de datos', 'Guiones corporativos', 'Uso de IA para generación de copy personalizados']
         },
         {
           category: 'Desarrollo Frontend',
-          items: ['Estructura HTML/CSS/JS para landing pages', 'Prototipado en Figma', 'Implementación de lógica básica', 'Optimización SEO técnica']
+          items: ['Estructura HTML/CSS/JS para landing pages', 'Prototipado en Figma', 'Implementación de lógica básica']
         }
       ],
       visualExamples: [
@@ -133,14 +133,14 @@ export const brandProjects: BrandProject[] = [
       
         {
           type: 'Post de Comunidad',
-          text: 'Este 2025 construiremos una comunidad tech fortalecida con tus conocimientos y de lo mucho que puedes aprender.👩🏽‍💻 \n👉 ¡Únete! ¡Déjanos un comentario o escríbenos directamente! 🚀✨\nSi ya tomaste la decisión de unirte, puedes llenar el siguiente formulario y luego escríbenos directamente.😊'
+          text: 'Este 2025 construiremos una comunidad tech fortalecida con tus conocimientos y de lo mucho que puedes aprender. \n👉 ¡Únete! ¡Déjanos un comentario o escríbenos directamente! \nSi ya tomaste la decisión de unirte, puedes llenar el siguiente formulario y luego escríbenos directamente.😊'
         }
       ],
       results: [
-        'Desarrollo de MVPs  en Hackathons (Experian, Bluetab)',
-        'Estrategias de contenido en organizaciones sociales y de tecnología',
-        'Optimización de procesos mediante herramientas No-Code',
-        'Creación de agentes de IA para generación de contenido'
+        'Desarrollo de MVPs  en Hackathons (Experian, Bluetab).',
+        'Estrategias de marketing y contenido en organizaciones sociales, tecnológicas y emprendimientos.',
+        'Optimización de procesos mediante herramientas No-Code.',
+        'Creación de agentes de IA para generación de contenido.'
       ],
       testimonials: [
         {

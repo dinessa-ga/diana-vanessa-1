@@ -142,7 +142,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-2 md:gap-8">
                 <div>
                   <h5 className="mb-3 text-primary">Intereses</h5>
                   <ul className="space-y-2">

@@ -215,13 +215,12 @@ export const brandProjects: BrandProject[] = [
     brandName: "Fundación La Casita",
     category: "Non-Profit / Social Impact",
     description: "Estrategia de reactivación digital y posicionamiento de marca para una fundación que transforma comunidades vulnerables de Guayaquil mediante arte, educación y voluntariado.",
-    image: "/images/casestudies/lacasita-cover.jpg", // Asegúrate de tener esta imagen
+    image: 'case-study-3.png', // Asegúrate de tener esta imagen
     colors: ["#D97B54", "#4A7C59", "#F7B84B", "#FFFFFF", "#333333"],
     services: [
       "Branding estratégico",
       "Estrategia de contenido",
       "Diseño visual minimalista",
-      "Copywriting emocional",
       "Posicionamiento en redes sociales"
     ],
     results: {
@@ -356,30 +355,30 @@ export const brandProjects: BrandProject[] = [
   "id": 4,
   "brandName": "Somos Dev",
   "category": "Branding & Social Media Strategy",
-  "description": "Rebranding y estrategia de contenido para la comunidad tech de mujeres más grande de LATAM, enfocada en cerrar la brecha de género y potenciar el talento junior en Perú y Ecuador.",
-  "image": "https://tu-portfolio.com/images/somos-dev-hero.jpg",
+  "description": "Rebranding y estrategia de contenido para comunidad tech de mujeres en LATAM, enfocada en cerrar la brecha de género y potenciar el talento junior.",
+  "image": 'case-study-4.png',
   "colors": ["#361358", "#4a4de7", "#faf494", "#f5f5f5"],
   "services": ["Brand Identity", "Content Strategy", "UX Writing", "Inbound Marketing"],
   "results": {
     "metric1": "25%+",
-    "label1": "Engagement Rate",
-    "metric2": "1.5k+",
-    "label2": "Miembros Activos"
+    "label1": "Engagement rate",
+    "metric2": "1k+",
+    "label2": "Perfiles Tech alcanzados en LinkedIn"
   },
   "caseStudy": {
-    "clientOverview": "Somos Dev es una comunidad de Desarrolladoras Web en Latinoamérica (Perú y Ecuador) que busca potenciar el desarrollo profesional de perfiles tech femeninos, estudiantes y juniors a través del trabajo en equipo y la mejora de habilidades técnicas.",
-    "challenge": "Evolucionar la marca de una identidad informal a una figura de autoridad cercana ('La Aliada'). El reto principal era combatir el síndrome del impostor y el aislamiento que sienten las mujeres en sus primeros pasos en tecnología.",
+    "clientOverview": "Somos Dev es una comunidad de Desarrolladoras Web en Latinoamérica (Ecuador, Perú, México y Bolivia) que busca potenciar el desarrollo profesional de perfiles tech femeninos, estudiantes y juniors a través del trabajo en equipo y la mejora de habilidades técnicas.",
+    "challenge": "Evolucionar la marca de una identidad informal a una figura de autoridad cercana ('La aliada'). El reto principal era combatir el síndrome del impostor y el aislamiento que sienten las mujeres en sus primeros pasos en tecnología.",
     "purpose": "A pura creatividad, resiliencia y constancia… construir la comunidad tech líder donde cada mujer de LATAM tenga las herramientas y la red de apoyo para alcanzar su máximo potencial.",
     "buyerPersona": {
-      "name": "Sofía, La Dev Aspirante",
-      "age": "20-27 años",
-      "occupation": "Estudiante o Junior Developer",
+      "name": "Sofía, La Dev aspirante",
+      "age": "20-35 años",
+      "occupation": "Estudiante, Junior Developer o profesional en transición a tech",
       "interests": ["Desarrollo Web", "Networking", "Career Growth", "Mentorías"],
       "painPoints": ["Síndrome del impostor", "Falta de referentes femeninos", "Aislamiento profesional", "Miedo al cambio de carrera"]
     },
     "brandPersonality": {
       "tone": ["Empático", "Inspirador", "Cómplice", "Resiliente"],
-      "voice": "La Aliada Empoderadora. Una mentora experta y cercana que no solo enseña, sino que acompaña y protege el crecimiento de su comunidad."
+      "voice": "La Aliada que empodera. Una mentora experta y cercana que no solo enseña, sino que acompaña y protege el crecimiento de su comunidad."
     },
     "contentStrategy": {
       "objectives": [
@@ -388,37 +387,37 @@ export const brandProjects: BrandProject[] = [
         "Visibilizar el talento femenino ante reclutadores y líderes de la industria."
       ],
       "pillars": [
-        "Sororidad y Cultura (Conexión)",
-        "Crecimiento Profesional (Empoderamiento)",
-        "Visibilidad e Inspiración (Impulso)"
+        "Conectar: Comunidad y sororidad (Cercanía)",
+        "Inspirar: Historias de éxito y crecimiento (Motivación)",
+        "Educar: Recursos técnicos y mentorías (Valor práctico)"
       ]
     },
     "deliverables": [
       {
-        "category": "Branding Visual",
-        "items": ["Manual de Identidad", "Logotipo {S;D}", "Librería de Íconos Vectoriales", "Paleta de Colores de Alto Contraste"]
+        "category": "Branding y diseño visual",
+        "items": ["Manual de identidad", "Logotipo", "Paleta de colores y tipografías", "Plantillas para publicaciones y presentaciones"]
       },
       {
         "category": "Estrategia de Contenido",
-        "items": ["Guía de Tono y Voz", "Arquitectura de Posts (Hooks/Captions)", "Planificación Mensual Multi-canal"]
+        "items": ["Guía de tono y voz", "Arquitectura de posts (Hooks/Captions)", "Planificación mensual"]
       }
     ],
     "visualExamples": [
       {
-        "src": "https://tu-portfolio.com/images/somos-dev-branding.jpg",
+        src: 'sd/case-study-4-art1.png',
         "platform": "LinkedIn"
       },
       {
-        "src": "https://tu-portfolio.com/images/somos-dev-infographic.jpg",
+        src: 'sd/case-study-4-art2.png',
+        "platform": "Instagram"
+      },
+      {
+        src: 'sd/case-study-4-art3.png',
         "platform": "Instagram"
       }
     ],
     "instagramPosts": [
-      {
-        "src": "https://tu-portfolio.com/images/post-voluntarias.jpg",
-        "embedCode": "<blockquote class='instagram-media' data-instgrm-captioned ...></blockquote>",
-        "isVideo": false
-      }
+      
     ],
     "copyExamples": [
       {
@@ -431,17 +430,11 @@ export const brandProjects: BrandProject[] = [
       }
     ],
     "results": [
-      "Definición de un ADN de marca único basado en el arquetipo de 'La Aliada'.",
-      "Creación de un sistema visual escalable para voluntarias (diseño en Inkscape/Affinity).",
-      "Optimización de la comunicación en LinkedIn hacia un tono profesional pero empático."
+      "Definición de un ADN de marca único basado en el arquetipo de 'La aliada'.",
+      "Creación de un sistema visual escalable para voluntarias (diseño en Canva).",
+      "Optimización de la comunicación en LinkedIn hacia un tono profesional y empático."
     ],
-    "testimonials": [
-      {
-        "text": "Somos Dev me dio la confianza para aplicar a mi primer empleo cuando pensaba que no estaba lista.",
-        "author": "Ana Pérez",
-        "position": "Junior Frontend Dev"
-      }
-    ]
+    "testimonials": []
   }
 },
 

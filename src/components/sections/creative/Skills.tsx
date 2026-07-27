@@ -19,27 +19,27 @@ export function Skills() {
 
   const skillCategories = [
     {
-      title: 'Branding & Estrategia',
+      title: 'Branding & estrategia',
       icon: Sparkles,
       color: 'from-primary to-secondary',
       skills: [
         'Estrategia de marca',
         'Posicionamiento',
-        'Brand voice',
+        'Voz de marca',
       ],
     },
     {
-      title: 'Diseño Visual',
+      title: 'Diseño visual',
       icon: Paintbrush,
       color: 'from-secondary to-accent',
       skills: [
         'Identidad visual',
-        'Tipografía',
         'Sistemas de color',
+        'Plantillas para redes sociales',
       ],
     },
     {
-      title: 'Marketing Digital',
+      title: 'Marketing digital',
       icon: BarChart3,
       color: 'from-accent to-primary',
       skills: [
@@ -48,24 +48,10 @@ export function Skills() {
         'Email marketing',
       ],
     },
-    {
-      title: 'Herramientas Creativas',
-      icon: Laptop,
-      color: 'from-primary to-accent',
-      skills: [
-        'Figma',
-        'Canva',
-        'Inkscape',
-      ],
-    },
+  
   ];
 
-  const additionalSkills = [
-
-    { icon: PenTool, label: 'UX Writing' },
-    { icon: MessageSquare, label: 'Copywriting' },
-  ];
-
+ 
   const certifications = [
     {
       title: 'Tecnología Superior en Negociación y Ventas',
@@ -97,6 +83,12 @@ export function Skills() {
       year: '2025',
       certificateUrl: 'https://platzi.com/p/diana.vannesa/curso/12370-growth-ia/diploma/detalle/'
     },
+    {
+      title: 'De "Me gusta" a clientes potenciales: Interactúa con tus clientes en línea',
+      org: 'Coursera',
+      year: '2026',
+      certificateUrl: 'https://www.coursera.org/account/accomplishments/verify/7A6KAS9MO0RT'
+    },
   ];
 
   const openCertificate = (cert: any) => {
@@ -126,7 +118,7 @@ export function Skills() {
         </motion.div>
 
         {/* Main Skills Grid - Reduced size */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-3 lg:grid-cols-2 gap-6 mb-16">
           {skillCategories.map((category, categoryIndex) => {
             const Icon = category.icon;
             return (
@@ -142,7 +134,7 @@ export function Skills() {
                   <div className={`w-12 h-12 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center mb-3`}>
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-center text-foreground">{category.title}</h3>
+                  <h3 className="text-center text-foreground text-xl md:text-xl font-bold">{category.title}</h3>
                 </div>
 
                 <ul className="space-y-2">
@@ -161,35 +153,6 @@ export function Skills() {
           })}
         </div>
 
-        {/* Additional Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-center mb-8 text-foreground">También trabajo con</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {additionalSkills.map((skill, index) => {
-              const Icon = skill.icon;
-              return (
-                <motion.div
-                  key={skill.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  className="flex items-center gap-2 px-5 py-2.5 bg-card border-2 border-border rounded-full hover:border-primary transition-colors"
-                >
-                  <Icon className="w-4 h-4 text-primary" />
-                  <span className="text-sm text-foreground">{skill.label}</span>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
-
         {/* Certifications */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -198,7 +161,7 @@ export function Skills() {
           viewport={{ once: true }}
           className="mt-20 text-center bg-gradient-to-r from-primary/5 to-accent/5 rounded-3xl p-12 border border-border"
         >
-          <h3 className="mb-8 text-foreground">Certificaciones & Formación</h3>
+          <h3 className="mb-8 text-foreground text-xl md:text-xl font-bold">Certificaciones & Formación</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {certifications.map((cert, index) => (
               <motion.button
@@ -224,13 +187,6 @@ export function Skills() {
         </motion.div>
       </div>
 
-      {/* Certificate Modal 
-      <CertificateModal
-        certificate={selectedCertificate}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
-      */}
     </section>
   );
 }

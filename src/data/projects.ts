@@ -62,8 +62,286 @@ export interface BrandProject {
 
 export const brandProjects: BrandProject[] = [
 
+  
   {
     id: 1,
+    brandName: 'Akros',
+    category: 'Content Creation & Branding',
+    description: 'Proyecto colaborativo para el desarrollo de piezas gráficas moderna y minimalista que refleja innovación y cercanía.',
+    image: 'case-study-2.png',
+    colors: ['#aa1a85', '#eef0ff', '#eb2766', '#001865', '#ffbc00'],
+    services: ['Estrategia de contenido', 'Contenido y diseño de piezas gráficas'],
+    results: {
+      metric1: '20%',
+      label1: 'Reconocimiento de marca',
+      metric2: '30%',
+      label2: 'Asistencia a eventos'
+    },
+    caseStudy: {
+      clientOverview: 'Akros domina el entorno digital con soluciones integradas, personalizadas y escalables. Acompaña la evolución tecnológica con visión, control y propósito.',
+      challenge: 'Generar contenido de valor manteniendo criterio técnico y emocional, a través de generar estructuras y mejora de procesos de contenido.',
+      deliverables: [
+        {
+          category: 'Estrategia de contenido',
+          items: ['Auditoría de marca', 'Reposicionamiento estratégico', 'Análisis del proceso de contenido y branding', 'Creación de agentes de IA']
+        },
+        {
+          category: 'Contenido y diseño',
+          items: ['Estrategia de contenido B2B', 'Carruseles(15)', 'Infografías (5)', 'Blog Linkedin(6)']
+        },
+      ],
+      visualExamples: [
+        { src: 'akros/case-study-2-art1.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: 'akros/case-study-2-art2.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: 'akros/case-study-2-art3.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: 'akros/case-study-2-art4.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: 'akros/case-study-2-art5.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: 'akros/case-study-2-art6.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+      ],
+
+
+      copyExamples: [
+        {
+          type: 'Caption de carrusel de LinkedIn',
+          text: '¿Qué tienen en común un banco, un gobierno y una tienda online? \nCada sector enfrenta amenazas distintas, pero todos necesitan lo mismo: contexto, visibilidad y acción para anticiparse. \nEn Akros, activamos soluciones de ciberseguridad que combinan inteligencia, tecnología y visión de negocio. \nDescubre cómo podemos ayudarte a anticipar lo que otros aún no ven. 🔍 Contáctanos: '
+        },
+      ],
+      results: [],
+      testimonials: []
+    }
+  },
+
+  {
+    id: 2,
+    brandName: "Fundación La Casita",
+    category: "Non-Profit / Social Impact",
+    description: "Estrategia de reactivación digital y posicionamiento de marca para una fundación que transforma comunidades vulnerables de Guayaquil mediante arte, educación y voluntariado.",
+    image: 'case-study-3.png', // Asegúrate de tener esta imagen
+    colors: ["#D97B54", "#4A7C59", "#F7B84B", "#FFFFFF", "#333333"],
+    services: [
+      "Branding estratégico",
+      "Estrategia de contenido",
+      "Diseño visual minimalista",
+      "Posicionamiento en redes sociales"
+    ],
+    results: {
+      metric1: "80%",
+      label1: "Más engagement potencial",
+      metric2: "3x",
+      label2: "Más visibilidad orgánica"
+    },
+    caseStudy: {
+      clientOverview:
+        "Fundación La Casita es una organización sin fines de lucro fundada en 2015 en Guayaquil por Javier Intriago. Desde una pequeña casa en La Carolina, ha crecido hasta convertirse en un centro comunitario que ofrece talleres artísticos, educativos y de emprendimiento a niños, jóvenes y adultos en situación de vulnerabilidad. Su misión es mejorar la calidad de vida a través del arte y la inclusión social, fomentando el voluntariado y la conciencia social.",
+
+      challenge:
+        "En 2023 y 2025, a pesar de su impacto real en las comunidades, su presencia digital estaba inactiva. Sus redes sociales no reflejaban su identidad emocional ni su trabajo constante. Necesitaban una estrategia clara para reactivar sus canales, atraer nuevos voluntarios y contar su historia con autenticidad, coherencia y profesionalismo.",
+
+      purpose:
+        "Reposicionar a La Casita como una organización humana, cercana y transformadora, utilizando el diseño y el contenido para visibilizar su labor, fortalecer su comunidad digital y facilitar la participación ciudadana.",
+
+      buyerPersona: {
+        name: "María",
+        age: "19–35 años",
+        occupation: "Estudiante universitaria, graduados recientes, jóvenes profesionales",
+        interests: ["Voluntariado", "Arte social", "Desarrollo personal", "Cambio comunitario"],
+        painPoints: [
+          "No sabe cómo contribuir con sus conocimientos fuera del aula",
+          "Busca experiencias significativas, no solo cumplir horas de práctica",
+          "Quieren aprender y crecer mientras ayudan, no solo dar su tiempo",
+          "Conectar con una comunidad real y ver el impacto de su trabajo"
+        ]
+      },
+
+      brandPersonality: {
+        tone: ["cercano", "inspirador", "humano", "esperanzador"],
+        voice: "Una voz cálida y clara que habla desde el corazón, conectando emociones con acciones reales. Usa un lenguaje sencillo pero profundo, evitando tecnicismos."
+      },
+
+      contentStrategy: {
+        objectives: [
+          "Reactivar redes sociales con contenido auténtico y visualmente coherente.",
+          "Atraer nuevos voluntarios entre estudiantes y jóvenes profesionales.",
+          "Contar la historia de impacto año a año."
+        ],
+        pillars: [
+          "Interactuar: Voluntariado y comunidad",
+          "Conectar: Historias reales de cambio comunitario",
+          "Inspirar: El arte como herramienta de transformación social",
+        ]
+      },
+
+      deliverables: [
+        {
+          category: "Identidad visual",
+          items: [
+            "Paleta de colores institucionales (principal + secundarias)",
+            "Guía de tipografías para Canva Pro",
+            "Elementos gráficos minimalistas simbólicos (historias destacadas)",
+            "Diseño de carruseles, reels y posts para Instagram y Facebook en 2025"
+          ]
+        },
+        {
+          category: "Contenido digital",
+          items: [
+            "Calendario editorial en 2023 por 9 meses",
+            "Copywriting para redes: copys, captions, slogans, CTAs",
+            "Meta Ads para captación de voluntarios",
+            "Estrategia diferenciada: Instagram"
+          ]
+        },
+        {
+          category: "Estrategia de marca",
+          items: [
+            "Propuesta de tono y personalidad de marca para 2023, 2025 y 2026",
+            "Frase central: 'Sembrando oportunidades, transformando realidades'",
+            "Pilares de contenido 2026: Educar, Inspirar, Conectar",
+          ]
+        }
+      ],
+
+      visualExamples: [
+        {
+          src: 'lc/case-study-3-art1.png',
+          embedCode: "",
+          isVideo: false,
+          platform: "instagram"
+        },
+         {
+          src: 'lc/case-study-3-art2.png',
+          embedCode: "",
+          isVideo: false,
+          platform: "instagram"
+        },
+         {
+          src: 'lc/case-study-3-art3.png',
+          embedCode: "",
+          isVideo: false,
+          platform: "instagram"
+        },
+      
+      ],
+
+      copyExamples: [
+        {
+          type: "slogan",
+          text: "Sembrando oportunidades, transformando realidades en las comunidades."
+        },
+        {
+          type: "caption",
+          text: "¿Eres estudiante y buscas hacer tus prácticas con propósito? Únete a La Casita y transforma vidas con arte y educación. 🎨📚 #VoluntariadoQueTransforma"
+        },
+        {
+          type: "cta",
+          text: "Escríbenos por WhatsApp y sé parte del cambio → 0995738930"
+        }
+      ],
+
+      results: [
+        "Presencia digital reactivada con identidad visual coherente",
+        "Kit de marca listo para uso continuo por voluntarios",
+        "Contenido emocional que conecta con jóvenes y donantes",
+      ],
+
+      testimonials: [
+        {
+          text: "Este trabajo no solo dio forma a nuestra imagen, sino que nos ayudó a recordar quiénes somos y por qué empezamos. Ahora podemos contar nuestra historia con claridad, firmeza y humanidad.",
+          author: "Javier Intriago",
+          position: "Director Fundador, Fundación La Casita"
+        }
+      ]
+    }
+  },
+
+  {
+  "id": 3,
+  "brandName": "Somos Dev",
+  "category": "Branding & Social Media Strategy",
+  "description": "Rebranding y estrategia de contenido para comunidad tech de mujeres en LATAM, enfocada en cerrar la brecha de género y potenciar el talento junior.",
+  "image": 'case-study-4.png',
+  "colors": ["#361358", "#4a4de7", "#faf494", "#f5f5f5"],
+  "services": ["Brand Identity", "Content Strategy", "UX Writing", "Inbound Marketing"],
+  "results": {
+    "metric1": "25%+",
+    "label1": "Engagement rate",
+    "metric2": "1k+",
+    "label2": "Perfiles Tech alcanzados en LinkedIn"
+  },
+  "caseStudy": {
+    "clientOverview": "Somos Dev es una comunidad de Desarrolladoras Web en Latinoamérica (Ecuador, Perú, México y Bolivia) que busca potenciar el desarrollo profesional de perfiles tech femeninos, estudiantes y juniors a través del trabajo en equipo y la mejora de habilidades técnicas.",
+    "challenge": "Evolucionar la marca de una identidad informal a una figura de autoridad cercana ('La aliada'). El reto principal era combatir el síndrome del impostor y el aislamiento que sienten las mujeres en sus primeros pasos en tecnología.",
+    "purpose": "A pura creatividad, resiliencia y constancia… construir la comunidad tech líder donde cada mujer de LATAM tenga las herramientas y la red de apoyo para alcanzar su máximo potencial.",
+    "buyerPersona": {
+      "name": "Sofía, La Dev aspirante",
+      "age": "20-35 años",
+      "occupation": "Estudiante, Junior Developer o profesional en transición a tech",
+      "interests": ["Desarrollo Web", "Networking", "Career Growth", "Mentorías"],
+      "painPoints": ["Síndrome del impostor", "Falta de referentes femeninos", "Aislamiento profesional", "Miedo al cambio de carrera"]
+    },
+    "brandPersonality": {
+      "tone": ["Empático", "Inspirador", "Cómplice", "Resiliente"],
+      "voice": "La Aliada que empodera. Una mentora experta y cercana que no solo enseña, sino que acompaña y protege el crecimiento de su comunidad."
+    },
+    "contentStrategy": {
+      "objectives": [
+        "Fomentar el sentido de pertenencia y sororidad.",
+        "Proveer recursos técnicos accionables para cerrar brechas de conocimiento.",
+        "Visibilizar el talento femenino ante reclutadores y líderes de la industria."
+      ],
+      "pillars": [
+        "Conectar: Comunidad y sororidad (Cercanía)",
+        "Inspirar: Historias de éxito y crecimiento (Motivación)",
+        "Educar: Recursos técnicos y mentorías (Valor práctico)"
+      ]
+    },
+    "deliverables": [
+      {
+        "category": "Branding y diseño visual",
+        "items": ["Manual de identidad", "Logotipo", "Paleta de colores y tipografías", "Plantillas para publicaciones y presentaciones"]
+      },
+      {
+        "category": "Estrategia de Contenido",
+        "items": ["Guía de tono y voz", "Arquitectura de posts (Hooks/Captions)", "Planificación mensual"]
+      }
+    ],
+    "visualExamples": [
+      {
+        src: 'sd/case-study-4-art1.png',
+        "platform": "LinkedIn"
+      },
+      {
+        src: 'sd/case-study-4-art2.png',
+        "platform": "Instagram"
+      },
+      {
+        src: 'sd/case-study-4-art3.png',
+        "platform": "Instagram"
+      }
+    ],
+    "instagramPosts": [
+      
+    ],
+    "copyExamples": [
+      {
+        "type": "Post Hook",
+        "text": "¿Conoces ese código que 'funciona'... pero que nadie se atreve a tocar? Hablemos de la deuda técnica invisible."
+      },
+      {
+        "type": "Slogan",
+        "text": "A pura creatividad, resiliencia y constancia… construyendo comunidad tech."
+      }
+    ],
+    "results": [
+      "Definición de un ADN de marca único basado en el arquetipo de 'La aliada'.",
+      "Creación de un sistema visual escalable para voluntarias (diseño en Canva).",
+      "Optimización de la comunicación en LinkedIn hacia un tono profesional y empático."
+    ],
+    "testimonials": []
+  }
+},
+
+{
+    id: 4,
     brandName: 'Diana Vanessa',
     category: 'Estrategia de Contenido',
     description: 'Fusiono conocimientos en tecnología con el marketing de contenidos. Traduzco conceptos técnicos complejos en narrativas claras y cercanas.',
@@ -162,280 +440,5 @@ export const brandProjects: BrandProject[] = [
 
     }
   },
-  {
-    id: 2,
-    brandName: 'Akros',
-    category: 'Content Creation & Branding',
-    description: 'Proyecto colaborativo para el desarrollo de piezas gráficas moderna y minimalista que refleja innovación y cercanía.',
-    image: 'case-study-2.png',
-    colors: ['#aa1a85', '#eef0ff', '#eb2766', '#001865', '#ffbc00'],
-    services: ['Estrategia de contenido', 'Contenido y diseño de piezas gráficas'],
-    results: {
-      metric1: '20%',
-      label1: 'Reconocimiento de marca',
-      metric2: '30%',
-      label2: 'Asistencia a eventos'
-    },
-    caseStudy: {
-      clientOverview: 'Akros domina el entorno digital con soluciones integradas, personalizadas y escalables. Acompaña la evolución tecnológica con visión, control y propósito.',
-      challenge: 'Generar contenido de valor manteniendo criterio técnico y emocional, a través de generar estructuras y mejora de procesos de contenido.',
-      deliverables: [
-        {
-          category: 'Estrategia de contenido',
-          items: ['Auditoría de marca', 'Reposicionamiento estratégico', 'Análisis del proceso de contenido y branding', 'Creación de agentes de IA']
-        },
-        {
-          category: 'Contenido y diseño',
-          items: ['Estrategia de contenido B2B', 'Carruseles(15)', 'Infografías (5)', 'Blog Linkedin(6)']
-        },
-      ],
-      visualExamples: [
-        { src: 'akros/case-study-2-art1.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-        { src: 'akros/case-study-2-art2.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-        { src: 'akros/case-study-2-art3.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-        { src: 'akros/case-study-2-art4.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-        { src: 'akros/case-study-2-art5.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-        { src: 'akros/case-study-2-art6.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-      ],
-
-
-      copyExamples: [
-        {
-          type: 'Caption de carrusel de LinkedIn',
-          text: '¿Qué tienen en común un banco, un gobierno y una tienda online? \nCada sector enfrenta amenazas distintas, pero todos necesitan lo mismo: contexto, visibilidad y acción para anticiparse. \nEn Akros, activamos soluciones de ciberseguridad que combinan inteligencia, tecnología y visión de negocio. \nDescubre cómo podemos ayudarte a anticipar lo que otros aún no ven. 🔍 Contáctanos: '
-        },
-      ],
-      results: [],
-      testimonials: []
-    }
-  },
-
-  {
-    id: 3,
-    brandName: "Fundación La Casita",
-    category: "Non-Profit / Social Impact",
-    description: "Estrategia de reactivación digital y posicionamiento de marca para una fundación que transforma comunidades vulnerables de Guayaquil mediante arte, educación y voluntariado.",
-    image: 'case-study-3.png', // Asegúrate de tener esta imagen
-    colors: ["#D97B54", "#4A7C59", "#F7B84B", "#FFFFFF", "#333333"],
-    services: [
-      "Branding estratégico",
-      "Estrategia de contenido",
-      "Diseño visual minimalista",
-      "Posicionamiento en redes sociales"
-    ],
-    results: {
-      metric1: "80%",
-      label1: "Más engagement potencial",
-      metric2: "3x",
-      label2: "Más visibilidad orgánica"
-    },
-    caseStudy: {
-      clientOverview:
-        "Fundación La Casita es una organización sin fines de lucro fundada en 2015 en Guayaquil por Javier Intriago. Desde una pequeña casa en La Carolina, ha crecido hasta convertirse en un centro comunitario que ofrece talleres artísticos, educativos y de emprendimiento a niños, jóvenes y adultos en situación de vulnerabilidad. Su misión es mejorar la calidad de vida a través del arte y la inclusión social, fomentando el voluntariado y la conciencia social.",
-
-      challenge:
-        "En 2023 y 2025, a pesar de su impacto real en las comunidades, su presencia digital estaba inactiva. Sus redes sociales no reflejaban su identidad emocional ni su trabajo constante. Necesitaban una estrategia clara para reactivar sus canales, atraer nuevos voluntarios y contar su historia con autenticidad, coherencia y profesionalismo.",
-
-      purpose:
-        "Reposicionar a La Casita como una organización humana, cercana y transformadora, utilizando el diseño y el contenido para visibilizar su labor, fortalecer su comunidad digital y facilitar la participación ciudadana.",
-
-      buyerPersona: {
-        name: "María",
-        age: "19–35 años",
-        occupation: "Estudiante universitaria, graduados recientes, jóvenes profesionales",
-        interests: ["Voluntariado", "Arte social", "Desarrollo personal", "Cambio comunitario"],
-        painPoints: [
-          "No sabe cómo contribuir con sus conocimientos fuera del aula",
-          "Busca experiencias significativas, no solo cumplir horas de práctica",
-          "Quieren aprender y crecer mientras ayudan, no solo dar su tiempo",
-          "Conectar con una comunidad real y ver el impacto de su trabajo"
-        ]
-      },
-
-      brandPersonality: {
-        tone: ["cercano", "inspirador", "humano", "esperanzador"],
-        voice: "Una voz cálida y clara que habla desde el corazón, conectando emociones con acciones reales. Usa un lenguaje sencillo pero profundo, evitando tecnicismos."
-      },
-
-      contentStrategy: {
-        objectives: [
-          "Reactivar redes sociales con contenido auténtico y visualmente coherente.",
-          "Atraer nuevos voluntarios entre estudiantes y jóvenes profesionales.",
-          "Contar la historia de impacto año a año."
-        ],
-        pillars: [
-          "Interactuar: Voluntariado y comunidad",
-          "Conectar: Historias reales de cambio comunitario",
-          "Inspirar: El arte como herramienta de transformación social",
-        ]
-      },
-
-      deliverables: [
-        {
-          category: "Identidad visual",
-          items: [
-            "Paleta de colores institucionales (principal + secundarias)",
-            "Guía de tipografías para Canva Pro",
-            "Elementos gráficos minimalistas simbólicos (casa, manos, árbol, camino)"
-          ]
-        },
-        {
-          category: "Contenido digital",
-          items: [
-            "Calendario editorial en 2023 por 9 meses",
-            "Copywriting para redes: captions, slogans, CTAs",
-            "Guión para Reel de aniversario",
-            "Estrategia diferenciada: Instagram vs Facebook vs TikTok"
-          ]
-        },
-        {
-          category: "Estrategia de marca",
-          items: [
-            "Propuesta de tono y personalidad de marca",
-            "Frase central: 'Sembrando oportunidades, transformando realidades'",
-            "Modelo de uso de elementos gráficos en diseños"
-          ]
-        }
-      ],
-
-      visualExamples: [
-        {
-          src: 'lc/case-study-3-art1.png',
-          embedCode: "",
-          isVideo: false,
-          platform: "instagram"
-        },
-         {
-          src: 'lc/case-study-3-art2.png',
-          embedCode: "",
-          isVideo: false,
-          platform: "instagram"
-        },
-         {
-          src: 'lc/case-study-3-art3.png',
-          embedCode: "",
-          isVideo: false,
-          platform: "instagram"
-        },
-      
-      ],
-
-      copyExamples: [
-        {
-          type: "slogan",
-          text: "Sembrando oportunidades, transformando realidades en las comunidades."
-        },
-        {
-          type: "caption",
-          text: "¿Eres estudiante y buscas hacer tus prácticas con propósito? Únete a La Casita y transforma vidas con arte y educación. 🎨📚 #VoluntariadoQueTransforma"
-        },
-        {
-          type: "cta",
-          text: "Escríbenos por WhatsApp y sé parte del cambio → 0995738930"
-        }
-      ],
-
-      results: [
-        "Presencia digital reactivada con identidad visual coherente",
-        "Kit de marca listo para uso continuo por voluntarios",
-        "Contenido emocional que conecta con jóvenes y donantes",
-      ],
-
-      testimonials: [
-        {
-          text: "Este trabajo no solo dio forma a nuestra imagen, sino que nos ayudó a recordar quiénes somos y por qué empezamos. Ahora podemos contar nuestra historia con claridad, firmeza y humanidad.",
-          author: "Javier Intriago",
-          position: "Director Fundador, Fundación La Casita"
-        }
-      ]
-    }
-  },
-
-  {
-  "id": 4,
-  "brandName": "Somos Dev",
-  "category": "Branding & Social Media Strategy",
-  "description": "Rebranding y estrategia de contenido para comunidad tech de mujeres en LATAM, enfocada en cerrar la brecha de género y potenciar el talento junior.",
-  "image": 'case-study-4.png',
-  "colors": ["#361358", "#4a4de7", "#faf494", "#f5f5f5"],
-  "services": ["Brand Identity", "Content Strategy", "UX Writing", "Inbound Marketing"],
-  "results": {
-    "metric1": "25%+",
-    "label1": "Engagement rate",
-    "metric2": "1k+",
-    "label2": "Perfiles Tech alcanzados en LinkedIn"
-  },
-  "caseStudy": {
-    "clientOverview": "Somos Dev es una comunidad de Desarrolladoras Web en Latinoamérica (Ecuador, Perú, México y Bolivia) que busca potenciar el desarrollo profesional de perfiles tech femeninos, estudiantes y juniors a través del trabajo en equipo y la mejora de habilidades técnicas.",
-    "challenge": "Evolucionar la marca de una identidad informal a una figura de autoridad cercana ('La aliada'). El reto principal era combatir el síndrome del impostor y el aislamiento que sienten las mujeres en sus primeros pasos en tecnología.",
-    "purpose": "A pura creatividad, resiliencia y constancia… construir la comunidad tech líder donde cada mujer de LATAM tenga las herramientas y la red de apoyo para alcanzar su máximo potencial.",
-    "buyerPersona": {
-      "name": "Sofía, La Dev aspirante",
-      "age": "20-35 años",
-      "occupation": "Estudiante, Junior Developer o profesional en transición a tech",
-      "interests": ["Desarrollo Web", "Networking", "Career Growth", "Mentorías"],
-      "painPoints": ["Síndrome del impostor", "Falta de referentes femeninos", "Aislamiento profesional", "Miedo al cambio de carrera"]
-    },
-    "brandPersonality": {
-      "tone": ["Empático", "Inspirador", "Cómplice", "Resiliente"],
-      "voice": "La Aliada que empodera. Una mentora experta y cercana que no solo enseña, sino que acompaña y protege el crecimiento de su comunidad."
-    },
-    "contentStrategy": {
-      "objectives": [
-        "Fomentar el sentido de pertenencia y sororidad.",
-        "Proveer recursos técnicos accionables para cerrar brechas de conocimiento.",
-        "Visibilizar el talento femenino ante reclutadores y líderes de la industria."
-      ],
-      "pillars": [
-        "Conectar: Comunidad y sororidad (Cercanía)",
-        "Inspirar: Historias de éxito y crecimiento (Motivación)",
-        "Educar: Recursos técnicos y mentorías (Valor práctico)"
-      ]
-    },
-    "deliverables": [
-      {
-        "category": "Branding y diseño visual",
-        "items": ["Manual de identidad", "Logotipo", "Paleta de colores y tipografías", "Plantillas para publicaciones y presentaciones"]
-      },
-      {
-        "category": "Estrategia de Contenido",
-        "items": ["Guía de tono y voz", "Arquitectura de posts (Hooks/Captions)", "Planificación mensual"]
-      }
-    ],
-    "visualExamples": [
-      {
-        src: 'sd/case-study-4-art1.png',
-        "platform": "LinkedIn"
-      },
-      {
-        src: 'sd/case-study-4-art2.png',
-        "platform": "Instagram"
-      },
-      {
-        src: 'sd/case-study-4-art3.png',
-        "platform": "Instagram"
-      }
-    ],
-    "instagramPosts": [
-      
-    ],
-    "copyExamples": [
-      {
-        "type": "Post Hook",
-        "text": "¿Conoces ese código que 'funciona'... pero que nadie se atreve a tocar? Hablemos de la deuda técnica invisible."
-      },
-      {
-        "type": "Slogan",
-        "text": "A pura creatividad, resiliencia y constancia… construyendo comunidad tech."
-      }
-    ],
-    "results": [
-      "Definición de un ADN de marca único basado en el arquetipo de 'La aliada'.",
-      "Creación de un sistema visual escalable para voluntarias (diseño en Canva).",
-      "Optimización de la comunicación en LinkedIn hacia un tono profesional y empático."
-    ],
-    "testimonials": []
-  }
-},
 
 ];

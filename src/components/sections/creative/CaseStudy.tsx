@@ -335,7 +335,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="relative group overflow-hidden rounded-2xl shadow-lg aspect-square"
+                    className="relative group overflow-hidden rounded-2xl shadow-lg aspect-[4/5]"
                   >
                     <ImageWithFallback
                       src={visual.src}

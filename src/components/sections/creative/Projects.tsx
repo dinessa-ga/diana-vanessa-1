@@ -31,11 +31,11 @@ export default function Projects() {
             {brandProjects.map((project) => (
               <article
                 key={project.id}
-                className="group overflow-hidden rounded-3xl border border-border bg-card shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="project-card group overflow-hidden rounded-3xl border border-border bg-card shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <Link
                   to={`/projects/${project.id}`}
-                  className="block focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary"
+                  className="project-card-link focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary"
                 >
                   <div className="project-card-media">
                     <ImageWithFallback
@@ -50,9 +50,9 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <div className="space-y-3 p-4">
+                  <div className="project-card-content">
                     <p className="text-sm leading-relaxed text-muted-foreground">{project.description}</p>
-                    <span className="inline-flex items-center gap-2 font-semibold text-primary transition-colors group-hover:text-secondary">
+                    <span className="project-card-cta inline-flex items-center gap-2 font-semibold text-primary transition-colors group-hover:text-secondary">
                       Ver proyecto
                       <ExternalLink className="h-4 w-4" />
                     </span>

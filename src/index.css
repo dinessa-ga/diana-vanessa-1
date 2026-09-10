@@ -2243,6 +2243,7 @@ html {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 @media (min-width: 48rem) {
@@ -2255,6 +2256,29 @@ html {
   .projects-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+.project-card {
+  display: flex;
+  height: 100%;
+}
+
+.project-card-link {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.project-card-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.project-card-cta {
+  margin-top: auto;
 }
 
 .project-card-media {

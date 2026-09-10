@@ -59,16 +59,30 @@ export function BrandingShowcase() {
           viewport={{ once: true }}
           className="text-center mb-4"
         >
-          <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full mb-4">
-            Proyectos destacados
-          </span>
+
           <h2 className="mb-6 text-4xl md:text-5xl text-foreground">
             Marcas que han <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">confiado</span> en mí
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Cada proyecto es una historia única de transformación y crecimiento
-          </p>
+
+
         </motion.div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={() => paginate(-1)}
+          className="absolute left-4 top-4 md:top-1/2 -translate-y-0 md:-translate-y-1/2 z-10 w-12 h-12 shadow-lg rounded-full flex items-center justify-center bg-primary text-primary-foreground transition-all hover:scale-110 border-2 border-border"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        <button
+          onClick={() => paginate(1)}
+          className="absolute right-4 top-4 md:top-1/2 -translate-y-0 md:-translate-y-1/2 z-10 w-12 h-12 shadow-lg rounded-full flex items-center justify-center bg-primary text-primary-foreground transition-all hover:scale-110 border-2 border-border"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+
 
         {/* Carousel */}
         <div className="relative">
@@ -101,21 +115,7 @@ export function BrandingShowcase() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={() => paginate(-1)}
-            className="absolute left-4 top-4 md:top-1/2 -translate-y-0 md:-translate-y-1/2 z-10 w-12 h-12 bg-card shadow-lg rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110 border-2 border-border"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={() => paginate(1)}
-            className="absolute right-4 top-4 md:top-1/2 -translate-y-0 md:-translate-y-1/2 z-10 w-12 h-12 bg-card shadow-lg rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110 border-2 border-border"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
+
 
           {/* Dots Indicator */}
           <div className="flex justify-center gap-2 mt-8">
@@ -127,8 +127,8 @@ export function BrandingShowcase() {
                   setCurrentIndex(index);
                 }}
                 className={`h-2 rounded-full transition-all ${index === currentIndex
-                    ? 'w-8 bg-primary'
-                    : 'w-2 bg-muted hover:bg-muted-foreground'
+                  ? 'w-8 bg-primary'
+                  : 'w-2 bg-muted hover:bg-muted-foreground'
                   }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

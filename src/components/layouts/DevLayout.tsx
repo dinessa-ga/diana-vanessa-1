@@ -8,10 +8,10 @@ interface DevLayoutProps {
 export function DevLayout({ children }: DevLayoutProps) {
   const menuItems = [
 
-    { label: 'Sobre mí', href: '#about' },
-    { label: 'Proyectos ', href: '#projects-dev' },
-    { label: 'Servicios', href: '#services' },
-    { label: 'Contacto', href: '#contact' },
+    { label: 'Sobre mí', href: '/dev', scrollTo: 'about' },
+    { label: 'Proyectos ', href: '/dev', scrollTo: 'projects-dev' },
+    { label: 'Servicios', href: '/dev', scrollTo: 'services' },
+    { label: 'Contacto', href: '/dev', scrollTo: 'contact' },
     { label: '← Perfil Creativo', href: '/' },
   ];
 

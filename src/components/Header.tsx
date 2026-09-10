@@ -6,6 +6,7 @@ import { MobileMenu } from './MobileMenu';
 interface MenuItem {
   label: string;
   href: string;
+  scrollTo?: string;
 }
 
 interface HeaderProps {
@@ -61,7 +62,7 @@ export function Header({ menuItems }: HeaderProps) {
   }, [isOpen]);
 
   const isActive = (href: string) =>
-    !href.startsWith('#') && location.pathname === href;
+    !href.startsWith('#') && href !== '/' && href !== '/dev' && location.pathname === href;
 
   const linkBase = 'text-foreground px-4 py-2 transition-all duration-200 text-sm font-bold';
   const linkHover = 'hover:bg-accent hover:text-accent-foreground rounded-xl';
@@ -80,10 +81,15 @@ export function Header({ menuItems }: HeaderProps) {
             {menuItems.map((item) => {
               const active = item.label !== 'Inicio' && isActive(item.href);
               const cls = `${linkBase} ${linkHover} ${active ? linkActiveClass : ''}`;
-              return item.href.startsWith('#') ? (
-                <a key={item.label} href={item.href} className={cls}>{item.label}</a>
-              ) : (
-                <Link key={item.label} to={item.href} className={cls}>{item.label}</Link>
+              return (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  state={item.scrollTo ? { scrollTo: item.scrollTo } : undefined}
+                  className={cls}
+                >
+                  {item.label}
+                </Link>
               );
             })}
 

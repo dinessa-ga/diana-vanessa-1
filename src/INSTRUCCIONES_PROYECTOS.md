@@ -1,7 +1,14 @@
 # 📝 Guía para Agregar Nuevos Proyectos
 
 ## Ubicación del archivo de datos
-Todos los proyectos se gestionan desde un único archivo: `/data/projects.ts`
+Todos los proyectos se gestionan desde un único archivo: `/src/data/projects.ts`.
+La navegación usa React Router con URLs limpias:
+
+- `/about`, `/projects`, `/skills` y `/contact` para el perfil creativo.
+- `/projects/:projectId` para cada caso de estudio.
+- `/dev`, `/dev/about`, `/dev/projects`, `/dev/services` y `/dev/contact` para el perfil developer.
+
+Las páginas de entrada se mantienen en `/src/pages/Index.tsx` y `/src/pages/Dev.tsx`. Las pantallas y wrappers específicos viven dentro de las carpetas de secciones correspondientes.
 
 ## Cómo agregar un nuevo proyecto
 
@@ -11,7 +18,7 @@ Todos los proyectos se gestionan desde un único archivo: `/data/projects.ts`
 
 ```typescript
 {
-  id: 6, // Incrementa el ID del último proyecto
+  id: 7, // Incrementa el ID del último proyecto
   brandName: 'Nombre de tu Marca',
   category: 'Categoría del Proyecto',
   description: 'Descripción breve que aparece en el carrusel',
@@ -73,9 +80,9 @@ Si quieres que el proyecto tenga un caso de estudio detallado, agrega la propied
     },
     
     visualExamples: [
-      'https://url-imagen-1.jpg',
-      'https://url-imagen-2.jpg',
-      'https://url-imagen-3.jpg'
+      { src: 'ruta/imagen-1.png', platform: 'instagram' },
+      { src: 'ruta/imagen-2.png', platform: 'instagram' },
+      { src: 'ruta/imagen-3.png', platform: 'instagram' }
     ],
     
     copyExamples: [
@@ -89,11 +96,13 @@ Si quieres que el proyecto tenga un caso de estudio detallado, agrega la propied
       }
     ],
     
-    testimonial: {
-      text: 'El testimonio del cliente',
-      author: 'Nombre del Cliente',
-      position: 'CEO, Nombre Empresa'
-    }
+    testimonials: [
+      {
+        text: 'El testimonio del cliente',
+        author: 'Nombre del Cliente',
+        position: 'CEO, Nombre Empresa'
+      }
+    ]
   }
 }
 ```
@@ -166,7 +175,7 @@ https://images.unsplash.com/photo-XXXXXX?w=1080
     visualExamples: [ ... ],
     copyExamples: [ ... ],
     results: [ ... ],
-    testimonial: { ... }
+    testimonials: [ ... ]
   }
 }
 ```

@@ -114,7 +114,7 @@ export const brandProjects: BrandProject[] = [
   {
     id: 2,
     brandName: "Fundación La Casita",
-    category: "Non-Profit / Social Impact",
+    category: "Branding estratégico y contenido",
     description: "Estrategia de reactivación digital y posicionamiento de marca para una fundación que transforma comunidades vulnerables de Guayaquil mediante arte, educación y voluntariado.",
     image: 'case-study-3.png', // Asegúrate de tener esta imagen
     colors: ["#D97B54", "#4A7C59", "#F7B84B", "#FFFFFF", "#333333"],
@@ -438,6 +438,80 @@ export const brandProjects: BrandProject[] = [
         },
       ]
 
+    }
+  },
+
+  {
+    id: 5,
+    brandName: 'Proyecto editorial',
+    category: 'Estrategia de contenido',
+    description: 'Placeholder para un proyecto editorial enfocado en convertir ideas complejas en contenido claro, útil y memorable.',
+    image: 'case-study-2.png',
+    colors: ['#173f5f', '#20639b', '#3caea3', '#f6d55c'],
+    services: ['Estrategia de contenido', 'Copywriting', 'Diseño editorial'],
+    results: {
+      metric1: '+40%',
+      label1: 'Interacción estimada',
+      metric2: '3x',
+      label2: 'Piezas reutilizables'
+    },
+    caseStudy: {
+      clientOverview: 'Proyecto placeholder pendiente de reemplazar con la información definitiva del cliente.',
+      challenge: 'Organizar una propuesta de contenido coherente para comunicar una oferta especializada de forma cercana.',
+      purpose: 'Construir un sistema editorial claro, consistente y preparado para crecer.',
+      deliverables: [
+        {
+          category: 'Estrategia editorial',
+          items: ['Arquitectura de contenidos', 'Pilares de comunicación', 'Guía de tono y voz']
+        },
+        {
+          category: 'Diseño y copywriting',
+          items: ['Plantillas para redes', 'Copys para publicaciones', 'Calendario editorial']
+        }
+      ],
+      visualExamples: [
+        { src: 'akros/case-study-2-art1.png', platform: 'instagram' },
+        { src: 'akros/case-study-2-art2.png', platform: 'instagram' }
+      ],
+      results: ['Sistema de contenido organizado', 'Mensajes más claros y consistentes'],
+      testimonials: []
+    }
+  },
+
+  {
+    id: 6,
+    brandName: 'Proyecto digital',
+    category: 'Branding y experiencia digital',
+    description: 'Placeholder para un proyecto digital que conecta identidad visual, experiencia de usuario y comunicación estratégica.',
+    image: 'case-study-3.png',
+    colors: ['#4a1942', '#893168', '#d499b9', '#f8e5ee'],
+    services: ['Identidad visual', 'UX Writing', 'Contenido digital'],
+    results: {
+      metric1: '100%',
+      label1: 'Sistema documentado',
+      metric2: '5+',
+      label2: 'Puntos de contacto'
+    },
+    caseStudy: {
+      clientOverview: 'Proyecto placeholder pendiente de reemplazar con la información definitiva del cliente.',
+      challenge: 'Alinear la identidad de una propuesta digital con una experiencia sencilla y una comunicación reconocible.',
+      purpose: 'Crear una base visual y verbal que facilite cada interacción con la marca.',
+      deliverables: [
+        {
+          category: 'Identidad de marca',
+          items: ['Dirección visual', 'Paleta cromática', 'Sistema de componentes']
+        },
+        {
+          category: 'Experiencia digital',
+          items: ['Mapa de mensajes', 'Microcopy de interfaz', 'Piezas de lanzamiento']
+        }
+      ],
+      visualExamples: [
+        { src: 'lc/case-study-3-art1.png', platform: 'instagram' },
+        { src: 'lc/case-study-3-art2.png', platform: 'instagram' }
+      ],
+      results: ['Identidad visual consistente', 'Comunicación lista para escalar'],
+      testimonials: []
     }
   },
 

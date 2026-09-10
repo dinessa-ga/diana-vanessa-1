@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { TrendingUp, Award } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { BrandProject } from '../../../data/projects';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
@@ -8,11 +9,6 @@ interface BrandCardProps {
 }
 
 export function BrandCard({ project }: BrandCardProps) {
-  const handleViewCaseStudy = () => {
-    // Abrir en nueva pestaña con hash routing
-    window.open(`#/case-study/${project.id}`, '_blank');
-  };
-
   return (
     <div className="px-4 md:px-8 py-8">
       <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
@@ -102,13 +98,13 @@ export function BrandCard({ project }: BrandCardProps) {
           </div>
 
           {/* CTA Button */}
-          <div className="pt-4">
-            <button
-              className="group px-8 py-3 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-full hover:shadow-xl transition-all hover:scale-105"
-              onClick={handleViewCaseStudy}
+          <div className="flex flex-wrap items-center gap-4 pt-4">
+            <Link
+              to={`/projects/${project.id}`}
+              className="group rounded-full bg-gradient-to-r from-primary to-secondary px-8 py-3 text-primary-foreground transition-all hover:scale-105 hover:shadow-xl"
             >
               <span className="flex items-center gap-2">
-                Ver caso de estudio
+                Ver proyecto
                 <svg
                   className="w-5 h-5 transition-transform group-hover:translate-x-1"
                   fill="none"
@@ -123,7 +119,15 @@ export function BrandCard({ project }: BrandCardProps) {
                   />
                 </svg>
               </span>
-            </button>
+            </Link>
+            <a
+              href="/projects"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all hover:scale-105 hover:shadow-xl "
+            >
+              Ver más proyectos
+            </a>
           </div>
         </motion.div>
       </div>

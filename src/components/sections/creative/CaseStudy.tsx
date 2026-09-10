@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { 
   ArrowLeft, 
   Target, 
@@ -56,7 +57,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           className="absolute top-6 left-6 flex items-center gap-2 px-4 py-2 bg-card/90 backdrop-blur-sm rounded-full shadow-lg hover:scale-105 transition-transform text-foreground border border-border"
         >
           <ArrowLeft className="w-5 h-5" />
-          <span>Volver</span>
+          <span>Volver a proyectos</span>
         </button>
 
         {/* Título del proyecto */}
@@ -334,7 +335,7 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="relative group overflow-hidden rounded-2xl shadow-lg aspect-square"
+                    className="relative group overflow-hidden rounded-2xl shadow-lg aspect-[4/5]"
                   >
                     <ImageWithFallback
                       src={visual.src}
@@ -441,12 +442,12 @@ export function CaseStudy({ project, onBack }: CaseStudyProps) {
           <h3 className="text-2xl md:text-3xl mb-6 text-foreground">
             ¿Empezamos a transformar tu marca?
           </h3>
-          <button
-            onClick={() => window.location.hash = '#contact'}
+          <Link
+            to="/#contact"
             className="px-8 py-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           >
             Hablemos de tu proyecto
-          </button>
+          </Link>
         </motion.div>
       </div>
     </div>

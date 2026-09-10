@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 interface MenuItem {
   label: string;
   href: string;
+  scrollTo?: string;
 }
 
 interface MobileMenuProps {
@@ -28,7 +29,7 @@ export function MobileMenu({ menuItems, isOpen, onClose }: MobileMenuProps) {
   }, [onClose]);
 
   const isActive = (href: string) =>
-    !href.startsWith('#') && location.pathname === href;
+    !href.startsWith('#') && href !== '/' && href !== '/dev' && location.pathname === href;
 
   const linkBase =
     'text-foreground px-4 py-3 rounded-xl transition-all duration-200 text-base font-medium';
@@ -79,20 +80,11 @@ export function MobileMenu({ menuItems, isOpen, onClose }: MobileMenuProps) {
           {menuItems.map((item) => {
             const active = isActive(item.href);
             const cls = `${linkBase} ${linkHover} ${active ? linkActive : ''}`;
-            return item.href.startsWith('#') ? (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={onClose}
-                className={cls}
-                style={{ display: 'block', textDecoration: 'none' }}
-              >
-                {item.label}
-              </a>
-            ) : (
+            return (
               <Link
                 key={item.label}
                 to={item.href}
+                state={item.scrollTo ? { scrollTo: item.scrollTo } : undefined}
                 onClick={onClose}
                 className={cls}
                 style={{ display: 'block', textDecoration: 'none' }}

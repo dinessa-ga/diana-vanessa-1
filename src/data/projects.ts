@@ -68,7 +68,7 @@ export const brandProjects: BrandProject[] = [
     brandName: 'Akros',
     category: 'Content Creation & Branding',
     description: 'Proyecto colaborativo para el desarrollo de piezas gráficas moderna y minimalista que refleja innovación y cercanía.',
-    image: 'case-study-2.png',
+    image: '/creative/case-study-2.png',
     colors: ['#aa1a85', '#eef0ff', '#eb2766', '#001865', '#ffbc00'],
     services: ['Estrategia de contenido', 'Contenido y diseño de piezas gráficas'],
     results: {
@@ -91,12 +91,12 @@ export const brandProjects: BrandProject[] = [
         },
       ],
       visualExamples: [
-        { src: 'akros/case-study-2-art1.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-        { src: 'akros/case-study-2-art2.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-        { src: 'akros/case-study-2-art3.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-        { src: 'akros/case-study-2-art4.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-        { src: 'akros/case-study-2-art5.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-        { src: 'akros/case-study-2-art6.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: '/creative/projects/akros/case-study-2-art1.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: '/creative/projects/akros/case-study-2-art2.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: '/creative/projects/akros/case-study-2-art3.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: '/creative/projects/akros/case-study-2-art4.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: '/creative/projects/akros/case-study-2-art5.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: '/creative/projects/akros/case-study-2-art6.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
       ],
 
 
@@ -114,9 +114,9 @@ export const brandProjects: BrandProject[] = [
   {
     id: 2,
     brandName: "Fundación La Casita",
-    category: "Non-Profit / Social Impact",
+    category: "Branding estratégico y contenido",
     description: "Estrategia de reactivación digital y posicionamiento de marca para una fundación que transforma comunidades vulnerables de Guayaquil mediante arte, educación y voluntariado.",
-    image: 'case-study-3.png', // Asegúrate de tener esta imagen
+    image: '/creative/case-study-3.png', // Asegúrate de tener esta imagen
     colors: ["#D97B54", "#4A7C59", "#F7B84B", "#FFFFFF", "#333333"],
     services: [
       "Branding estratégico",
@@ -202,19 +202,19 @@ export const brandProjects: BrandProject[] = [
 
       visualExamples: [
         {
-          src: 'lc/case-study-3-art1.png',
+          src: '/creative/projects/lc/case-study-3-art1.png',
           embedCode: "",
           isVideo: false,
           platform: "instagram"
         },
          {
-          src: 'lc/case-study-3-art2.png',
+          src: '/creative/projects/lc/case-study-3-art2.png',
           embedCode: "",
           isVideo: false,
           platform: "instagram"
         },
          {
-          src: 'lc/case-study-3-art3.png',
+          src: '/creative/projects/lc/case-study-3-art3.png',
           embedCode: "",
           isVideo: false,
           platform: "instagram"
@@ -258,7 +258,7 @@ export const brandProjects: BrandProject[] = [
   "brandName": "Somos Dev",
   "category": "Branding & Social Media Strategy",
   "description": "Rebranding y estrategia de contenido para comunidad tech de mujeres en LATAM, enfocada en cerrar la brecha de género y potenciar el talento junior.",
-  "image": 'case-study-4.png',
+  "image": '/creative/case-study-4.png',
   "colors": ["#361358", "#4a4de7", "#faf494", "#f5f5f5"],
   "services": ["Brand Identity", "Content Strategy", "UX Writing", "Inbound Marketing"],
   "results": {
@@ -306,15 +306,15 @@ export const brandProjects: BrandProject[] = [
     ],
     "visualExamples": [
       {
-        src: 'sd/case-study-4-art1.png',
+        src: '/creative/projects/sd/case-study-4-art1.png',
         "platform": "LinkedIn"
       },
       {
-        src: 'sd/case-study-4-art2.png',
+        src: '/creative/projects/sd/case-study-4-art2.png',
         "platform": "Instagram"
       },
       {
-        src: 'sd/case-study-4-art3.png',
+        src: '/creative/projects/sd/case-study-4-art3.png',
         "platform": "Instagram"
       }
     ],
@@ -345,7 +345,7 @@ export const brandProjects: BrandProject[] = [
     brandName: 'Diana Vanessa',
     category: 'Estrategia de Contenido',
     description: 'Fusiono conocimientos en tecnología con el marketing de contenidos. Traduzco conceptos técnicos complejos en narrativas claras y cercanas.',
-    image: 'case-study-1.png',
+    image: '/creative/case-study-1.png',
     colors: ['#ff65a1', '#591fff', '#fff3fe', '#0a0224'],
     services: ['Estrategia de Contenidos Tech', 'UX Writing & Microcopy', 'Gestión de Comunidades', 'Redacción Técnica'],
     results: {
@@ -394,14 +394,14 @@ export const brandProjects: BrandProject[] = [
         }
       ],
       visualExamples: [
-        { src: 'me/case-study-1-art1.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-        { src: 'me/case-study-1-art2.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
-        { src: 'me/case-study-1-art3.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: '/creative/projects/me/case-study-1-art1.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: '/creative/projects/me/case-study-1-art2.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
+        { src: '/creative/projects/me/case-study-1-art3.png', embedCode: undefined, isVideo: false, platform: 'instagram' },
       ],
       instagramPosts: [
-        { src: 'me/instagram-post-1.png', embedCode: 'https://www.instagram.com/p/DOY_OhdALKX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', isVideo: false },
-        { src: 'me/instagram-post-2.png', embedCode: 'https://www.instagram.com/p/EJEMPLO2/', isVideo: false },
-        { src: 'me/instagram-post-3.png', embedCode: 'https://www.instagram.com/p/EJEMPLO3/', isVideo: false },
+        { src: '/creative/projects/me/instagram-post-1.png', embedCode: 'https://www.instagram.com/p/DOY_OhdALKX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', isVideo: false },
+        { src: '/creative/projects/me/instagram-post-2.png', embedCode: 'https://www.instagram.com/p/EJEMPLO2/', isVideo: false },
+        { src: '/creative/projects/me/instagram-post-3.png', embedCode: 'https://www.instagram.com/p/EJEMPLO3/', isVideo: false },
       ],
       copyExamples: [
         {
@@ -440,5 +440,8 @@ export const brandProjects: BrandProject[] = [
 
     }
   },
+
+
+ 
 
 ];

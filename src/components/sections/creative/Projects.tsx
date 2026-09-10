@@ -27,7 +27,7 @@ export default function Projects() {
             </p>
           </header>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="projects-grid">
             {brandProjects.map((project) => (
               <article
                 key={project.id}
@@ -50,8 +50,8 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <div className="space-y-5 p-6">
-                    <p className="min-h-20 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+                  <div className="space-y-3 p-4">
+                    <p className="text-sm leading-relaxed text-muted-foreground">{project.description}</p>
                     <span className="inline-flex items-center gap-2 font-semibold text-primary transition-colors group-hover:text-secondary">
                       Ver proyecto
                       <ExternalLink className="h-4 w-4" />

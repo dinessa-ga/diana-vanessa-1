@@ -21,7 +21,7 @@ export default function Projects() {
             <p className="mb-3 text-lg font-bold uppercase tracking-[0.2em] text-primary">
               Portafolio creativo
             </p>
-            <h1 className="mb-5 text-4xl text-foreground md:text-6xl">Todos los proyectos</h1>
+            <h1 className="mb-5 text-4xl text-foreground md:text-6xl">Conoce mis proyectos</h1>
             <p className="text-lg pt-6 leading-relaxed text-muted-foreground">
               Una selección de proyectos de branding, contenido y comunicación digital.
             </p>

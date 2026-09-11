@@ -442,6 +442,161 @@ export const brandProjects: BrandProject[] = [
   },
 
 
+  {
+  id: 5,
+  brandName: "Fundación La Casita - 2026",
+  category: "Estrategia de Contenido, Branding Social & Crecimiento Orgánico",
+  description: 
+    "Evolución estratégica de marca y sistema de contenidos 2026. Transformando el feed en un canal de descubrimiento y comunidad.",
+  image: "/creative/case-study-5.png",
+  colors: [
+    "#cc553d", // Terracota Real (Identidad y acción)
+    "#4A7C59", // Verde Esperanza (Educación y comunidad)
+    "#F7B84B", // Amarillo Sol (Creatividad e infancia)
+    "#39b4fe", // Celeste Digital (Virtualidad y acento)
+    "#2C5F7C", // Azul Profundo (Institucionalidad y confianza)
+    "#c75b7a"  // Rosa fuerte LC comunidad secundaria (Casita Kids & Arte)
+  ],
+  services: [
+    "Estrategia de Crecimiento Orgánico",
+    "Content Matrix (Educar / Inspirar / Informar)",
+    "Guionizado y Hooks Optimizer para Reels y carruseles",
+  ],
+  results: {
+    metric1: "+185%",
+    label1: "Alcance orgánico de no seguidores",
+    metric2: "3.4x",
+    label2: "Aumento en postulaciones de voluntarios"
+  },
+  caseStudy: {
+    clientOverview: 
+      "Fundación La Casita es una ONG ecuatoriana fundada en 2015 en Guayaquil por Javier Intriago. Su labor utiliza el arte, la cultura y la pedagogía como herramientas de rescate, inclusión social y educación en sectores vulnerables. Para 2026, la organización requería desligar su percepción digital exclusiva de proyectos puntuales temporales (como Sauces) y fortalecer su Brand Equity como institución permanente y referente de transformación social en Guayaquil.",
+    challenge: 
+      "Producir una estrategia de crecimiento sostenible con recursos limitados: sin equipo de producción audiovisual in situ en cada sede, dependiendo de capturas del equipo de campo y con la necesidad de no saturar a la audiencia. El reto principal consistió en evitar que la cuenta pareciera un boletín burocrático o cayera en el 'poverty porn', logrando que personas que no conocían la fundación descubrieran su causa, se identificaran con ella y se convirtieran en difusores orgánicos de la marca.",
+    purpose: 
+      "Sembrando oportunidades, transformando realidades en las comunidades. Utilizar el arte como eje transversal para derrotar el silencio creativo y la exclusión social con dignidad, ética y esperanza.",
+    buyerPersona: {
+      name: "María",
+      age: "22 años",
+      occupation: "Estudiante universitaria de últimos ciclos / recién graduada",
+      interests: [
+        "Voluntariado con propósito",
+        "Arte comunitario y educación",
+        "Justicia social y desarrollo personal",
+        "Proyectos de impacto real en Guayaquil"
+      ],
+      painPoints: [
+        "Siente que lo aprendido en las aulas no genera un impacto real en su entorno.",
+        "Frustración por programas de voluntariado superficiales que solo buscan cumplir horas de vinculación.",
+        "Desconfianza hacia ONGs con falta de transparencia o mensajes victimizantes."
+      ]
+    },
+    brandPersonality: {
+      tone: ["Humano", "Cálido", "Esperanzador", "Comunitario", "Directo", "Transparente"],
+      voice: "Cálida, cercana y auténtica. Habla desde el corazón sin caer en tecnicismos ni burocracia, demostrando la transformación con hechos y personas reales, nunca con asistencialismo."
+    },
+    contentStrategy: {
+      objectives: [
+        "Nivel 1 (Descubrimiento): Captar a personas en Guayaquil que no conocen La Casita mediante Reels basados en curiosidad y reflexiones educativas.",
+        "Nivel 2 (Identificación): Humanizar el impacto a través de las historias y frases de docentes, familias y participantes.",
+        "Nivel 3 (Comunidad): Activar a los seguidores existentes como distribuidores orgánicos mediante dinámicas semanales en Stories (martes de interacción y jueves de recomendación).",
+        "Optimización Operativa: Mantener una cadencia viable de 3 posts semanales en feed con un sistema de bajo esfuerzo de producción y alta reutilización de archivo visual."
+      ],
+      pillars: [
+        "Educar: Aportar valor y reflexiones sobre el arte como motor pedagógico, convivencia, valores y fechas cívicas desde un ángulo social.",
+        "Inspirar: Conexión emocional, testimonios sin revictimización, crónicas de docentes y transformaciones de los participantes.",
+        "Informar: Información concreta, transparente y accionable (convocatorias de voluntariado, talleres semanales, rendición de cuentas)."
+      ]
+    },
+    deliverables: [
+      {
+        category: "Manual y Sistema Visual 2026",
+        items: [
+          "Sistema de 5 paletas modulares para Canva Pro (LC Alma, LC Digital, LC Arte, LC Comunidad y LC Neutro).",
+          "Jerarquía tipográfica reglamentaria (Quicksand para títulos, Nunito para subtítulos y Open Sans para cuerpo).",
+          "Set de iconografía y elementos planos: Casa Simbólica, Árbol de Impacto, Manos que se sostienen y Pincel de Amor.",
+          "Guía de Ética Visual: Protocolo de dignidad fotográfica frente a la revictimización."
+        ]
+      },
+      {
+        category: "Estructura Operativa de Contenido",
+        items: [
+          "Calendario semanal sostenible (Lunes de descubrimiento, Miércoles de autoridad humana/docentes, Viernes de información/talleres).",
+          "Estrategia de Stories diferenciada del feed (Martes de interacción / Jueves de recomendación comunitaria).",
+          "Framework Hooks Optimizer (alineación verbal, visual y textual en los primeros 3 segundos).",
+          "Base de prompts y directrices para GPT especializada de redacción institucional."
+        ]
+      }
+    ],
+    visualExamples: [
+      {
+        src: '/creative/projects/lc5/case-study-5-art1.png',
+        embedCode: "https://www.instagram.com/p/DF_example1/",
+        isVideo: false,
+        platform: "instagram"
+      },
+      {
+        src: '/creative/projects/lc5/case-study-5-art2.png',
+        embedCode: "https://www.instagram.com/reel/DF_example2/",
+        isVideo: true,
+        platform: "instagram"
+      },
+      {
+        src: '/creative/projects/lc5/case-study-5-art3.png',
+        embedCode: "https://www.instagram.com/p/DF_example3/",
+        isVideo: false,
+        platform: "instagram"
+      }
+    ],
+    instagramPosts: [
+      {
+        src: "/assets/portfolio/la-casita/reel-clausura.webp",
+        embedCode: "https://www.instagram.com/reel/DF_example4/",
+        isVideo: true
+      },
+      {
+        src: "/assets/portfolio/la-casita/post-voluntariado.webp",
+        embedCode: "https://www.instagram.com/p/DF_example5/",
+        isVideo: false
+      }
+    ],
+    copyExamples: [
+      {
+        type: "slogan",
+        text: "Sembrando oportunidades, transformando realidades en las comunidades."
+      },
+      {
+        type: "caption",
+        text: "La paz no es solo la ausencia de conflicto, también se aprende y se ejercita todos los días. En cada taller donde un niño aprende a escuchar a su compañero, a compartir sus materiales y a expresar lo que siente con un pincel, estamos construyendo convivencia pacífica. El arte enseña a dialogar antes que a confrontar. Compártele esta reflexión a alguien que trabaje por la educación en nuestra ciudad."
+      },
+      {
+        type: "caption",
+        text: "Detrás de cada historia hay alguien que enseña a mirar. Cuando Alba Tobar llegó al taller de cine, su objetivo no era solo encender una cámara, sino recordarles a los chicos que su voz y su punto de vista importan. Como ella siempre nos dice: No hay barreras ni límites para el arte. Déjale en los comentarios un mensaje de agradecimiento a los docentes que con paciencia transforman nuestras comunidades."
+      },
+      {
+        type: "copy",
+        text: "¿Buscando dónde realizar tus prácticas comunitarias o poner tu vocación al servicio de los demás? En Fundación La Casita abrimos convocatorias para estudiantes y jóvenes comprometidos con el arte, la educación y el cambio social. Modalidad presencial con horarios flexibles y certificación oficial. Escríbenos directamente por WhatsApp al 0999332612 y conoce cómo unirte a nuestro equipo."
+      }
+    ],
+    results: [
+      "Consolidación de la identidad visual de la fundación en Canva Pro, logrando uniformidad cromática y tipográfica en todas las piezas digitales.",
+      "Desacoplamiento exitoso de la percepción de marca: la audiencia comprendió que los proyectos comunitarios son brazos operativos de un propósito institucional mayor.",
+      "Optimización del tiempo de producción en un 60% al aplicar la regla de reciclaje inteligente de material de campo y la matriz de pilares por intención.",
+      "Crecimiento del engagement calificado en Stories (+42% de interacción en stickers de encuesta y recomendación) gracias a la separación estratégica entre Feed y Stories.",
+      "Atracción de voluntarios universitarios con alta retención moral sin necesidad de pauta publicitaria pagada."
+    ],
+    testimonials: [
+      {
+        text: "La estrategia nos permitió ordenar el caos del día a día. Pasar de publicar sin rumbo a tener pilares claros hizo que el esfuerzo de nuestro pequeño equipo rindiera el triple y que la gente en Guayaquil realmente entienda quiénes somos.",
+        author: "Javier Intriago",
+        position: "Fundador y Director, Fundación La Casita"
+      },
+      
+    ]
+  }
+},
+
+
  
 
 ];

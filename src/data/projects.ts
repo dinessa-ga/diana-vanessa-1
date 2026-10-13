@@ -596,7 +596,112 @@ export const brandProjects: BrandProject[] = [
   }
 },
 
-
- 
+{
+  "id": 6,
+  "brandName": "Joseline Vásconez – Nutricionista",
+  "category": "Salud, Nutrición y Bienestar Hormonal",
+  "description": "Estrategia comunicacional y de marketing enfocada en traducir la evidencia clínica a un lenguaje humano, práctico y empático para mujeres con desequilibrios hormonales.",
+  "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=80",
+  "colors": [
+    "#199780",
+    "#DCEDA1",
+    "#FF6F61",
+    "#FAFFE6",
+    "#082B59"
+  ],
+  "services": [
+    "Estrategia de Comunicación y Marketing de Contenidos",
+    "Posicionamiento de Marca Personal",
+    "Definición de Propuesta de Valor y Mensaje Principal",
+    "Estructuración de Estrategia para Redes Sociales"
+  ],
+  "results": {
+    "metric1": "100%",
+    "label1": "Enfoque libre de juicios y dietas restrictivas",
+    "metric2": "Especializada",
+    "label2": "En salud hormonal femenina (SOMP, resistencia a la insulina)"
+  },
+  "caseStudy": {
+    "clientOverview": "Joseline Vásconez es una marca personal de nutrición enfocada en la salud integral, el bienestar y la regulación hormonal femenina, orientada a guiar a las pacientes mediante hábitos sostenibles y educación basada en evidencia científica.",
+    "challenge": "Superar la frustración de pacientes con síntomas no resueltos (inflamación, acné, cansancio, desequilibrios hormonales) que cargan con historiales de dietas extremas y exámenes médicos 'normales' que no explican sus malestares.",
+    "purpose": "Transformar la relación de las mujeres con la comida a través de educación alimentaria consciente, eliminando el miedo y la culpa mediante un acompañamiento clínico cercano y accesible.",
+    "buyerPersona": {
+      "name": "Mujer en búsqueda de bienestar hormonal",
+      "age": "25 - 40 años",
+      "occupation": "Profesionales, estudiantes o madres activas",
+      "interests": [
+        "Salud y bienestar integral",
+        "Nutrición consciente y sostenible",
+        "Regulación hormonal (SOMP, resistencia a la insulina)",
+        "Desarrollo personal y autocuidado"
+      ],
+      "painPoints": [
+        "Frustración por síntomas persistentes (inflamación, cansancio, acné, caída de cabello)",
+        "Resultados médicos 'normales' que no reflejan cómo se sienten realmente",
+        "Ansiedad y agotamiento causados por ciclos infinitos de dietas restrictivas"
+      ]
+    },
+    "brandPersonality": {
+      "tone": [
+        "Empático",
+        "Científico-accesible",
+        "Cercano y humano"
+      ],
+      "voice": "Guía sabia y comprensiva que combina el rigor clínico con una comunicación auténtica, cálida y de 'tú a tú'."
+    },
+    "contentStrategy": {
+      "objectives": [
+        "Fomentar el crecimiento y posicionamiento de la marca personal.",
+        "Aumentar la visibilidad, participación y sentido de comunidad en el público.",
+        "Promover la interacción, educar sin tecnicismos y despertar curiosidad saludable."
+      ],
+      "pillars": [
+        "Traducción de evidencia clínica a soluciones prácticas para la vida real",
+        "Educación sobre salud hormonal (SOMP, resistencia a la insulina) y bienestar sin restricciones",
+        "Empatía, validación emocional y validación de experiencias previas con dietas"
+      ]
+    },
+    "deliverables": [
+      {
+        "category": "Estrategia de Comunicación",
+        "items": [
+          "Definición de personalidad de marca y tono de comunicación",
+          "Creación del mensaje principal y promesa de marca",
+          "Estructuración general de pilares de contenido para redes sociales"
+        ]
+      },
+      {
+        "category": "Marketing de Contenidos",
+        "items": [
+          "Lineamientos para la redacción de copies educativos y compasivos",
+          "Estrategia de conexión basada en experiencias y soluciones reales",
+          "Guías de lenguaje flexible y libre de juicios punitivos"
+        ]
+      }
+    ],
+    "copyExamples": [
+      {
+        "type": "Mensaje Principal",
+        "text": "Sanar tu salud hormonal y lograr una pérdida de grasa sostenible no requiere dietas extremas ni restricciones; requiere educación alimentaria, evidencia científica y hábitos que se adapten a tu vida real."
+      },
+      {
+        "type": "Ejemplo de Copy / Tono",
+        "text": "Entendamos qué le pasa a tus hormonas cuando combinas tus alimentos de forma equilibrada."
+      }
+    ],
+    "results": [
+      "Diseño de una identidad comunicacional moderna, empática y rigurosa.",
+      "Diferenciación clara en el mercado basada en la experiencia personal de la nutrióloga y su enfoque sin restricciones.",
+      "Creación de un puente de confianza profunda que elimina el miedo de las pacientes hacia los alimentos."
+    ],
+    "testimonials": [
+      {
+        "text": "La estrategia comunicacional logró conectar de forma genuina con el dolor de las pacientes, convirtiendo conceptos médicos complejos en un mensaje humano, cálido y transformador.",
+        "author": "Diana Guaiña",
+        "position": "Estratega de Marca"
+      }
+    ]
+  }
+} 
 
 ];

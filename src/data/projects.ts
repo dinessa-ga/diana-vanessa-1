@@ -546,7 +546,35 @@ export const brandProjects: BrandProject[] = [
         embedCode: "https://www.instagram.com/p/DF_example3/",
         isVideo: false,
         platform: "instagram"
-      }
+      },
+      {
+        src: '/creative/projects/lc5/case-study-5-art4.png',
+        embedCode: "https://www.instagram.com/p/DF_example4/",
+        isVideo: false,
+        platform: "instagram"
+      },
+      {
+        src: '/creative/projects/lc5/case-study-5-art5.png',
+        embedCode: "https://www.instagram.com/p/DF_example5/",
+        isVideo: false,
+        platform: "instagram"
+      },
+      {
+        src: '/creative/projects/lc5/case-study-5-art6.png',
+        embedCode: "https://www.instagram.com/p/DF_example6/",
+        isVideo: false,
+        platform: "instagram"
+      },
+       {
+        src: '/creative/projects/lc5/case-study-5-art7.png',
+       },
+        {
+        src: '/creative/projects/lc5/case-study-5-art8.png',
+       },
+        {
+        src: '/creative/projects/lc5/case-study-5-art9.png',
+       },
+
     ],
     instagramPosts: [
       {
